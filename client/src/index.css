@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700&display=swap');
 
 :root {
   --background: 0 0% 98%;
@@ -114,31 +114,37 @@
   }
 
   /* Neural Network Animation */
+  .neural-svg {
+    overflow: visible;
+  }
+  
   .node {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: hsl(var(--primary));
-    border-radius: 50%;
     transition: all 0.3s ease;
+    opacity: 0.7;
+  }
+  
+  .node-hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(79, 110, 193, 0.7));
   }
 
   .connection {
-    position: absolute;
-    height: 1px;
-    background: hsl(var(--accent));
-    transform-origin: 0% 0%;
-    transition: opacity 0.3s ease;
+    stroke-opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+
+  .connection-hover {
+    stroke: rgba(79, 110, 193, 0.7);
+    stroke-opacity: 0.7;
   }
 
   .neural-hover:hover .node {
-    background: hsl(var(--primary));
-    width: 10px;
-    height: 10px;
+    fill: hsl(var(--primary));
+    r: 5;
   }
 
   .neural-hover:hover .connection {
-    background: hsla(var(--primary), 0.5);
+    stroke: hsla(var(--primary), 0.7);
   }
 }
 
