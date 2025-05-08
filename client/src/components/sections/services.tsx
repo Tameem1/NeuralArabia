@@ -12,8 +12,7 @@ export default function Services() {
     {
       id: "consulting",
       title: t("services.consulting.title"),
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      imageAlt: t("services.consulting.imageAlt"),
+      icon: "fas fa-lightbulb",
       features: [
         t("services.consulting.features.1"),
         t("services.consulting.features.2"),
@@ -25,8 +24,7 @@ export default function Services() {
     {
       id: "development",
       title: t("services.development.title"),
-      image: "https://images.unsplash.com/photo-1607798748738-b15c40d33d57?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      imageAlt: t("services.development.imageAlt"),
+      icon: "fas fa-code",
       features: [
         t("services.development.features.1"),
         t("services.development.features.2"),
@@ -49,12 +47,8 @@ export default function Services() {
           {services.map((service) => (
             <Card key={service.id} className="service-card bg-accent rounded-2xl p-2 shadow-md hover:shadow-xl border-none">
               <CardContent className="p-6">
-                <div className="mb-6 neural-hover relative overflow-hidden rounded-lg">
-                  <img 
-                    src={service.image} 
-                    alt={service.imageAlt} 
-                    className="w-full h-64 object-cover rounded-lg" 
-                  />
+                <div className="mb-6 neural-hover relative overflow-hidden rounded-lg h-64 flex items-center justify-center bg-accent/40">
+                  <i className={`${service.icon} text-6xl text-primary opacity-70`}></i>
                   <NeuralAnimation nodesCount={10} connectionsCount={15} />
                 </div>
                 <CardHeader className="p-0 mb-4">

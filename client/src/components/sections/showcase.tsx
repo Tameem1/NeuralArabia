@@ -8,15 +8,13 @@ export default function Showcase() {
   const technologies = [
     {
       id: "neural",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      imageAlt: t("showcase.neural.imageAlt"),
+      icon: "fas fa-network-wired",
       title: t("showcase.neural.title"),
       description: t("showcase.neural.description")
     },
     {
       id: "nlp",
-      image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      imageAlt: t("showcase.nlp.imageAlt"),
+      icon: "fas fa-language",
       title: t("showcase.nlp.title"),
       description: t("showcase.nlp.description")
     }
@@ -32,14 +30,12 @@ export default function Showcase() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {technologies.map((tech) => (
-            <Card key={tech.id} className="neural-container neural-hover rounded-xl overflow-hidden shadow-lg border-none">
-              <img 
-                src={tech.image} 
-                alt={tech.imageAlt} 
-                className="w-full h-auto neural-animation" 
-              />
-              <NeuralAnimation nodesCount={15} connectionsCount={25} />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-6">
+            <Card key={tech.id} className="neural-container neural-hover rounded-xl overflow-hidden shadow-lg border-none relative min-h-[250px] flex items-center justify-center">
+              <div className="absolute top-0 left-0 w-full h-full bg-accent/30 flex items-center justify-center">
+                <i className={`${tech.icon} text-7xl text-primary opacity-60`}></i>
+                <NeuralAnimation nodesCount={15} connectionsCount={25} />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/80 to-transparent p-6 z-10">
                 <h3 className="font-cairo font-bold text-xl text-white mb-2">{tech.title}</h3>
                 <p className="text-white">{tech.description}</p>
               </div>
