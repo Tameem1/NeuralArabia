@@ -21,8 +21,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store the contact message
       const message = await storage.createContactMessage(validatedData);
       
-      // Send email notification (logs to console in this implementation)
-      const emailSent = sendContactNotification(message);
+      // Send email notification to tameem@gmail.com
+      const emailSent = await sendContactNotification(message);
       
       res.status(200).json({ 
         success: true, 
