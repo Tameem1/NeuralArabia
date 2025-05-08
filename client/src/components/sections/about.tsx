@@ -24,11 +24,12 @@ export default function About() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-12 md:mb-0">
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt={t("about.imageAlt")} 
-              className="w-full h-auto rounded-xl shadow-lg" 
-            />
+            <div className="w-full h-64 md:h-[350px] bg-accent/40 rounded-xl shadow-lg flex items-center justify-center neural-container">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <i className="fas fa-users text-8xl text-primary opacity-70"></i>
+                <div className="absolute inset-0 bg-primary/5 rounded-xl"></div>
+              </div>
+            </div>
           </div>
           <div className={`md:w-1/2 ${direction === 'rtl' ? 'md:pr-12' : 'md:pl-12'}`}>
             <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-foreground">{t("about.title")}</h2>
