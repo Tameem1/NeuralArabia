@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
 import { storage } from "./storage";
+import { sendContactNotification } from "./email";
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
@@ -20,7 +21,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store the contact message
       const message = await storage.createContactMessage(validatedData);
       
-      res.status(200).json({ success: true, message: "Message sent successfully" });
+      // Send email notification (logs to console in this implementation)
+      const emailSent = sendContactNotification(message);
+      
+      res.status(200).json({ 
+        success: true, 
+        message: "Message sent successfully",
+        emailSent
+      });
     } catch (error) {
       if (error instanceof z.ZodError) {
         return res.status(400).json({ success: false, message: "Validation error", errors: error.format() });

@@ -6,7 +6,7 @@ import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import Features from "@/components/sections/features";
 import Showcase from "@/components/sections/showcase";
-import About from "@/components/sections/about";
+
 import Contact from "@/components/sections/contact";
 
 export default function Home() {
@@ -43,7 +43,6 @@ export default function Home() {
         <Services />
         <Features />
         <Showcase />
-        <About />
         <Contact />
       </main>
       <Footer />
