@@ -112,6 +112,21 @@
   .btn-primary:hover {
     box-shadow: 0 10px 15px -3px rgba(79, 110, 193, 0.3), 0 4px 6px -2px rgba(79, 110, 193, 0.05);
   }
+  
+  /* Particles.js styles */
+  #tsparticles {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  #tsparticles canvas {
+    position: absolute;
+    z-index: 0;
+  }
 
   /* Neural Network Animation */
   .neural-svg {

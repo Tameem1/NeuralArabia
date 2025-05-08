@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
+import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -9,6 +10,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative py-24 bg-gradient-to-l from-accent to-white overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground className="z-0" />
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className={`md:w-1/2 text-center ${direction === 'rtl' ? 'md:text-right' : 'md:text-left'}`}>
