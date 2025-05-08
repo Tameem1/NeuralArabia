@@ -1,0 +1,145 @@
+{
+  "seo": {
+    "title": "Nova AI - Consulting and Development",
+    "description": "Nova AI offers advanced AI consulting, strategic services, and AI development and integration services for companies and institutions",
+    "ogTitle": "Nova AI - Consulting and Development",
+    "ogDescription": "Leading the AI revolution in the business world through innovative and customized solutions"
+  },
+  "header": {
+    "title": "Nova AI",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "hero": {
+    "titleStart": "Leading the",
+    "titleHighlight": "AI Revolution",
+    "titleEnd": "in the Business World",
+    "description": "We empower companies through innovative AI solutions that drive growth, improve efficiency, and open new horizons for digital transformation.",
+    "contactButton": "Contact Us",
+    "servicesButton": "Discover Our Services",
+    "imageAlt": "AI Neural Network"
+  },
+  "services": {
+    "title": "Our Specialized Services",
+    "description": "We provide comprehensive AI solutions to help your company innovate and grow",
+    "consulting": {
+      "title": "AI Strategy Consulting",
+      "imageAlt": "AI Strategy Consulting",
+      "features": {
+        "1": "Analyzing requirements and opportunities for AI application in your business",
+        "2": "Developing customized AI strategies for your business objectives",
+        "3": "Assessing technical readiness and defining digital transformation path",
+        "4": "Training and qualifying teams to use AI technologies"
+      },
+      "cta": "Free Consultation"
+    },
+    "development": {
+      "title": "AI Development & Integration",
+      "imageAlt": "AI Development and Integration",
+      "features": {
+        "1": "Developing custom machine learning models for your business use case",
+        "2": "Integrating AI solutions with your existing systems",
+        "3": "Developing intelligent applications and interfaces based on AI",
+        "4": "Continuous maintenance and improvement of AI models"
+      },
+      "cta": "Request Technical Demo"
+    }
+  },
+  "features": {
+    "title": "Why Choose Nova AI?",
+    "description": "We combine advanced technical expertise and strategic vision to achieve exceptional results",
+    "expertise": {
+      "title": "Specialized Expertise",
+      "description": "A team of AI experts with advanced certifications and practical experience in diverse projects."
+    },
+    "customized": {
+      "title": "Customized Solutions",
+      "description": "We design tailored solutions that fit your unique business needs instead of following a one-size-fits-all approach."
+    },
+    "measurable": {
+      "title": "Measurable Results",
+      "description": "We focus on achieving tangible and measurable results that positively impact your business performance."
+    }
+  },
+  "showcase": {
+    "title": "Our Advanced Technologies",
+    "description": "We use the latest AI technologies to deliver innovative solutions",
+    "neural": {
+      "title": "Deep Neural Networks",
+      "description": "Deep analysis and learning from complex data to extract valuable insights",
+      "imageAlt": "Deep Neural Networks"
+    },
+    "nlp": {
+      "title": "Natural Language Processing",
+      "description": "Understanding and analyzing Arabic texts with high accuracy",
+      "imageAlt": "Natural Language Processing"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description1": "We are a team of AI experts specialized in developing and consulting on advanced AI solutions. Nova was founded in 2018 with the goal of helping companies leverage the power of AI to achieve exceptional growth.",
+    "description2": "We pride ourselves on providing distinguished services that combine deep technical expertise and strategic understanding of business needs, ensuring tangible results for our clients.",
+    "imageAlt": "Nova AI Team",
+    "stats": {
+      "projects": "Successful Projects",
+      "experts": "Specialized Experts"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "We are here to help you on your digital transformation journey using AI",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Full Name",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "company": "Company",
+      "companyPlaceholder": "Company Name",
+      "service": "Service Needed",
+      "servicePlaceholder": "Select Service",
+      "serviceOptions": {
+        "consulting": "AI Strategy Consulting",
+        "development": "AI Development & Integration",
+        "training": "Team Training & Qualification",
+        "other": "Other Service"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Write your inquiry or needs details here...",
+      "submit": "Send Message",
+      "submitting": "Sending..."
+    },
+    "info": {
+      "address": {
+        "title": "Address",
+        "text": "King Fahd Road, Al Olaya District, Riyadh, Saudi Arabia"
+      },
+      "email": {
+        "title": "Email",
+        "text": "info@nova-ai.com"
+      },
+      "phone": {
+        "title": "Phone",
+        "text": "+966 12 345 6789"
+      }
+    },
+    "success": {
+      "title": "Message Sent Successfully",
+      "message": "Thank you for contacting us, we will respond to you as soon as possible."
+    },
+    "error": {
+      "title": "Error Occurred",
+      "message": "We couldn't send your message, please try again later."
+    }
+  },
+  "footer": {
+    "title": "Nova AI",
+    "tagline": "Leading the AI revolution in the business world through innovative and customized solutions",
+    "copyright": "© {{year}} Nova AI. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  }
+}
