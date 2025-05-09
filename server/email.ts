@@ -1,13 +1,13 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 import { type ContactMessage } from "../shared/schema";
 
 // Create an Ethereal test account (free service that catches emails)
 // This creates a new disposable email address for testing purposes
 async function createTestAccount() {
   const testAccount = await nodemailer.createTestAccount();
-  
+
   return {
-    host: 'smtp.ethereal.email',
+    host: "smtp.ethereal.email",
     port: 587,
     secure: false,
     auth: {
@@ -21,7 +21,9 @@ async function createTestAccount() {
  * Send an email notification for a contact form submission
  * Uses Ethereal for testing, which creates a preview URL for each sent email
  */
-export async function sendContactNotification(message: ContactMessage): Promise<boolean> {
+export async function sendContactNotification(
+  message: ContactMessage,
+): Promise<boolean> {
   try {
     // First, log to console for debugging
     console.log("\n===== NEW CONTACT FORM SUBMISSION =====");
@@ -32,17 +34,17 @@ export async function sendContactNotification(message: ContactMessage): Promise<
     console.log(`Message: ${message.message}`);
     console.log(`Date: ${message.createdAt}`);
     console.log("=======================================\n");
-    
+
     // Create a test account for Ethereal email
     const config = await createTestAccount();
-    
+
     // Create a transporter
     const transporter = nodemailer.createTransport(config);
-    
+
     // Send mail with defined transport object
     const info = await transporter.sendMail({
       from: `"${message.name}" <${message.email}>`,
-      to: 'tameem@gmail.com',
+      to: "tamemkabbani24@gmail.com",
       subject: `New Contact Form Submission: ${message.serviceType}`,
       text: `
 Name: ${message.name}
@@ -63,16 +65,16 @@ Date: ${message.createdAt}
   <p style="background: #f9f9f9; padding: 15px; border-radius: 5px;">${message.message}</p>
   <p><strong>Date:</strong> ${message.createdAt}</p>
 </div>
-      `
+      `,
     });
-    
+
     // Log the URL where the email can be viewed (this is an Ethereal feature)
-    console.log('Email sent successfully!');
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    
+    console.log("Email sent successfully!");
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
     return true;
   } catch (error) {
-    console.error('Failed to send email:', error);
+    console.error("Failed to send email:", error);
     return false;
   }
 }
