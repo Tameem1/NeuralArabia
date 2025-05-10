@@ -34,7 +34,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-white shadow-sm transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
+    <header className={`sticky top-0 z-50 bg-white shadow-sm transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
@@ -42,7 +42,7 @@ export default function Header() {
               <img 
                 src={logoImage} 
                 alt="TawjeehAI Logo" 
-                className={`h-10 ${isScrolled ? 'h-8' : 'h-10'} transition-all duration-300`}
+                className={`${isScrolled ? 'h-12' : 'h-16'} transition-all duration-300`}
               />
             </a>
           </div>
