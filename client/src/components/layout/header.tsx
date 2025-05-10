@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/tawjeehAI-logo.png";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -37,7 +38,13 @@ export default function Header() {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="font-cairo font-bold text-2xl text-primary">{t("header.title")}</h1>
+            <a href="#home" className="block">
+              <img 
+                src={logoImage} 
+                alt="TawjeehAI Logo" 
+                className={`h-10 ${isScrolled ? 'h-8' : 'h-10'} transition-all duration-300`}
+              />
+            </a>
           </div>
           <nav className="hidden md:flex">
             <ul className={`flex ${direction === 'rtl' ? 'space-x-8 space-x-reverse' : 'space-x-8'} text-foreground`}>
