@@ -231,18 +231,6 @@
   .service-sections {
     position: relative;
   }
-  
-  .service-sections::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(79, 110, 193, 0.5), transparent);
-    z-index: 1;
-    transform: translateX(-50%);
-  }
 }
 
 /* Define custom fonts for Cairo and IBM Plex Sans Arabic */
