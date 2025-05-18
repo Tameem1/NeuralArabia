@@ -19,7 +19,8 @@ export default function Services() {
         t("services.consulting.features.3"),
         t("services.consulting.features.4")
       ],
-      ctaText: t("services.consulting.cta")
+      ctaText: t("services.consulting.cta"),
+      formLink: "https://forms.gle/tCunX1J4ANmDCdZW6"
     },
     {
       id: "development",
@@ -31,7 +32,8 @@ export default function Services() {
         t("services.development.features.3"),
         t("services.development.features.4")
       ],
-      ctaText: t("services.development.cta")
+      ctaText: t("services.development.cta"),
+      formLink: "https://forms.gle/8ERwqfnDoKtFFexRA"
     }
   ];
 
@@ -68,9 +70,7 @@ export default function Services() {
                     asChild
                   >
                     <a 
-                      href={service.id === 'consulting' 
-                        ? "https://forms.gle/tCunX1J4ANmDCdZW6" 
-                        : "https://forms.gle/8ERwqfnDoKtFFexRA"} 
+                      href={service.formLink}
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
