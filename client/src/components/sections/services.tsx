@@ -111,10 +111,12 @@ export default function Services() {
                     className={`flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md hover:bg-accent/10 hover:translate-x-1 transition-all duration-300 ${isConsultingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                     style={{ transitionDelay: `${(index + 1) * 100}ms` }}
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-white mr-6">
-                      {index + 1}
-                    </span>
-                    <span>{feature}</span>
+                    <div className="flex-shrink-0">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <span className="mr-0 ml-6">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -214,8 +216,10 @@ export default function Services() {
                     className={`flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1 ${isDevelopmentVisible ? 'opacity-100' : 'opacity-0'}`}
                     style={{ transitionDelay: `${(index + 1) * 150}ms`, transitionProperty: 'all', transitionDuration: '700ms' }}
                   >
-                    <i className={`fas fa-check-circle text-primary mt-1 ${direction === 'rtl' ? 'ml-6' : 'mr-6'}`}></i>
-                    <span>{feature}</span>
+                    <div className="flex-shrink-0">
+                      <i className={`fas fa-check-circle text-primary text-lg`}></i>
+                    </div>
+                    <span className="mr-0 ml-6">{feature}</span>
                   </li>
                 ))}
               </ul>
