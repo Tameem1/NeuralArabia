@@ -67,7 +67,15 @@ export default function Services() {
                     className="bg-primary text-white rounded-lg font-cairo font-semibold hover:bg-primary/90 transition-colors duration-300"
                     asChild
                   >
-                    <a href="https://forms.gle/BSqjFaYHg4inc5aB6" target="_blank" rel="noopener noreferrer">{service.ctaText}</a>
+                    <a 
+                      href={service.id === 'consulting' 
+                        ? "https://forms.gle/tCunX1J4ANmDCdZW6" 
+                        : "https://forms.gle/8ERwqfnDoKtFFexRA"} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      {service.ctaText}
+                    </a>
                   </Button>
                 </CardFooter>
               </CardContent>
