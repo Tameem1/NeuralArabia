@@ -37,7 +37,7 @@ export default function Hero() {
                 size="lg"
                 asChild
               >
-                <a href="#contact">{t("hero.contactButton")}</a>
+                <a href="#ai-consulting">{t("services.consulting.title")}</a>
               </Button>
               <Button
                 className="bg-white text-primary border border-primary px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-accent transition-colors duration-300"
@@ -45,7 +45,7 @@ export default function Hero() {
                 size="lg"
                 asChild
               >
-                <a href="#services">{t("hero.servicesButton")}</a>
+                <a href="#ai-development">{t("services.development.title")}</a>
               </Button>
             </div>
           </div>

@@ -161,6 +161,88 @@
   .neural-hover:hover .connection {
     stroke: hsla(var(--primary), 0.7);
   }
+  
+  /* Custom animations */
+  .fade-in {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 1s ease-in-out forwards;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 1s ease-in-out forwards;
+  }
+  
+  .pop-in {
+    animation: popIn 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards;
+  }
+  
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 5px rgba(79, 110, 193, 0.2), 0 0 10px rgba(79, 110, 193, 0.1); }
+    to { box-shadow: 0 0 10px rgba(79, 110, 193, 0.3), 0 0 20px rgba(79, 110, 193, 0.2); }
+  }
+  
+  /* Service sections specific styles */
+  .service-sections {
+    position: relative;
+  }
+  
+  .service-sections::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(79, 110, 193, 0.5), transparent);
+    z-index: 1;
+    transform: translateX(-50%);
+  }
 }
 
 /* Define custom fonts for Cairo and IBM Plex Sans Arabic */
