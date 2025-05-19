@@ -28,10 +28,8 @@ export default function Header() {
 
   const navItems = [
     { href: "#home", label: t("header.home") },
-    { href: "#services", label: t("header.services") },
     { href: "#ai-consulting", label: t("header.aiConsulting") },
     { href: "#ai-development", label: t("header.aiDevelopment") },
-    { href: "#contact", label: t("header.contact") },
   ];
 
   return (
