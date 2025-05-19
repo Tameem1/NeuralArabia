@@ -26,13 +26,12 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-r from-accent to-white">
+    <section id="features" className="py-24 bg-gradient-to-r from-accent to-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-foreground">
             {t("features.title")}
           </h2>
-          <a href="#features">{t("features.title")}</a>
           <p className="text-lg max-w-2xl mx-auto">
             {t("features.description")}
           </p>
