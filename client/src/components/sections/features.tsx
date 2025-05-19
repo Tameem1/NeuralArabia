@@ -32,6 +32,7 @@ export default function Features() {
           <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-foreground">
             {t("features.title")}
           </h2>
+          <a href="#features">{t("features.title")}</a>
           <p className="text-lg max-w-2xl mx-auto">
             {t("features.description")}
           </p>
