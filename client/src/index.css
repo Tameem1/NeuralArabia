@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -60,7 +60,7 @@
   }
 
   body {
-    @apply font-ibm antialiased bg-background text-foreground;
+    @apply font-cairo antialiased bg-background text-foreground;
   }
 }
 
@@ -233,45 +233,9 @@
   }
 }
 
-/* Define custom fonts for Cairo and IBM Plex Sans Arabic */
-@font-face {
-  font-family: 'Cairo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/cairo/v22/SLXgc1nY6HkvalIkTpu0xg.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
-}
-
-@font-face {
-  font-family: 'Cairo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/cairo/v22/SLXgc1nY6HkvalIkTpu0xg.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
-}
-
-@font-face {
-  font-family: 'IBM Plex Sans Arabic';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6YNe.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
-}
-
-@font-face {
-  font-family: 'IBM Plex Sans Arabic';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
-}
-
+/* Cairo font utility class */
 .font-cairo {
   font-family: 'Cairo', sans-serif;
-}
-
-.font-ibm {
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 html {
