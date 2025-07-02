@@ -49,10 +49,9 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="md:w-1/2 mt-12 md:mt-0 neural-container neural-hover flex items-center justify-center">
+          <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
             <div className="relative w-full h-80 sm:h-96 bg-accent/30 rounded-xl flex items-center justify-center overflow-hidden">
               <i className="fas fa-brain text-8xl md:text-9xl text-primary opacity-70"></i>
-              <NeuralAnimation nodesCount={20} connectionsCount={30} />
             </div>
           </div>
         </div>
