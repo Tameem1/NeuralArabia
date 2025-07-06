@@ -92,6 +92,7 @@ TawjeehAI is a bilingual (Arabic-English) AI consulting and development company 
 - **Static Assets**: Optimized build output for CDN deployment
 
 ## Changelog
+- July 06, 2025. Updated theme to dark mode with gradient color scheme (#6ad4e2, #997fb8, #f3c575) and replaced logo
 - July 02, 2025. Initial setup
 
 ## User Preferences

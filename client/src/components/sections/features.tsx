@@ -26,7 +26,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-gradient-to-r from-accent to-white">
+    <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-foreground">
@@ -41,18 +41,18 @@ export default function Features() {
           {features.map((feature) => (
             <Card
               key={feature.id}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border-none"
+              className="bg-card border-border rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 service-card"
             >
               <CardHeader className="p-0">
-                <div className="text-primary text-3xl mb-4">
+                <div className="text-gradient-tawjeeh text-3xl mb-4">
                   <i className={`fas fa-${feature.icon}`}></i>
                 </div>
-                <CardTitle className="font-cairo font-bold text-xl mb-3 text-foreground">
+                <CardTitle className="font-cairo font-bold text-xl mb-3 text-card-foreground">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <p>{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

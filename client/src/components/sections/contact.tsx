@@ -95,17 +95,17 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-foreground">
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
               {t("contact.title")}
             </h2>
-            <p className="text-lg">{t("contact.description")}</p>
+            <p className="text-lg text-muted-foreground">{t("contact.description")}</p>
           </div>
 
-          <Card className="bg-accent rounded-2xl p-0 shadow-lg border-none">
+          <Card className="bg-card border border-border rounded-2xl p-0 shadow-lg">
             <CardContent className="p-8">
               <Form {...form}>
                 <form
@@ -122,7 +122,7 @@ export default function Contact() {
                           <FormControl>
                             <Input
                               placeholder={t("contact.form.namePlaceholder")}
-                              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                              className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                               {...field}
                             />
                           </FormControl>
@@ -139,7 +139,7 @@ export default function Contact() {
                           <FormControl>
                             <Input
                               placeholder={t("contact.form.emailPlaceholder")}
-                              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                              className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                               {...field}
                             />
                           </FormControl>
@@ -157,7 +157,7 @@ export default function Contact() {
                         <FormControl>
                           <Input
                             placeholder={t("contact.form.companyPlaceholder")}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                             {...field}
                           />
                         </FormControl>
@@ -176,7 +176,7 @@ export default function Contact() {
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent">
                               <SelectValue
                                 placeholder={t(
                                   "contact.form.servicePlaceholder",
@@ -212,7 +212,7 @@ export default function Contact() {
                         <FormControl>
                           <Textarea
                             placeholder={t("contact.form.messagePlaceholder")}
-                            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
                             rows={4}
                             {...field}
                           />
@@ -224,7 +224,7 @@ export default function Contact() {
                   <div className="text-center">
                     <Button
                       type="submit"
-                      className="btn-primary bg-primary text-white px-8 py-3 rounded-lg font-cairo font-semibold inline-block"
+                      className="btn-primary bg-gradient-tawjeeh text-white px-8 py-3 rounded-lg font-cairo font-semibold inline-block hover:opacity-90 transition-all duration-300"
                       disabled={isSubmitting}
                     >
                       {isSubmitting

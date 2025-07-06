@@ -41,15 +41,15 @@ export default function AIConsulting() {
   return (
     <section 
       id="ai-consulting" 
-      className="py-24 bg-gradient-to-b from-white to-accent/20"
+      className="py-24 bg-background"
       ref={sectionRef}
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className={`font-cairo font-bold text-3xl md:text-4xl mb-4 text-primary transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+          <h2 className={`font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             {t("services.consulting.title")}
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+          <p className={`text-lg max-w-2xl mx-auto text-muted-foreground transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             نقدم استشارات متخصصة في مجال الذكاء الاصطناعي لمساعدة شركتك على تحديد أفضل الاستراتيجيات وفرص التطبيق التي تناسب أهداف عملك.
           </p>
         </div>
@@ -60,19 +60,19 @@ export default function AIConsulting() {
               {features.map((feature, index) => (
                 <li 
                   key={index} 
-                  className={`flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md hover:bg-accent/10 hover:translate-x-1 transition-all duration-300 delay-${(index + 1) * 100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  className={`flex items-start bg-card border border-border p-4 rounded-lg shadow-sm hover:shadow-md hover:bg-accent/10 hover:translate-x-1 transition-all duration-300 delay-${(index + 1) * 100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-white mr-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-tawjeeh text-white mr-3">
                     {index + 1}
                   </span>
-                  <span>{feature}</span>
+                  <span className="text-card-foreground">{feature}</span>
                 </li>
               ))}
             </ul>
             
             <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Button 
-                className="bg-primary text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-primary/90 hover:shadow-lg transition-all duration-300 mt-4"
+                className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                 size="lg"
                 asChild
               >
@@ -90,21 +90,21 @@ export default function AIConsulting() {
           <div 
             className={`order-1 lg:order-2 neural-container transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
           >
-            <div className="relative w-full h-96 bg-accent/30 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
+            <div className="relative w-full h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
               <div className="absolute inset-0 flex items-center justify-center">
-                <i className="fas fa-lightbulb text-8xl text-primary opacity-40"></i>
+                <i className="fas fa-lightbulb text-8xl text-gradient-cyan opacity-40"></i>
               </div>
               <NeuralAnimation nodesCount={25} connectionsCount={40} />
               
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/20 to-transparent h-32"></div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gradient-cyan/20 to-transparent h-32"></div>
               
-              <div className="absolute top-4 right-4 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md animate-pulse">
-                <i className="fas fa-brain text-primary text-2xl"></i>
+              <div className="absolute top-4 right-4 w-20 h-20 bg-background rounded-full flex items-center justify-center shadow-md animate-pulse">
+                <i className="fas fa-brain text-gradient-cyan text-2xl"></i>
               </div>
               
               {/* Floating elements with CSS animations */}
-              <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md animate-bounce">
-                <i className="fas fa-lightbulb text-primary text-lg"></i>
+              <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-background/80 rounded-full flex items-center justify-center shadow-md animate-bounce">
+                <i className="fas fa-lightbulb text-gradient-purple text-lg"></i>
               </div>
               
               <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md animate-ping">

@@ -38,21 +38,21 @@ export default function AIDevelopment() {
   ];
 
   return (
-    <section id="ai-development" className="py-24 bg-gradient-to-b from-accent/20 to-white">
+    <section id="ai-development" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-foreground">
+          <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
             {t("services.development.title")}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
             نطور حلول ذكاء اصطناعي مخصصة ومتكاملة مع أنظمتك الحالية لزيادة الكفاءة وتحسين تجربة المستخدم
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-xl p-6 shadow-lg mb-8">
-              <h3 className="font-cairo font-bold text-2xl mb-4 text-primary">
+            <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8">
+              <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh">
                 المجالات التقنية
               </h3>
               
@@ -61,8 +61,8 @@ export default function AIDevelopment() {
                   <div 
                     key={area.id}
                     className={`text-center p-3 rounded-lg cursor-pointer transition-all duration-300 ${activeTab === index 
-                      ? 'bg-primary text-white shadow-md' 
-                      : 'bg-accent/30 hover:bg-accent/50'}`}
+                      ? 'bg-gradient-tawjeeh text-white shadow-md' 
+                      : 'bg-muted hover:bg-muted/80'}`}
                     onClick={() => setActiveTab(index)}
                   >
                     <i className={`${area.icon} text-xl mb-2 block`}></i>
@@ -71,25 +71,25 @@ export default function AIDevelopment() {
                 ))}
               </div>
               
-              <div className="p-4 bg-accent/10 rounded-lg min-h-[100px]">
-                <h4 className="font-cairo font-semibold text-lg mb-2">
+              <div className="p-4 bg-muted/50 rounded-lg min-h-[100px]">
+                <h4 className="font-cairo font-semibold text-lg mb-2 text-card-foreground">
                   {developmentAreas[activeTab].title}
                 </h4>
-                <p>{developmentAreas[activeTab].description}</p>
+                <p className="text-muted-foreground">{developmentAreas[activeTab].description}</p>
               </div>
             </div>
             
             <ul className="space-y-3 mb-8">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
-                  <i className={`fas fa-check-circle text-primary mt-1 ${direction === 'rtl' ? 'ml-2' : 'mr-2'}`}></i>
-                  <span>{feature}</span>
+                <li key={index} className="flex items-start bg-card border border-border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1">
+                  <i className={`fas fa-check-circle text-gradient-cyan mt-1 ${direction === 'rtl' ? 'ml-2' : 'mr-2'}`}></i>
+                  <span className="text-card-foreground">{feature}</span>
                 </li>
               ))}
             </ul>
             
             <Button 
-              className="bg-primary text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-primary/90 transition-colors duration-300 mt-4"
+              className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 transition-all duration-300 mt-4"
               size="lg"
               asChild
             >
