@@ -102,10 +102,10 @@ export default function Services() {
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-primary">
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
               {t("services.consulting.title")}
             </h2>
-            <p className="text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
               نقدم استشارات متخصصة في مجال الذكاء الاصطناعي لمساعدة شركتك على
               تحديد أفضل الاستراتيجيات وفرص التطبيق التي تناسب أهداف عملك.
             </p>
@@ -119,13 +119,13 @@ export default function Services() {
                 {consultingFeatures.map((feature, index) => (
                   <li
                     key={index}
-                    className={`flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md hover:bg-accent/10 hover:translate-x-1 transition-all duration-300 ${isConsultingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                    className={`flex items-start bg-card border border-border p-4 rounded-lg shadow-sm hover:shadow-md hover:bg-accent/10 hover:translate-x-1 transition-all duration-300 ${isConsultingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                     style={{ transitionDelay: `${(index + 1) * 100}ms` }}
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-white mr-6">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-tawjeeh text-white mr-6">
                       {index + 1}
                     </span>
-                    <span className={"mr-6"}>{feature}</span>
+                    <span className={"mr-6 text-card-foreground"}>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -135,7 +135,7 @@ export default function Services() {
                 style={{ transitionDelay: "600ms" }}
               >
                 <Button
-                  className="bg-primary text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-primary/90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   asChild
                 >
@@ -153,25 +153,25 @@ export default function Services() {
             <div
               className={`order-1 lg:order-2 neural-container transition-all duration-1000 delay-300 ${isConsultingVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
             >
-              <div className="relative w-full h-96 bg-accent/30 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative w-full h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-lightbulb text-8xl text-primary opacity-40"></i>
+                  <i className="fas fa-lightbulb text-8xl text-gradient-cyan opacity-40"></i>
                 </div>
                 <NeuralAnimation nodesCount={25} connectionsCount={40} />
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/20 to-transparent h-32"></div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gradient-cyan/20 to-transparent h-32"></div>
 
-                <div className="absolute top-4 right-4 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md animate-pulse">
-                  <i className="fas fa-brain text-primary text-2xl"></i>
+                <div className="absolute top-4 right-4 w-20 h-20 bg-background rounded-full flex items-center justify-center shadow-md animate-pulse">
+                  <i className="fas fa-brain text-gradient-cyan text-2xl"></i>
                 </div>
 
                 {/* Floating elements with CSS animations */}
-                <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md animate-bounce">
-                  <i className="fas fa-lightbulb text-primary text-lg"></i>
+                <div className="absolute top-1/4 left-1/4 w-12 h-12 bg-background/80 rounded-full flex items-center justify-center shadow-md animate-bounce">
+                  <i className="fas fa-lightbulb text-gradient-purple text-lg"></i>
                 </div>
 
-                <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md pulse">
-                  <i className="fas fa-chart-line text-primary text-lg"></i>
+                <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-background/80 rounded-full flex items-center justify-center shadow-md pulse">
+                  <i className="fas fa-chart-line text-gradient-yellow text-lg"></i>
                 </div>
               </div>
             </div>
@@ -182,16 +182,16 @@ export default function Services() {
       {/* AI Development Section */}
       <section
         id="ai-development"
-        className="py-24 bg-gradient-to-b from-accent/20 to-white"
+        className="py-24 bg-background"
       >
         <div className="container mx-auto px-6" ref={developmentSectionRef}>
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-primary">
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
               {t("services.development.title")}
             </h2>
-            <p className="text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
               نطور حلول ذكاء اصطناعي مخصصة ومتكاملة مع أنظمتك الحالية لزيادة
               الكفاءة وتحسين تجربة المستخدم
             </p>
@@ -201,8 +201,8 @@ export default function Services() {
             <div
               className={`order-2 lg:order-1 transition-all duration-1000 delay-200 ${isDevelopmentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
-              <div className="bg-white rounded-xl p-6 shadow-lg mb-8 glow">
-                <h3 className="font-cairo font-bold text-2xl mb-4 text-primary">
+              <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8 glow">
+                <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh">
                   المجالات التقنية
                 </h3>
 
@@ -212,8 +212,8 @@ export default function Services() {
                       key={area.id}
                       className={`text-center p-3 rounded-lg cursor-pointer transition-all duration-300 ${
                         activeDevTab === index
-                          ? "bg-primary text-white shadow-md"
-                          : "bg-accent/30 hover:bg-accent/50"
+                          ? "bg-gradient-tawjeeh text-white shadow-md"
+                          : "bg-muted hover:bg-muted/80"
                       }`}
                       onClick={() => setActiveDevTab(index)}
                     >
@@ -225,11 +225,11 @@ export default function Services() {
                   ))}
                 </div>
 
-                <div className="p-4 bg-accent/10 rounded-lg min-h-[100px]">
-                  <h4 className="font-cairo font-semibold text-lg mb-2">
+                <div className="p-4 bg-muted/50 rounded-lg min-h-[100px]">
+                  <h4 className="font-cairo font-semibold text-lg mb-2 text-card-foreground">
                     {developmentAreas[activeDevTab].title}
                   </h4>
-                  <p>{developmentAreas[activeDevTab].description}</p>
+                  <p className="text-muted-foreground">{developmentAreas[activeDevTab].description}</p>
                 </div>
               </div>
 
@@ -237,7 +237,7 @@ export default function Services() {
                 {developmentFeatures.map((feature, index) => (
                   <li
                     key={index}
-                    className={`flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1 ${isDevelopmentVisible ? "opacity-100" : "opacity-0"}`}
+                    className={`flex items-start bg-card border border-border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:translate-x-1 ${isDevelopmentVisible ? "opacity-100" : "opacity-0"}`}
                     style={{
                       transitionDelay: `${(index + 1) * 150}ms`,
                       transitionProperty: "all",
@@ -245,9 +245,9 @@ export default function Services() {
                     }}
                   >
                     <i
-                      className={`fas fa-check-circle text-primary mt-1 mr-6`}
+                      className={`fas fa-check-circle text-gradient-cyan mt-1 mr-6`}
                     ></i>
-                    <span className={"mr-6"}>{feature}</span>
+                    <span className={"mr-6 text-card-foreground"}>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -257,7 +257,7 @@ export default function Services() {
                 style={{ transitionDelay: "800ms" }}
               >
                 <Button
-                  className="bg-primary text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-primary/90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   asChild
                 >
@@ -275,25 +275,25 @@ export default function Services() {
             <div
               className={`order-1 lg:order-2 neural-container transition-all duration-1000 delay-300 ${isDevelopmentVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
             >
-              <div className="relative w-full h-96 bg-accent/30 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-full h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-code text-8xl text-primary opacity-40"></i>
+                  <i className="fas fa-code text-8xl text-gradient-cyan opacity-40"></i>
                 </div>
                 <NeuralAnimation nodesCount={30} connectionsCount={50} />
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/20 to-transparent h-32"></div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gradient-cyan/20 to-transparent h-32"></div>
 
                 {/* Floating elements */}
-                <div className="absolute float top-10 left-10 w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <i className="fas fa-robot text-primary text-xl"></i>
+                <div className="absolute float top-10 left-10 w-16 h-16 bg-background rounded-lg flex items-center justify-center shadow-md">
+                  <i className="fas fa-robot text-gradient-cyan text-xl"></i>
                 </div>
 
-                <div className="absolute pulse bottom-10 right-10 w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <i className="fas fa-microchip text-primary text-xl"></i>
+                <div className="absolute pulse bottom-10 right-10 w-16 h-16 bg-background rounded-lg flex items-center justify-center shadow-md">
+                  <i className="fas fa-microchip text-gradient-purple text-xl"></i>
                 </div>
 
-                <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-white/70 rounded-full flex items-center justify-center shadow-md">
-                  <i className="fas fa-cogs text-primary text-lg"></i>
+                <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-background/70 rounded-full flex items-center justify-center shadow-md">
+                  <i className="fas fa-cogs text-gradient-yellow text-lg"></i>
                 </div>
               </div>
             </div>
