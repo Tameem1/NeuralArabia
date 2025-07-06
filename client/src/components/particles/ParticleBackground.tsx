@@ -44,11 +44,11 @@ export default function ParticleBackground({ className = "" }: ParticleBackgroun
         },
         particles: {
           color: {
-            value: "#4F6EC1", // Primary color
+            value: ["#6ad4e2", "#997fb8", "#f3c575"], // Gradient colors
           },
           links: {
             color: {
-              value: "#4F6EC1", // Primary color for links
+              value: "#6ad4e2", // Cyan color for links
             },
             distance: 150,
             enable: true,

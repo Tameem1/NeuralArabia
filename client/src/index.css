@@ -5,53 +5,63 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 98%;
-  --foreground: 20 14.3% 4.1%;
-  --muted: 60 4.8% 95.9%;
-  --muted-foreground: 25 5.3% 44.7%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 20 14.3% 4.1%;
-  --card: 0 0% 100%;
-  --card-foreground: 20 14.3% 4.1%;
-  --border: 20 5.9% 90%;
-  --input: 20 5.9% 90%;
-  --primary: 218 50% 53%;
-  --primary-foreground: 211 100% 99%;
-  --secondary: 60 4.8% 95.9%;
-  --secondary-foreground: 24 9.8% 10%;
-  --accent: 218 75% 95%;
-  --accent-foreground: 24 9.8% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 60 9.1% 97.8%;
-  --ring: 218 50% 53%;
+  --background: 222 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --muted: 217 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --popover: 222 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 32.6% 17.5%;
+  --input: 217 32.6% 17.5%;
+  --primary: 188 68% 63%;
+  --primary-foreground: 222 84% 4.9%;
+  --secondary: 217 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 274 38% 62%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 188 68% 63%;
   --radius: 0.5rem;
-  --chart-1: 218 50% 53%;
-  --chart-2: 218 60% 65%;
-  --chart-3: 218 70% 75%;
-  --chart-4: 218 80% 85%;
-  --chart-5: 218 90% 95%;
+  --chart-1: 188 68% 63%;
+  --chart-2: 274 38% 62%;
+  --chart-3: 45 77% 72%;
+  --chart-4: 210 40% 98%;
+  --chart-5: 217 32.6% 17.5%;
+  
+  /* Gradient colors */
+  --gradient-cyan: 188 68% 63%;
+  --gradient-purple: 274 38% 62%;
+  --gradient-yellow: 45 77% 72%;
 }
 
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --primary: 218 50% 53%;
-  --primary-foreground: 211 100% 99%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 218 75% 95%;
-  --accent-foreground: 0 0% 98%;
+  --background: 222 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --muted: 217 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --popover: 222 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 32.6% 17.5%;
+  --input: 217 32.6% 17.5%;
+  --primary: 188 68% 63%;
+  --primary-foreground: 222 84% 4.9%;
+  --secondary: 217 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 274 38% 62%;
+  --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --ring: 218 50% 53%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 188 68% 63%;
+  
+  /* Gradient colors */
+  --gradient-cyan: 188 68% 63%;
+  --gradient-purple: 274 38% 62%;
+  --gradient-yellow: 45 77% 72%;
 }
 
 @layer base {
@@ -80,6 +90,17 @@
   .text-align-end {
     text-align: end;
   }
+
+  .bg-gradient-tawjeeh {
+    background: linear-gradient(135deg, #6ad4e2 0%, #997fb8 50%, #f3c575 100%);
+  }
+
+  .text-gradient-tawjeeh {
+    background: linear-gradient(135deg, #6ad4e2 0%, #997fb8 50%, #f3c575 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 @layer components {
@@ -102,7 +123,7 @@
 
   .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(79, 110, 193, 0.1), 0 10px 10px -5px rgba(79, 110, 193, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(106, 212, 226, 0.1), 0 10px 10px -5px rgba(106, 212, 226, 0.04);
   }
 
   .btn-primary {
@@ -110,7 +131,7 @@
   }
 
   .btn-primary:hover {
-    box-shadow: 0 10px 15px -3px rgba(79, 110, 193, 0.3), 0 4px 6px -2px rgba(79, 110, 193, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(106, 212, 226, 0.3), 0 4px 6px -2px rgba(106, 212, 226, 0.05);
   }
   
   /* Particles.js styles */
@@ -140,7 +161,7 @@
   
   .node-hover {
     opacity: 1;
-    filter: drop-shadow(0 0 3px rgba(79, 110, 193, 0.7));
+    filter: drop-shadow(0 0 3px rgba(106, 212, 226, 0.7));
   }
 
   .connection {
@@ -149,7 +170,7 @@
   }
 
   .connection-hover {
-    stroke: rgba(79, 110, 193, 0.7);
+    stroke: rgba(106, 212, 226, 0.7);
     stroke-opacity: 0.7;
   }
 
@@ -223,8 +244,8 @@
   }
   
   @keyframes glow {
-    from { box-shadow: 0 0 5px rgba(79, 110, 193, 0.2), 0 0 10px rgba(79, 110, 193, 0.1); }
-    to { box-shadow: 0 0 10px rgba(79, 110, 193, 0.3), 0 0 20px rgba(79, 110, 193, 0.2); }
+    from { box-shadow: 0 0 5px rgba(106, 212, 226, 0.2), 0 0 10px rgba(106, 212, 226, 0.1); }
+    to { box-shadow: 0 0 10px rgba(106, 212, 226, 0.3), 0 0 20px rgba(106, 212, 226, 0.2); }
   }
   
   /* Service sections specific styles */

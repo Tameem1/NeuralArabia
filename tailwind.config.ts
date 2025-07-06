@@ -65,6 +65,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gradient: {
+          cyan: "hsl(var(--gradient-cyan))",
+          purple: "hsl(var(--gradient-purple))",
+          yellow: "hsl(var(--gradient-yellow))",
+        },
       },
       keyframes: {
         "accordion-down": {

@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative py-24 bg-gradient-to-l from-accent to-white overflow-hidden"
+      className="relative py-24 bg-gradient-tawjeeh overflow-hidden"
     >
       {/* Particle Background */}
       <ParticleBackground className="z-0" />
@@ -21,26 +21,26 @@ export default function Hero() {
           <div
             className={`md:w-1/2 text-center ${direction === "rtl" ? "md:text-right" : "md:text-left"}`}
           >
-            <h1 className="font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-foreground">
+            <h1 className="font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-white">
               {t("hero.titleStart")}{" "}
-              <span className="text-primary">{t("hero.titleHighlight")}</span>{" "}
+              <span className="text-white drop-shadow-lg">{t("hero.titleHighlight")}</span>{" "}
               {t("hero.titleEnd")}
             </h1>
-            <p className="text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0">
+            <p className="text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0 text-white/90">
               {t("hero.description")}
             </p>
             <div
               className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"}`}
             >
               <Button
-                className="bg-primary text-white px-8 py-6 rounded-lg font-cairo font-semibold btn-primary"
+                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                 size="lg"
                 asChild
               >
                 <a href="#ai-consulting">{t("services.consulting.title")}</a>
               </Button>
               <Button
-                className="bg-white text-primary border border-primary px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-accent transition-colors duration-300"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                 variant="outline"
                 size="lg"
                 asChild

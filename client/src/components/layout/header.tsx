@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/tawjeehAI-logo.png";
+import logoImage from "@assets/Tawjeeh AI_1751797429062.png";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-white shadow-sm transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
+    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
