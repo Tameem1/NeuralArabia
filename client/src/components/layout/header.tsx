@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Tawjeeh AI_1751797429062.png";
+import logoImage from "@assets/Tawjeeh AI (4)_1751799313207.png";
 
 export default function Header() {
   const { t } = useTranslation();
