@@ -3,6 +3,7 @@ import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
 import ParticleBackground from "@/components/particles/ParticleBackground";
+import tawjeehLogo from "@assets/tawjeehAI-logo.png";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -51,7 +52,11 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
             <div className="relative w-full h-80 sm:h-96 bg-accent/30 rounded-xl flex items-center justify-center overflow-hidden">
-              <i className="fas fa-brain text-8xl md:text-9xl text-primary opacity-70"></i>
+              <img 
+                src={tawjeehLogo} 
+                alt="TawjeehAI Logo" 
+                className="max-w-xs max-h-64 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
           </div>
         </div>
