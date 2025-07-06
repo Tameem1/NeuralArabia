@@ -34,7 +34,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-3' : 'py-5'}`}>
+    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-2' : 'py-3'}`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
