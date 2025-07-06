@@ -42,7 +42,11 @@ export default function Header() {
               <img 
                 src={logoImage} 
                 alt="TawjeehAI Logo" 
-                className={`${isScrolled ? 'h-20' : 'h-28'} transition-all duration-300`}
+                className={`${isScrolled ? 'h-20' : 'h-28'} transition-all duration-300 object-cover object-center`}
+                style={{ 
+                  transform: 'scale(1.8)',
+                  objectPosition: 'center center'
+                }}
               />
             </a>
           </div>
