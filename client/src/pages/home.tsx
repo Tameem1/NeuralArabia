@@ -4,7 +4,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
 import Features from "@/components/sections/features";
-import Showcase from "@/components/sections/showcase";
+import CalendlyBooking from "@/components/sections/calendly-booking";
 import Services from "@/components/sections/services";
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
           <Features />
         </div>
         <div className="section-transition">
-          <Showcase />
+          <CalendlyBooking />
         </div>
       </main>
       <Footer />

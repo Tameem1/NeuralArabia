@@ -72,22 +72,30 @@
       "description": "We focus on achieving tangible and measurable results that positively impact your business performance."
     }
   },
-  "showcase": {
-    "title": "Our Advanced Technologies",
-    "description": "We use the latest AI technologies to deliver innovative solutions",
-    "neural": {
-      "title": "RAG",
-      "description": "Retrieval-Augmented Generation (RAG) is a technique that enables generative AI models to retrieve and integrate new information.",
-      "imageAlt": "Deep Neural Networks"
+  "calendly": {
+    "title": "Book Your Appointment",
+    "description": "Schedule a free consultation to discuss your project and how AI can help achieve your goals",
+    "bookButton": "Book Free Consultation",
+    "duration": "Session Duration: 30 minutes",
+    "steps": {
+      "schedule": {
+        "title": "Choose Your Time",
+        "description": "Book your appointment at a time that suits you through our available calendar"
+      },
+      "discuss": {
+        "title": "Discuss Your Project",
+        "description": "Talk to us about your challenges and goals in the field of artificial intelligence"
+      },
+      "plan": {
+        "title": "Get an Action Plan",
+        "description": "Receive personalized recommendations and a clear plan to move forward"
+      }
     },
-    "nlp": {
-      "title": "AI Agents",
-      "description": "AI agents are digital workers dedicated to specific tasks and can work within existing systems.",
-      "imageAlt": "Natural Language Processing"
-    },
-    "responsible": {
-      "title": "Responsible AI",
-      "description": "Developing intelligent systems to provide personalized recommendations to users based on their preferences and behavior"
+    "availability": {
+      "title": "Working Hours",
+      "description": "We are available to help you at flexible times that suit your schedule",
+      "times": "9:00 AM - 6:00 PM (Riyadh Time)",
+      "days": "Sunday - Thursday"
     }
   },
   "aiDevelopment": {
