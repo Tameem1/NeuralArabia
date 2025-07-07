@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Calendar, Clock, Users, MessageSquare } from "lucide-react";
 
@@ -24,10 +24,21 @@ export default function CalendlyBooking() {
     },
   ];
 
-  const handleBookingClick = () => {
-    // Open Calendly in a new tab - replace with actual Calendly URL
-    window.open("https://calendly.com/your-calendly-link", "_blank");
-  };
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   return (
     <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 relative overflow-hidden">
@@ -46,19 +57,20 @@ export default function CalendlyBooking() {
           <p className="text-lg max-w-2xl mx-auto text-muted-foreground mb-8">
             {t("calendly.description")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              onClick={handleBookingClick}
-              size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              <Calendar className="w-5 h-5 mr-2" />
-              {t("calendly.bookButton")}
-            </Button>
-            <div className="flex items-center text-muted-foreground">
-              <Clock className="w-4 h-4 mr-2" />
-              <span className="text-sm">{t("calendly.duration")}</span>
-            </div>
+          <div className="flex items-center justify-center text-muted-foreground mb-8">
+            <Clock className="w-4 h-4 mr-2" />
+            <span className="text-sm">{t("calendly.duration")}</span>
+          </div>
+        </div>
+
+        {/* Calendly Embedded Widget */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-2 shadow-lg">
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/your-calendly-link"
+              style={{ minWidth: '320px', height: '700px' }}
+            />
           </div>
         </div>
 
