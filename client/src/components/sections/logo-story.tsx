@@ -15,12 +15,12 @@ export default function LogoStory() {
 
   // Function to create highlighted text with special effects for key words
   const createHighlightedText = (text: string) => {
-    if (direction === 'rtl') {
+    if (direction === "rtl") {
       // Target the word "لتوجيه" specifically
-      if (text.includes('لتوجيه')) {
+      if (text.includes("لتوجيه")) {
         return text.replace(
-          'لتوجيه', 
-          '<span class="tawjeeh-highlight">لتوجيه</span>'
+          "لتوجيه",
+          '<span class="tawjeeh-highlight">لتوجيه</span>',
         );
       }
     }
@@ -95,13 +95,17 @@ export default function LogoStory() {
               className={`space-y-6 ${direction === "rtl" ? "lg:order-2" : ""}`}
             >
               <div className="prose prose-lg max-w-none">
-                <p 
+                <p
                   className="text-lg leading-relaxed text-foreground/90 mb-6"
-                  dangerouslySetInnerHTML={{ __html: createHighlightedText(t("logoStory.paragraph1")) }}
+                  dangerouslySetInnerHTML={{
+                    __html: createHighlightedText(t("logoStory.paragraph1")),
+                  }}
                 />
-                <p 
+                <p
                   className="text-lg leading-relaxed text-foreground/90 font-medium"
-                  dangerouslySetInnerHTML={{ __html: createHighlightedText(t("logoStory.paragraph2")) }}
+                  dangerouslySetInnerHTML={{
+                    __html: createHighlightedText(t("logoStory.paragraph2")),
+                  }}
                 />
               </div>
             </div>
@@ -142,36 +146,6 @@ export default function LogoStory() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Logo Elements Cards */}
-          <div className="mt-16">
-            <h3 className="auto-font font-bold text-2xl mb-8 text-center text-foreground">
-              {t("logoStory.elements.title")}
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {logoElements.map((element, index) => (
-                <Card
-                  key={element.id}
-                  className={`group hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm border-border/50 animate-fade-in-up`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <CardContent className="p-6 text-center">
-                    <div
-                      className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-background to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <element.icon className={`w-8 h-8 ${element.color}`} />
-                    </div>
-                    <h4 className="auto-font font-semibold text-lg mb-2 text-foreground">
-                      {element.title}
-                    </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {element.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </div>
