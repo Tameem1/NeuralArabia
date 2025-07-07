@@ -1,19 +1,25 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
+import { Globe } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/TawjeehAI-icon.png";
 
 export default function Header() {
-  const { t } = useTranslation();
-  const [direction] = useDirection();
+  const { t, i18n } = useTranslation();
+  const [direction, changeLanguage] = useDirection();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'ar' ? 'en' : 'ar';
+    changeLanguage(newLanguage);
   };
 
   useEffect(() => {
@@ -54,7 +60,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <nav className="hidden md:flex">
+          <nav className="hidden md:flex items-center">
             <ul
               className={`flex ${direction === "rtl" ? "space-x-8 space-x-reverse" : "space-x-8"} text-foreground`}
             >
@@ -73,8 +79,32 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+            <div className={`${direction === "rtl" ? "mr-6" : "ml-6"}`}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 hover:text-primary transition-colors duration-300"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="font-medium">
+                  {i18n.language === 'ar' ? 'English' : 'عربي'}
+                </span>
+              </Button>
+            </div>
           </nav>
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 hover:text-primary transition-colors duration-300"
+            >
+              <Globe className="w-4 h-4" />
+              <span className="text-sm font-medium">
+                {i18n.language === 'ar' ? 'EN' : 'عر'}
+              </span>
+            </Button>
             <Button
               variant="ghost"
               size="icon"
