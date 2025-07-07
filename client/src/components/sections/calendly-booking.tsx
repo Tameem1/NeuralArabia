@@ -43,7 +43,7 @@ export default function CalendlyBooking() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 relative overflow-hidden">
+    <section id="calendly-booking" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 relative overflow-hidden">
       {/* Dynamic background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-500/30 to-transparent rounded-full blur-3xl animate-pulse"></div>

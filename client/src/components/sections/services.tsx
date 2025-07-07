@@ -145,15 +145,14 @@ export default function Services() {
                 <Button
                   className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg auto-font font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
-                  asChild
+                  onClick={() => {
+                    const calendlySection = document.querySelector('#calendly-booking');
+                    if (calendlySection) {
+                      calendlySection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  <a
-                    href="https://forms.gle/tCunX1J4ANmDCdZW6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t("services.consulting.cta")}
-                  </a>
+                  {t("services.consulting.cta")}
                 </Button>
               </div>
             </div>
@@ -284,15 +283,14 @@ export default function Services() {
                 <Button
                   className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg auto-font font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
-                  asChild
+                  onClick={() => {
+                    const calendlySection = document.querySelector('#calendly-booking');
+                    if (calendlySection) {
+                      calendlySection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  <a
-                    href="https://forms.gle/8ERwqfnDoKtFFexRA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t("services.development.cta")}
-                  </a>
+                  {t("services.development.cta")}
                 </Button>
               </div>
             </div>
