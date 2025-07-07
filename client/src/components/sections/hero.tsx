@@ -45,7 +45,19 @@ export default function Hero() {
                 descVisible ? 'scroll-reveal active' : 'scroll-reveal'
               }`}
             >
-              {t("hero.description")}
+              {t("hero.description").split("توجيه AI").map((part, index, array) => (
+                <span key={index}>
+                  {part}
+                  {index < array.length - 1 && (
+                    <span className="relative inline-block mx-1">
+                      <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-lg blur-lg animate-pulse"></span>
+                      <span className="relative px-2 py-1 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold text-xl tracking-wide animate-shimmer">
+                        توجيه AI
+                      </span>
+                    </span>
+                  )}
+                </span>
+              ))}
             </p>
             <div
               className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"}`}
