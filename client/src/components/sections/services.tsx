@@ -141,7 +141,7 @@ export default function Services() {
                 style={{ transitionDelay: "600ms" }}
               >
                 <Button
-                  className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg font-cairo font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   asChild
                 >
@@ -270,7 +270,7 @@ export default function Services() {
                 style={{ transitionDelay: "800ms" }}
               >
                 <Button
-                  className="bg-gradient-tawjeeh text-white px-8 py-6 rounded-lg font-cairo font-semibold hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg font-cairo font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   asChild
                 >
