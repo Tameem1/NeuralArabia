@@ -6,6 +6,7 @@ import Hero from "@/components/sections/hero";
 import Features from "@/components/sections/features";
 import CalendlyBooking from "@/components/sections/calendly-booking";
 import Services from "@/components/sections/services";
+import LogoStory from "@/components/sections/logo-story";
 
 export default function Home() {
   const { i18n } = useTranslation();
@@ -40,6 +41,9 @@ export default function Home() {
         <Hero />
         <div className="service-sections relative section-transition">
           <Services />
+        </div>
+        <div className="section-transition">
+          <LogoStory />
         </div>
         <div className="section-transition">
           <Features />

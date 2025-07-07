@@ -38,6 +38,7 @@ export default function Header() {
     { href: "#home", label: t("header.home") },
     { href: "#ai-consulting", label: t("header.aiConsulting") },
     { href: "#ai-development", label: t("header.aiDevelopment") },
+    { href: "#logo-story", label: t("header.logoStory") },
     { href: "#features", label: t("header.whyChooseUs") },
   ];
 
