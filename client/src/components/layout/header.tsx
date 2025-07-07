@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
+import { useMagneticEffect } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import logoImage from "../../assets/TawjeehAI-logo.png";
 
@@ -9,6 +10,7 @@ export default function Header() {
   const [direction] = useDirection();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const magneticLogoRef = useMagneticEffect<HTMLImageElement>();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,16 +37,21 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? "py-1" : "py-2"}`}
+      className={`sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50 transition-all duration-300 ${
+        isScrolled ? "py-1 shadow-lg" : "py-2"
+      }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
             <a href="#home" className="block">
               <img
+                ref={magneticLogoRef}
                 src={logoImage}
                 alt="TawjeehAI Logo"
-                className={`${isScrolled ? "h-12" : "h-16"} transition-all duration-300 object-cover object-center`}
+                className={`${
+                  isScrolled ? "h-12" : "h-16"
+                } transition-all duration-500 object-cover object-center hover:scale-110 float`}
                 style={{
                   transform: "scale(2.2)",
                   objectPosition: "center center",
@@ -56,13 +63,17 @@ export default function Header() {
             <ul
               className={`flex ${direction === "rtl" ? "space-x-8 space-x-reverse" : "space-x-8"} text-foreground`}
             >
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="hover:text-primary transition duration-300"
+                    className={`relative hover:text-primary transition-all duration-300 font-cairo font-medium group ${
+                      isScrolled ? "text-sm" : "text-base"
+                    }`}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-tawjeeh transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 </li>
               ))}

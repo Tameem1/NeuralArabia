@@ -1,18 +1,31 @@
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
+import { useScrollAnimation, useMagneticEffect } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
+import { TypingAnimation } from "@/components/interactive/TypingAnimation";
 import tawjeehLogo from "../../assets/TawjeehAI-logo.png";
 import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function Hero() {
   const { t } = useTranslation();
   const [direction] = useDirection();
+  const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation<HTMLHeadingElement>();
+  const { elementRef: descRef, isVisible: descVisible } = useScrollAnimation<HTMLParagraphElement>({ threshold: 0.2 });
+  const magneticRef1 = useMagneticEffect<HTMLButtonElement>();
+  const magneticRef2 = useMagneticEffect<HTMLButtonElement>();
+  
+  const typingTexts = [
+    t("hero.titleHighlight"),
+    "الذكاء الاصطناعي",
+    "AI Innovation",
+    "التطوير الذكي"
+  ];
 
   return (
     <section
       id="home"
-      className="relative py-24 bg-gradient-tawjeeh overflow-hidden"
+      className="relative py-24 morphing-bg overflow-hidden"
     >
       {/* Particle Background */}
       <ParticleBackground className="z-0" />
@@ -22,28 +35,44 @@ export default function Hero() {
           <div
             className={`md:w-1/2 text-center ${direction === "rtl" ? "md:text-right" : "md:text-left"}`}
           >
-            <h1 className="font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-white">
+            <h1 
+              ref={titleRef}
+              className={`font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-white transition-all duration-1000 ${
+                titleVisible ? 'scroll-reveal active' : 'scroll-reveal'
+              }`}
+            >
               {t("hero.titleStart")}{" "}
               <span className="text-white drop-shadow-lg">
-                {t("hero.titleHighlight")}
+                <TypingAnimation 
+                  texts={typingTexts}
+                  className="gradient-text-animated"
+                  cursorClassName="text-cyan-300"
+                />
               </span>{" "}
               {t("hero.titleEnd")}
             </h1>
-            <p className="text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0 text-white/90">
+            <p 
+              ref={descRef}
+              className={`text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0 text-white/90 transition-all duration-1000 delay-300 ${
+                descVisible ? 'scroll-reveal active' : 'scroll-reveal'
+              }`}
+            >
               {t("hero.description")}
             </p>
             <div
               className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"}`}
             >
               <Button
-                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                ref={magneticRef1}
+                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold btn-magnetic ripple"
                 size="lg"
                 asChild
               >
                 <a href="#ai-consulting">{t("services.consulting.title")}</a>
               </Button>
               <Button
-                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                ref={magneticRef2}
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold btn-magnetic ripple"
                 variant="outline"
                 size="lg"
                 asChild
@@ -57,7 +86,12 @@ export default function Hero() {
               <img
                 src={tawjeehLogo}
                 alt="TawjeehAI Logo"
-                className="max-w-lg max-h-80 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                className="max-w-lg max-h-80 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float glow hover:scale-110"
+              />
+              <NeuralAnimation 
+                className="opacity-30 hover:opacity-50 transition-opacity duration-500" 
+                nodesCount={20} 
+                connectionsCount={30} 
               />
             </div>
           </div>

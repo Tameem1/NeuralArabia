@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { LoadingSpinner } from "@/components/interactive/LoadingSpinner";
 import {
   Form,
   FormControl,
@@ -41,6 +43,7 @@ export default function Contact() {
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { elementRef: sectionRef, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -95,22 +98,29 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-t from-slate-100 via-blue-50/20 to-white dark:from-slate-900 dark:via-blue-950/30 dark:to-slate-800 relative overflow-hidden">
-      {/* Subtle contact background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-300 to-blue-400 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full blur-3xl"></div>
+    <section 
+      id="contact" 
+      ref={sectionRef}
+      className="py-24 bg-gradient-to-t from-slate-100 via-blue-50/20 to-white dark:from-slate-900 dark:via-blue-950/30 dark:to-slate-800 relative overflow-hidden"
+    >
+      {/* Enhanced animated background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-300 to-blue-400 rounded-full blur-3xl icon-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full blur-3xl icon-bounce"></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full blur-2xl icon-float stagger-3"></div>
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
+          <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 gradient-text-animated">
               {t("contact.title")}
             </h2>
             <p className="text-lg text-muted-foreground">{t("contact.description")}</p>
           </div>
 
-          <Card className="bg-card border border-border rounded-2xl p-0 shadow-lg">
+          <Card className={`bg-card border border-border rounded-2xl p-0 shadow-lg perspective-card transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+          }`}>
             <CardContent className="p-8">
               <Form {...form}>
                 <form
@@ -229,12 +239,17 @@ export default function Contact() {
                   <div className="text-center">
                     <Button
                       type="submit"
-                      className="btn-primary bg-gradient-tawjeeh text-white px-8 py-3 rounded-lg font-cairo font-semibold inline-block hover:opacity-90 transition-all duration-300"
+                      className="btn-magnetic ripple bg-gradient-tawjeeh text-white px-8 py-3 rounded-lg font-cairo font-semibold inline-flex items-center gap-3 hover:opacity-90 transition-all duration-300 min-w-[160px] justify-center"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting
-                        ? t("contact.form.submitting")
-                        : t("contact.form.submit")}
+                      {isSubmitting ? (
+                        <>
+                          <LoadingSpinner size="sm" variant="dots" />
+                          {t("contact.form.submitting")}
+                        </>
+                      ) : (
+                        t("contact.form.submit")
+                      )}
                     </Button>
                   </div>
                 </form>
