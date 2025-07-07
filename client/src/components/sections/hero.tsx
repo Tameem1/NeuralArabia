@@ -3,7 +3,6 @@ import { useDirection } from "@/hooks/use-direction";
 import { useScrollAnimation, useMagneticEffect } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
-import { TypingAnimation } from "@/components/interactive/TypingAnimation";
 import tawjeehLogo from "../../assets/TawjeehAI-logo.png";
 import ParticleBackground from "@/components/particles/ParticleBackground";
 
@@ -14,13 +13,6 @@ export default function Hero() {
   const { elementRef: descRef, isVisible: descVisible } = useScrollAnimation<HTMLParagraphElement>({ threshold: 0.2 });
   const magneticRef1 = useMagneticEffect<HTMLButtonElement>();
   const magneticRef2 = useMagneticEffect<HTMLButtonElement>();
-  
-  const typingTexts = [
-    t("hero.titleHighlight"),
-    "الذكاء الاصطناعي",
-    "AI Innovation",
-    "التطوير الذكي"
-  ];
 
   return (
     <section
@@ -42,12 +34,8 @@ export default function Hero() {
               }`}
             >
               {t("hero.titleStart")}{" "}
-              <span className="text-white drop-shadow-lg">
-                <TypingAnimation 
-                  texts={typingTexts}
-                  className="gradient-text-animated"
-                  cursorClassName="text-cyan-300"
-                />
+              <span className="text-white drop-shadow-lg gradient-text-animated">
+                {t("hero.titleHighlight")}
               </span>{" "}
               {t("hero.titleEnd")}
             </h1>
