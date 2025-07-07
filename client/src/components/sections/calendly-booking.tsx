@@ -47,10 +47,9 @@ export default function CalendlyBooking() {
     <section id="calendly-booking" className="relative py-24 morphing-bg overflow-hidden">
       {/* Particle Background */}
       <ParticleBackground className="z-0" />
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
+          <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 leading-tight pb-2 text-[#ffff]">
             {t("calendly.title")}
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-white mb-8">
