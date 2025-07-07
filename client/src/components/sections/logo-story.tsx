@@ -4,6 +4,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Triangle, Mountain, Diamond } from "lucide-react";
 import logoIcon from "@assets/TawjeehAI-icon.png";
+import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function LogoStory() {
   const { t } = useTranslation();
@@ -54,13 +55,10 @@ export default function LogoStory() {
   return (
     <section
       id="logo-story"
-      className="py-24 bg-gradient-to-br from-background via-accent/20 to-background relative overflow-hidden"
+      className="relative py-24 morphing-bg overflow-hidden"
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-primary/20 rotate-45 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-secondary/20 rotate-12 animate-pulse delay-300"></div>
-      </div>
+      {/* Particle Background */}
+      <ParticleBackground className="z-0" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Title Section */}
