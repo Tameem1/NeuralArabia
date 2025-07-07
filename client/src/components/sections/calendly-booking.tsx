@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Calendar, Clock, Users, MessageSquare } from "lucide-react";
+import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function CalendlyBooking() {
   const { t } = useTranslation();
@@ -43,13 +44,9 @@ export default function CalendlyBooking() {
   }, []);
 
   return (
-    <section id="calendly-booking" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 relative overflow-hidden">
-      {/* Dynamic background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-500/30 to-transparent rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-1/4 w-48 h-48 bg-gradient-to-br from-purple-500/30 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-yellow-500/30 to-transparent rounded-full blur-3xl animate-pulse delay-2000"></div>
-      </div>
+    <section id="calendly-booking" className="relative py-24 morphing-bg overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground className="z-0" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
