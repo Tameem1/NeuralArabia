@@ -15,11 +15,14 @@ export default function LogoStory() {
 
   // Function to create highlighted text with special effects for key words
   const createHighlightedText = (text: string) => {
-    if (direction === 'rtl' && text.includes('تقود')) {
-      return text.replace(
-        'تقود', 
-        '<span class="tawjeeh-highlight">تقود</span>'
-      );
+    if (direction === 'rtl') {
+      // Target the word "لتوجيه" specifically
+      if (text.includes('لتوجيه')) {
+        return text.replace(
+          'لتوجيه', 
+          '<span class="tawjeeh-highlight">لتوجيه</span>'
+        );
+      }
     }
     return text;
   };
