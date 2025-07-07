@@ -53,11 +53,11 @@ export default function Hero() {
             </div>
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
-            <div className="relative w-full h-80 sm:h-96 bg-accent/30 rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-80 sm:h-96 flex items-center justify-center overflow-hidden">
               <img
                 src={tawjeehLogo}
                 alt="TawjeehAI Logo"
-                className="max-w-xs max-h-64 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                className="max-w-lg max-h-80 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           </div>
