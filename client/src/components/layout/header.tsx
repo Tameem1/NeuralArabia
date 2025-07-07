@@ -4,6 +4,8 @@ import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/Tawjeeh AI (4)_1751799313207.png";
 
+import Tawjeeh_20AI_20_6_ from "@assets/Tawjeeh%20AI%20(6).png";
+
 export default function Header() {
   const { t } = useTranslation();
   const [direction] = useDirection();
@@ -40,7 +42,7 @@ export default function Header() {
           <div>
             <a href="#home" className="block">
               <img 
-                src={logoImage} 
+                src={Tawjeeh_20AI_20_6_} 
                 alt="TawjeehAI Logo" 
                 className={`${isScrolled ? 'h-12' : 'h-16'} transition-all duration-300 object-cover object-center`}
                 style={{ 
