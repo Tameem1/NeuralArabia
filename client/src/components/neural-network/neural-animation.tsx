@@ -68,7 +68,7 @@ export default function NeuralAnimation({
               y2={`${toNode.y}%`}
               className={`connection ${isHovered ? 'connection-hover' : ''}`}
               strokeWidth="1"
-              stroke="rgba(106, 212, 226, 0.3)"
+              stroke="rgba(255, 255, 255, 0.3)"
             />
           );
         })}
@@ -81,7 +81,7 @@ export default function NeuralAnimation({
             cy={`${node.y}%`} 
             r={isHovered ? "5" : "3"}
             className={`node ${isHovered ? 'node-hover' : ''}`}
-            fill="#6ad4e2"
+            fill="#ffffff"
           >
             <animate 
               attributeName="opacity" 
