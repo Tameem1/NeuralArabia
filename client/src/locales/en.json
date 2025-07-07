@@ -22,6 +22,7 @@
     "titleHighlight": "AI Revolution",
     "titleEnd": "in the Business World",
     "description": "We empower companies through innovative AI solutions that drive growth, improve efficiency, and open new horizons for digital transformation.",
+    "companyHighlight": "TawjeehAI",
     "contactButton": "Contact Us",
     "servicesButton": "Discover Our Services",
     "imageAlt": "AI Neural Network"
@@ -31,6 +32,7 @@
     "description": "We provide comprehensive AI solutions to help your company innovate and grow",
     "consulting": {
       "title": "AI Strategy Consulting",
+      "description": "We provide specialized consulting in AI to help your company identify the best strategies and application opportunities that fit your business goals.",
       "imageAlt": "AI Strategy Consulting",
       "features": {
         "1": "Analyzing requirements and opportunities for AI application in your business",
@@ -42,6 +44,8 @@
     },
     "development": {
       "title": "AI Development & Integration",
+      "description": "We develop custom and integrated AI solutions with your existing systems to increase efficiency and improve user experience",
+      "technicalAreas": "Technical Areas",
       "imageAlt": "AI Development and Integration",
       "features": {
         "1": "Developing custom machine learning models for your business use case",
@@ -72,14 +76,36 @@
     "title": "Our Advanced Technologies",
     "description": "We use the latest AI technologies to deliver innovative solutions",
     "neural": {
-      "title": "Deep Neural Networks",
-      "description": "Deep analysis and learning from complex data to extract valuable insights",
+      "title": "RAG",
+      "description": "Retrieval-Augmented Generation (RAG) is a technique that enables generative AI models to retrieve and integrate new information.",
       "imageAlt": "Deep Neural Networks"
     },
     "nlp": {
-      "title": "Natural Language Processing",
-      "description": "Understanding and analyzing Arabic texts with high accuracy",
+      "title": "AI Agents",
+      "description": "AI agents are digital workers dedicated to specific tasks and can work within existing systems.",
       "imageAlt": "Natural Language Processing"
+    },
+    "responsible": {
+      "title": "Responsible AI",
+      "description": "Developing intelligent systems to provide personalized recommendations to users based on their preferences and behavior"
+    }
+  },
+  "aiDevelopment": {
+    "title": "AI Development Areas",
+    "subtitle": "We offer specialized development services in key AI domains",
+    "areas": {
+      "agents": {
+        "title": "AI Agents",
+        "description": "Imagine a team member who works tirelessly, learns continuously, and adapts to your needs. This is what AI agents promise. With their ability to monitor, plan, and act independently, AI agents open a new chapter of comprehensive transformation across various sectors, simplifying operations, enhancing data insights, and augmenting human capabilities unprecedentedly."
+      },
+      "generative": {
+        "title": "Generative AI",
+        "description": "AI has reached a generational turning point. With generative AI investments expected to increase by 60% over the next three years, AI and generative AI ambitions continue to grow across all sectors and functions."
+      },
+      "responsible": {
+        "title": "Responsible AI",
+        "description": "Developing intelligent systems to provide personalized recommendations to users based on their preferences and behavior"
+      }
     }
   },
   "about": {

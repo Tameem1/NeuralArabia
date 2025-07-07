@@ -48,7 +48,7 @@ export default function Hero() {
               }`}
             >
               {t("hero.description")
-                .split("توجيه AI")
+                .split(t("hero.companyHighlight"))
                 .map((part, index, array) => (
                   <span key={index}>
                     {part}
@@ -56,7 +56,7 @@ export default function Hero() {
                       <span className="relative inline-block mx-1">
                         <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-lg blur-lg animate-pulse"></span>
                         <span className="relative px-2 py-1 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold text-xl tracking-wide animate-shimmer">
-                          توجيه AI
+                          {t("hero.companyHighlight")}
                         </span>
                       </span>
                     )}

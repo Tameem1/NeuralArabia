@@ -70,25 +70,22 @@ export default function Services() {
 
   const developmentAreas = [
     {
-      id: "nlp",
-      title: "وكلاء الذكاء الاصطناعي",
+      id: "agents",
+      title: t("aiDevelopment.areas.agents.title"),
       icon: "fas fa-robot",
-      description:
-        "تخيّل زميلًا في الفريق يعمل بلا كلل، ويتعلم باستمرار، ويتكيف مع احتياجاتك. هذا ما تعد به وكلاء الذكاء الاصطناعي. بفضل قدرتهم على المراقبة والتخطيط والعمل بشكل مستقل، يفتح وكلاء الذكاء الاصطناعي فصلًا جديدًا من التحول الشامل في مختلف القطاعات، مُبسّطين العمليات، ومُعززين رؤى البيانات، ومُعززين الإمكانات البشرية بشكل غير مسبوق.",
+      description: t("aiDevelopment.areas.agents.description"),
     },
     {
-      id: "cv",
-      title: "الذكاء الاصطناعي التوليدي",
+      id: "generative",
+      title: t("aiDevelopment.areas.generative.title"),
       icon: "fas fa-comment-dots",
-      description:
-        "لقد وصل الذكاء الاصطناعي  إلى نقطة تحول جيلية. ومع توقع زيادة استثمارات الذكاء الاصطناعي التوليدي بنسبة 60% خلال السنوات الثلاث المقبلة،  تستمر طموحات الذكاء الاصطناعي والذكاء الاصطناعي التوليدي  في النمو في جميع القطاعات والوظائف.",
+      description: t("aiDevelopment.areas.generative.description"),
     },
     {
-      id: "systems",
-      title: "الذكاء الاصطناعي المسؤول",
+      id: "responsible",
+      title: t("aiDevelopment.areas.responsible.title"),
       icon: "fas fa-star",
-      description:
-        "تطوير نظم ذكية لتقديم توصيات مخصصة للمستخدمين بناءً على تفضيلاتهم وسلوكهم",
+      description: t("aiDevelopment.areas.responsible.description"),
     },
   ];
 
@@ -116,8 +113,7 @@ export default function Services() {
               {t("services.consulting.title")}
             </h2>
             <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
-              نقدم استشارات متخصصة في مجال الذكاء الاصطناعي لمساعدة شركتك على
-              تحديد أفضل الاستراتيجيات وفرص التطبيق التي تناسب أهداف عملك.
+              {t("services.consulting.description")}
             </p>
           </div>
 
@@ -218,8 +214,7 @@ export default function Services() {
               {t("services.development.title")}
             </h2>
             <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
-              نطور حلول ذكاء اصطناعي مخصصة ومتكاملة مع أنظمتك الحالية لزيادة
-              الكفاءة وتحسين تجربة المستخدم
+              {t("services.development.description")}
             </p>
           </div>
 
@@ -229,7 +224,7 @@ export default function Services() {
             >
               <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8 glow">
                 <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh leading-tight pb-1">
-                  المجالات التقنية
+                  {t("services.development.technicalAreas")}
                 </h3>
 
                 <div className="grid grid-cols-3 gap-2 mb-6">
