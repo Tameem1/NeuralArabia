@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Tawjeeh AI (4)_1751799313207.png";
-
-import Tawjeeh_20AI_20_6_ from "@assets/Tawjeeh%20AI%20(6).png";
+import logoImage from "@assets/TawjeehAI-logo.png";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -36,28 +34,32 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
+    <header
+      className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? "py-1" : "py-2"}`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
             <a href="#home" className="block">
-              <img 
-                src={Tawjeeh_20AI_20_6_} 
-                alt="TawjeehAI Logo" 
-                className={`${isScrolled ? 'h-12' : 'h-16'} transition-all duration-300 object-cover object-center`}
-                style={{ 
-                  transform: 'scale(1.2)',
-                  objectPosition: 'center center'
+              <img
+                src={logoImage}
+                alt="TawjeehAI Logo"
+                className={`${isScrolled ? "h-12" : "h-16"} transition-all duration-300 object-cover object-center`}
+                style={{
+                  transform: "scale(2.2)",
+                  objectPosition: "center center",
                 }}
               />
             </a>
           </div>
           <nav className="hidden md:flex">
-            <ul className={`flex ${direction === 'rtl' ? 'space-x-8 space-x-reverse' : 'space-x-8'} text-foreground`}>
+            <ul
+              className={`flex ${direction === "rtl" ? "space-x-8 space-x-reverse" : "space-x-8"} text-foreground`}
+            >
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="hover:text-primary transition duration-300"
                   >
                     {item.label}
@@ -71,9 +73,13 @@ export default function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              aria-label={isMenuOpen ? t("header.closeMenu") : t("header.openMenu")}
+              aria-label={
+                isMenuOpen ? t("header.closeMenu") : t("header.openMenu")
+              }
             >
-              <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+              <i
+                className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}
+              ></i>
             </Button>
           </div>
         </div>
@@ -82,8 +88,8 @@ export default function Header() {
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className="block hover:text-primary transition duration-300"
                     onClick={() => setIsMenuOpen(false)}
                   >
