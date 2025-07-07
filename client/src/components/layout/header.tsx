@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
-import { useMagneticEffect } from "@/hooks/use-scroll-animation";
+
 import { Button } from "@/components/ui/button";
 import logoImage from "../../assets/TawjeehAI-logo.png";
 
@@ -10,7 +10,7 @@ export default function Header() {
   const [direction] = useDirection();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const magneticLogoRef = useMagneticEffect<HTMLImageElement>();
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -46,16 +46,11 @@ export default function Header() {
           <div>
             <a href="#home" className="block">
               <img
-                ref={magneticLogoRef}
                 src={logoImage}
                 alt="TawjeehAI Logo"
                 className={`${
                   isScrolled ? "h-12" : "h-16"
-                } transition-all duration-500 object-cover object-center hover:scale-110 float`}
-                style={{
-                  transform: "scale(2.2)",
-                  objectPosition: "center center",
-                }}
+                } transition-all duration-300 object-cover object-center`}
               />
             </a>
           </div>
