@@ -95,8 +95,13 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-24 bg-gradient-to-t from-slate-100 via-blue-50/20 to-white dark:from-slate-900 dark:via-blue-950/30 dark:to-slate-800 relative overflow-hidden">
+      {/* Subtle contact background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-300 to-blue-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-purple-300 to-pink-400 rounded-full blur-3xl"></div>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">

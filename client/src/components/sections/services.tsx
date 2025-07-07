@@ -96,9 +96,15 @@ export default function Services() {
       {/* AI Consulting Section */}
       <section
         id="ai-consulting"
-        className="py-24 bg-gradient-to-b from-white to-accent/20"
+        className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/40 dark:from-slate-900/50 dark:via-blue-900/20 dark:to-purple-900/30 relative overflow-hidden"
       >
-        <div className="container mx-auto px-6" ref={consultingSectionRef}>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-40 right-32 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-xl"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10" ref={consultingSectionRef}>
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
@@ -182,9 +188,16 @@ export default function Services() {
       {/* AI Development Section */}
       <section
         id="ai-development"
-        className="py-24 bg-background"
+        className="py-24 bg-gradient-to-tl from-slate-900 via-slate-800/90 to-slate-900 relative overflow-hidden"
       >
-        <div className="container mx-auto px-6" ref={developmentSectionRef}>
+        {/* Geometric background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
+          <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 left-20 w-36 h-36 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-full blur-2xl"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10" ref={developmentSectionRef}>
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
