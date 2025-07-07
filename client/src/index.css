@@ -573,17 +573,12 @@
     position: relative;
   }
 
-  /* Cursor trail effect */
+  /* Cursor trail effect - optimized for performance */
   .cursor-trail {
     position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(106, 212, 226, 0.3), transparent);
     pointer-events: none;
-    mix-blend-mode: difference;
     z-index: 9999;
-    transition: all 0.3s ease;
+    will-change: transform;
   }
 
   /* Scroll progress indicator */
