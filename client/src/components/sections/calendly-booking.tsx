@@ -82,8 +82,8 @@ export default function CalendlyBooking() {
                 className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 text-center hover:bg-card/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 <div className="mb-4 flex justify-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-full flex items-center justify-center">
+                    <IconComponent className="w-6 h-6 text-amber-400" />
                   </div>
                 </div>
                 <h3 className="font-cairo font-bold text-lg mb-2 text-foreground">
