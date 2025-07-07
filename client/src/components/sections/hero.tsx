@@ -6,7 +6,7 @@ import {
 } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
-import tawjeehLogo from "@assets/TawjeehAI-icon.png";
+import tawjeehLogo from "@assets/TawjeehAI-logo.png";
 import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function Hero() {
