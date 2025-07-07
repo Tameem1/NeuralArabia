@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
 import { useEffect, useState, useRef } from "react";
-import tawjeehAIIcon from "@/assets/TawjeehAI-logo.png";
+import tawjeehAIIcon from "@assets/TawjeehAI-icon.png";
 
 export default function Services() {
   const { t } = useTranslation();
@@ -105,7 +105,10 @@ export default function Services() {
           <div className="absolute bottom-40 right-32 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-xl"></div>
           <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-xl"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10" ref={consultingSectionRef}>
+        <div
+          className="container mx-auto px-6 relative z-10"
+          ref={consultingSectionRef}
+        >
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
@@ -132,7 +135,9 @@ export default function Services() {
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-tawjeeh text-white mr-6">
                       {index + 1}
                     </span>
-                    <span className={"mr-6 text-card-foreground"}>{feature}</span>
+                    <span className={"mr-6 text-card-foreground"}>
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -169,7 +174,11 @@ export default function Services() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gradient-cyan/20 to-transparent h-32"></div>
 
                 <div className="absolute top-4 right-4 w-20 h-20 bg-background rounded-full flex items-center justify-center shadow-md animate-pulse">
-                  <img src={tawjeehAIIcon} alt="TawjeehAI" className="w-12 h-12 object-contain" />
+                  <img
+                    src={tawjeehAIIcon}
+                    alt="TawjeehAI"
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
 
                 {/* Floating elements with CSS animations */}
@@ -198,7 +207,10 @@ export default function Services() {
           <div className="absolute bottom-20 left-20 w-36 h-36 bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-full blur-2xl"></div>
           <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-full blur-2xl"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10" ref={developmentSectionRef}>
+        <div
+          className="container mx-auto px-6 relative z-10"
+          ref={developmentSectionRef}
+        >
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
@@ -243,7 +255,9 @@ export default function Services() {
                   <h4 className="font-cairo font-semibold text-lg mb-2 text-card-foreground">
                     {developmentAreas[activeDevTab].title}
                   </h4>
-                  <p className="text-muted-foreground">{developmentAreas[activeDevTab].description}</p>
+                  <p className="text-muted-foreground">
+                    {developmentAreas[activeDevTab].description}
+                  </p>
                 </div>
               </div>
 
@@ -261,7 +275,9 @@ export default function Services() {
                     <i
                       className={`fas fa-check-circle text-gradient-cyan mt-1 mr-6`}
                     ></i>
-                    <span className={"mr-6 text-card-foreground"}>{feature}</span>
+                    <span className={"mr-6 text-card-foreground"}>
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
