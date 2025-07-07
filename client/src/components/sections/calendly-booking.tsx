@@ -86,7 +86,7 @@ export default function CalendlyBooking() {
                     <IconComponent className="w-6 h-6 text-amber-400" />
                   </div>
                 </div>
-                <h3 className="font-cairo font-bold text-lg mb-2 text-white">
+                <h3 className="font-cairo font-bold text-lg mb-2 text-foreground">
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">
