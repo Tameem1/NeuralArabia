@@ -6,7 +6,6 @@ import Hero from "@/components/sections/hero";
 import Features from "@/components/sections/features";
 import Showcase from "@/components/sections/showcase";
 import Services from "@/components/sections/services";
-import Contact from "@/components/sections/contact";
 
 export default function Home() {
   const { i18n } = useTranslation();
@@ -47,9 +46,6 @@ export default function Home() {
         </div>
         <div className="section-transition">
           <Showcase />
-        </div>
-        <div className="section-transition">
-          <Contact />
         </div>
       </main>
       <Footer />
