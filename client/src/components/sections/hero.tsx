@@ -90,7 +90,7 @@ export default function Hero() {
               <img
                 src={tawjeehLogo}
                 alt="TawjeehAI Logo"
-                className="max-w-lg max-h-80 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float glow hover:scale-110"
+                className="max-w-sm max-h-60 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float hover:scale-110"
               />
               <NeuralAnimation
                 className="opacity-30 hover:opacity-50 transition-opacity duration-500"
