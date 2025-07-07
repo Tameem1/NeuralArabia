@@ -77,14 +77,8 @@ export default function LogoStory() {
                 <p className="text-lg leading-relaxed text-foreground/90 mb-6">
                   {t("logoStory.paragraph1")}
                 </p>
-                <p className="text-lg leading-relaxed text-foreground/90 mb-6">
-                  {t("logoStory.paragraph2")}
-                </p>
-                <p className="text-lg leading-relaxed text-foreground/90 mb-6">
-                  {t("logoStory.paragraph3")}
-                </p>
                 <p className="text-lg leading-relaxed text-foreground/90 font-medium">
-                  {t("logoStory.paragraph4")}
+                  {t("logoStory.paragraph2")}
                 </p>
               </div>
             </div>
@@ -180,8 +174,8 @@ export default function LogoStory() {
                     <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-foreground/90">
                       {direction === 'rtl' 
-                        ? 'الهيكل المثلثي يمثل البناء التدريجي والصعود نحو الهدف'
-                        : 'The triangular structure represents gradual building and ascent toward the goal'
+                        ? 'توحيد العمليات المتنوعة في بيئة الأعمال المعقدة'
+                        : 'Unifying diverse operations within complex business environments'
                       }
                     </p>
                   </div>
@@ -189,8 +183,8 @@ export default function LogoStory() {
                     <div className="w-3 h-3 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-foreground/90">
                       {direction === 'rtl' 
-                        ? 'الطبقات المتراكمة تشير إلى الأنظمة والحلول المتكاملة'
-                        : 'The layered structure indicates integrated systems and solutions'
+                        ? 'تكامل مسارات العمل المتعددة بخطوات استراتيجية مدروسة'
+                        : 'Integrating multiple work pathways through strategic, thoughtful steps'
                       }
                     </p>
                   </div>
@@ -198,8 +192,8 @@ export default function LogoStory() {
                     <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-foreground/90">
                       {direction === 'rtl' 
-                        ? 'النقطة المركزية تمثل البوصلة والتوجيه الواضح'
-                        : 'The central point represents the compass and clear guidance'
+                        ? 'الرؤية الاستراتيجية التي تقود نحو أداء منسجم ونتائج متفوقة'
+                        : 'Strategic vision that guides toward harmonious performance and superior results'
                       }
                     </p>
                   </div>

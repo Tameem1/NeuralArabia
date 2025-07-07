@@ -129,24 +129,22 @@
   },
   "logoStory": {
     "title": "Our Logo Story",
-    "subtitle": "A Journey from Complexity to Clarity",
-    "paragraph1": "In a world filled with complexity and intricacy, a great triangle was born... not just a shape, but an entity resembling a mountain. Within it, small triangles accumulate, each representing a step, an idea, or an independent system. Yet they don't remain scattered, but begin to join together, like pieces of a long journey toward the summit.",
-    "paragraph2": "Each small triangle carries a purpose: improvement, unification, simplification. As these triangles rise higher, they become closer to one goal... to that highest point representing ultimate efficiency and integrated quality.",
-    "paragraph3": "At the heart of this great triangle, a diamond shape shines... not just empty space, but the core, the compass. From there the journey begins, and from there balance flows. It is what guides everything, bringing all lines together into one clear point.",
-    "paragraph4": "This logo doesn't just express identity, but vision: that unifying systems and pathways isn't merely a technical goal, but a thoughtful, precise, and inspiring journey... always leading us toward excellence.",
+    "subtitle": "Our Methodology in Strategic Integration",
+    "paragraph1": "Our logo embodies our methodology in unifying operations within complex business environments. The large triangle represents our goal of reaching the highest levels of efficiency and quality, while the small triangles reflect the diverse work pathways that we integrate through thoughtful steps.",
+    "paragraph2": "At the heart, the compass symbolizes our strategic vision that guides this integration—toward harmonious performance and superior results.",
     "elements": {
       "title": "Logo Elements",
       "mountain": {
-        "title": "The Great Mountain",
-        "description": "Symbolizes the ultimate goal and ambition we strive for"
+        "title": "Large Triangle",
+        "description": "Represents our goal of achieving the highest levels of efficiency and quality"
       },
       "triangles": {
         "title": "Small Triangles",
-        "description": "Represent the integrated steps and systems in our journey"
+        "description": "Reflect diverse work pathways that we integrate through thoughtful steps"
       },
       "diamond": {
-        "title": "Diamond Shape",
-        "description": "The core and compass that guides everything toward clarity"
+        "title": "The Compass",
+        "description": "Symbolizes our strategic vision that guides integration"
       }
     }
   },
