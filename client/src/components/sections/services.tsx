@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
 import { useEffect, useState, useRef } from "react";
+import tawjeehAIIcon from "@/assets/TawjeehAI-logo.png";
 
 export default function Services() {
   const { t } = useTranslation();
@@ -168,7 +169,7 @@ export default function Services() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gradient-cyan/20 to-transparent h-32"></div>
 
                 <div className="absolute top-4 right-4 w-20 h-20 bg-background rounded-full flex items-center justify-center shadow-md animate-pulse">
-                  <i className="fas fa-brain text-gradient-cyan text-2xl"></i>
+                  <img src={tawjeehAIIcon} alt="TawjeehAI" className="w-12 h-12 object-contain" />
                 </div>
 
                 {/* Floating elements with CSS animations */}
