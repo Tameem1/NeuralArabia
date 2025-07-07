@@ -3,6 +3,7 @@ import { useDirection } from "@/hooks/use-direction";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Triangle, Mountain, Diamond } from "lucide-react";
+import logoIcon from "@assets/TawjeehAI-icon.png";
 
 export default function LogoStory() {
   const { t } = useTranslation();
@@ -91,26 +92,36 @@ export default function LogoStory() {
             {/* Visual Elements */}
             <div className={`${direction === 'rtl' ? 'lg:order-1' : ''}`}>
               <div className="relative">
-                {/* Large Triangle Background */}
+                {/* Logo Display */}
                 <div className="relative w-full h-80 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl backdrop-blur-sm"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl backdrop-blur-sm"></div>
                   
-                  {/* Logo representation */}
+                  {/* Actual Logo */}
                   <div className="relative z-10 flex items-center justify-center">
-                    <div className="w-40 h-40 relative">
-                      {/* Main triangle */}
-                      <div className="absolute inset-0 border-4 border-primary/60 rotate-0 transform">
-                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 clip-triangle"></div>
-                      </div>
+                    <div className="relative group">
+                      <img 
+                        src={logoIcon} 
+                        alt="TawjeehAI Logo" 
+                        className="w-48 h-48 object-contain filter drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                      />
                       
-                      {/* Small triangles */}
-                      <div className="absolute top-8 left-8 w-8 h-8 bg-primary/40 clip-triangle animate-pulse"></div>
-                      <div className="absolute top-12 right-12 w-6 h-6 bg-secondary/40 clip-triangle animate-pulse delay-300"></div>
-                      <div className="absolute bottom-16 left-16 w-10 h-10 bg-accent/40 clip-triangle animate-pulse delay-500"></div>
+                      {/* Glowing effect */}
+                      <div className="absolute inset-0 w-48 h-48 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
                       
-                      {/* Diamond in center */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rotate-45 animate-pulse delay-700"></div>
+                      {/* Floating decorative elements */}
+                      <div className="absolute -top-4 -left-4 w-3 h-3 bg-primary/60 rounded-full animate-bounce delay-100"></div>
+                      <div className="absolute -top-2 -right-6 w-2 h-2 bg-secondary/60 rounded-full animate-bounce delay-300"></div>
+                      <div className="absolute -bottom-3 -left-2 w-4 h-4 bg-accent/60 rounded-full animate-bounce delay-500"></div>
+                      <div className="absolute -bottom-4 -right-3 w-2 h-2 bg-primary/60 rounded-full animate-bounce delay-700"></div>
                     </div>
+                  </div>
+                  
+                  {/* Animated rings */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-56 h-56 border border-primary/20 rounded-full animate-ping"></div>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-64 h-64 border border-secondary/20 rounded-full animate-ping delay-1000"></div>
                   </div>
                 </div>
               </div>
@@ -142,6 +153,58 @@ export default function LogoStory() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Logo Analysis Section */}
+          <div className="mt-16 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-8">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Enhanced Logo View */}
+              <div className="relative">
+                <div className="bg-white/5 rounded-xl p-8 backdrop-blur-sm">
+                  <img 
+                    src={logoIcon} 
+                    alt="TawjeehAI Logo Analysis" 
+                    className="w-full max-w-64 mx-auto object-contain filter drop-shadow-lg"
+                  />
+                </div>
+              </div>
+              
+              {/* Logo Interpretation */}
+              <div className="space-y-4">
+                <h4 className="auto-font font-bold text-xl text-foreground mb-4">
+                  {direction === 'rtl' ? 'تفسير العناصر البصرية' : 'Visual Elements Interpretation'}
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground/90">
+                      {direction === 'rtl' 
+                        ? 'الهيكل المثلثي يمثل البناء التدريجي والصعود نحو الهدف'
+                        : 'The triangular structure represents gradual building and ascent toward the goal'
+                      }
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground/90">
+                      {direction === 'rtl' 
+                        ? 'الطبقات المتراكمة تشير إلى الأنظمة والحلول المتكاملة'
+                        : 'The layered structure indicates integrated systems and solutions'
+                      }
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-foreground/90">
+                      {direction === 'rtl' 
+                        ? 'النقطة المركزية تمثل البوصلة والتوجيه الواضح'
+                        : 'The central point represents the compass and clear guidance'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
