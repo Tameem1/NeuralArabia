@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
-import tawjeehLogo from "@assets/tawjeehAI-logo.png";
+import tawjeehLogo from "../../assets/TawjeehAI-logo.png";
 import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function Hero() {
