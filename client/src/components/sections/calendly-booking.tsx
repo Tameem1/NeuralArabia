@@ -53,10 +53,10 @@ export default function CalendlyBooking() {
           <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
             {t("calendly.title")}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-muted-foreground mb-8">
+          <p className="text-lg max-w-2xl mx-auto text-white mb-8">
             {t("calendly.description")}
           </p>
-          <div className="flex items-center justify-center text-muted-foreground mb-8">
+          <div className="flex items-center justify-center text-white mb-8">
             <Clock className="w-4 h-4 mr-2" />
             <span className="text-sm">{t("calendly.duration")}</span>
           </div>
@@ -86,10 +86,10 @@ export default function CalendlyBooking() {
                     <IconComponent className="w-6 h-6 text-amber-400" />
                   </div>
                 </div>
-                <h3 className="font-cairo font-bold text-lg mb-2 text-foreground">
+                <h3 className="font-cairo font-bold text-lg mb-2 text-white">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-white text-sm">
                   {step.description}
                 </p>
               </Card>
