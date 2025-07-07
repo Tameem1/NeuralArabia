@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useDirection } from "@/hooks/use-direction";
 import { Button } from "@/components/ui/button";
 import NeuralAnimation from "@/components/neural-network/neural-animation";
-import ParticleBackground from "@/components/particles/ParticleBackground";
 import tawjeehLogo from "@assets/tawjeehAI-logo.png";
+import ParticleBackground from "@/components/particles/ParticleBackground";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -24,7 +24,9 @@ export default function Hero() {
           >
             <h1 className="font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-white">
               {t("hero.titleStart")}{" "}
-              <span className="text-white drop-shadow-lg">{t("hero.titleHighlight")}</span>{" "}
+              <span className="text-white drop-shadow-lg">
+                {t("hero.titleHighlight")}
+              </span>{" "}
               {t("hero.titleEnd")}
             </h1>
             <p className="text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0 text-white/90">
@@ -52,9 +54,9 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
             <div className="relative w-full h-80 sm:h-96 bg-accent/30 rounded-xl flex items-center justify-center overflow-hidden">
-              <img 
-                src={tawjeehLogo} 
-                alt="TawjeehAI Logo" 
+              <img
+                src={tawjeehLogo}
+                alt="TawjeehAI Logo"
                 className="max-w-xs max-h-64 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
