@@ -31,7 +31,7 @@ export default function Hero() {
           >
             <h1
               ref={titleRef}
-              className={`font-cairo font-bold text-4xl md:text-5xl leading-tight mb-6 text-white transition-all duration-1000 ${
+              className={`auto-font font-bold text-4xl md:text-5xl leading-tight mb-6 text-white transition-all duration-1000 ${
                 titleVisible ? "scroll-reveal active" : "scroll-reveal"
               }`}
             >
@@ -68,7 +68,7 @@ export default function Hero() {
             >
               <Button
                 ref={magneticRef1}
-                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold btn-magnetic ripple"
+                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg auto-font font-semibold btn-magnetic ripple"
                 size="lg"
                 asChild
               >
@@ -76,7 +76,7 @@ export default function Hero() {
               </Button>
               <Button
                 ref={magneticRef2}
-                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg font-cairo font-semibold btn-magnetic ripple"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg auto-font font-semibold btn-magnetic ripple"
                 variant="outline"
                 size="lg"
                 asChild

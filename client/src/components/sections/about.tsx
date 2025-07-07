@@ -32,14 +32,14 @@ export default function About() {
             </div>
           </div>
           <div className={`md:w-1/2 ${direction === 'rtl' ? 'md:pr-12' : 'md:pl-12'}`}>
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-6 text-foreground">{t("about.title")}</h2>
+            <h2 className="auto-font font-bold text-3xl md:text-4xl mb-6 text-foreground">{t("about.title")}</h2>
             <p className="text-lg mb-6">{t("about.description1")}</p>
             <p className="text-lg mb-6">{t("about.description2")}</p>
             <div className="grid grid-cols-2 gap-4 text-center">
               {stats.map((stat) => (
                 <Card key={stat.id} className="bg-white p-4 rounded-lg shadow border-none">
                   <CardContent className="p-0">
-                    <span className="block font-cairo font-bold text-3xl text-primary">{stat.value}</span>
+                    <span className="block auto-font font-bold text-3xl text-primary">{stat.value}</span>
                     <span className="text-foreground">{stat.label}</span>
                   </CardContent>
                 </Card>

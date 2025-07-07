@@ -68,7 +68,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className={`relative hover:text-primary transition-all duration-300 font-cairo font-medium group ${
+                    className={`relative hover:text-primary transition-all duration-300 auto-font font-medium group ${
                       isScrolled ? "text-sm" : "text-base"
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -643,9 +644,34 @@
   }
 }
 
-/* Cairo font utility class */
+/* Language-specific font classes */
 .font-cairo {
   font-family: 'Cairo', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Automatic font switching based on document language */
+html[lang="ar"] body,
+html[lang="ar"] .auto-font {
+  font-family: 'Cairo', sans-serif;
+}
+
+html[lang="en"] body,
+html[lang="en"] .auto-font {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ensure Arabic text always uses Cairo font */
+.font-arabic {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* Ensure English text always uses Inter font */
+.font-english {
+  font-family: 'Inter', sans-serif !important;
 }
 
 html {

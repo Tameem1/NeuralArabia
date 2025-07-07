@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         'cairo': ['Cairo', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
         'sans': ['Cairo', 'sans-serif'],
       },
       borderRadius: {
