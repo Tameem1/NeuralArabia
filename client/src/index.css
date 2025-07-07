@@ -98,6 +98,8 @@
   .text-gradient-tawjeeh {
     background: linear-gradient(135deg, #6ad4e2 0%, #997fb8 50%, #f3c575 100%);
     -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1.3;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }

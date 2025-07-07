@@ -108,7 +108,7 @@ export default function Services() {
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
               {t("services.consulting.title")}
             </h2>
             <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
@@ -201,7 +201,7 @@ export default function Services() {
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
+            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
               {t("services.development.title")}
             </h2>
             <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
@@ -215,7 +215,7 @@ export default function Services() {
               className={`order-2 lg:order-1 transition-all duration-1000 delay-200 ${isDevelopmentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
               <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8 glow">
-                <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh">
+                <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh leading-tight pb-1">
                   المجالات التقنية
                 </h3>
 
