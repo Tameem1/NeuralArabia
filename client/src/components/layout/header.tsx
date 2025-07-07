@@ -34,7 +34,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-2' : 'py-3'}`}>
+    <header className={`sticky top-0 z-50 bg-background border-b border-border transition-all duration-300 ${isScrolled ? 'py-1' : 'py-2'}`}>
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <div>
@@ -42,9 +42,9 @@ export default function Header() {
               <img 
                 src={logoImage} 
                 alt="TawjeehAI Logo" 
-                className={`${isScrolled ? 'h-20' : 'h-28'} transition-all duration-300 object-cover object-center`}
+                className={`${isScrolled ? 'h-12' : 'h-16'} transition-all duration-300 object-cover object-center`}
                 style={{ 
-                  transform: 'scale(1.8)',
+                  transform: 'scale(1.2)',
                   objectPosition: 'center center'
                 }}
               />
@@ -76,8 +76,8 @@ export default function Header() {
           </div>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden pt-4 pb-2">
-            <ul className="space-y-4">
+          <div className="md:hidden pt-2 pb-1">
+            <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a 
