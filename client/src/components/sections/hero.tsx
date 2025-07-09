@@ -87,15 +87,15 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
             <div className="relative w-full h-80 sm:h-96 flex items-center justify-center overflow-hidden">
+              <NeuralAnimation
+                className="absolute inset-0 opacity-30 hover:opacity-50 transition-opacity duration-500 z-0"
+                nodesCount={20}
+                connectionsCount={30}
+              />
               <img
                 src={tawjeehLogo}
                 alt="TawjeehAI Logo"
-                className="max-w-sm max-h-60 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float hover:scale-110"
-              />
-              <NeuralAnimation
-                className="opacity-30 hover:opacity-50 transition-opacity duration-500"
-                nodesCount={20}
-                connectionsCount={30}
+                className="relative z-10 max-w-sm max-h-60 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float hover:scale-110"
               />
             </div>
           </div>
