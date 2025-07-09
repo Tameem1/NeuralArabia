@@ -103,21 +103,21 @@ export default function Services() {
           <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full blur-xl"></div>
         </div>
         <div
-          className="container mx-auto px-6 relative z-10"
+          className="container mx-auto px-4 sm:px-6 relative z-10"
           ref={consultingSectionRef}
         >
           <div
-            className={`text-center mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
+            className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isConsultingVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="auto-font font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
+            <h2 className="auto-font font-bold text-2xl sm:text-3xl lg:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
               {t("services.consulting.title")}
             </h2>
-            <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
+            <p className="text-base sm:text-lg max-w-xl lg:max-w-2xl mx-auto text-muted-foreground px-4">
               {t("services.consulting.description")}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div
               className={`order-2 lg:order-1 transition-all duration-1000 delay-200 ${isConsultingVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
@@ -143,7 +143,7 @@ export default function Services() {
                 style={{ transitionDelay: "600ms" }}
               >
                 <Button
-                  className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg auto-font font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-6 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 rounded-lg auto-font font-bold text-base sm:text-lg lg:text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   onClick={() => {
                     const calendlySection = document.querySelector('#calendly-booking');
@@ -160,7 +160,7 @@ export default function Services() {
             <div
               className={`order-1 lg:order-2 neural-container transition-all duration-1000 delay-300 ${isConsultingVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
             >
-              <div className="relative w-full h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <i className="fas fa-lightbulb text-8xl text-gradient-cyan opacity-40"></i>
                 </div>
@@ -203,42 +203,42 @@ export default function Services() {
           <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-gradient-to-br from-yellow-500/20 to-orange-600/20 rounded-full blur-2xl"></div>
         </div>
         <div
-          className="container mx-auto px-6 relative z-10"
+          className="container mx-auto px-4 sm:px-6 relative z-10"
           ref={developmentSectionRef}
         >
           <div
-            className={`text-center mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
+            className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isDevelopmentVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="auto-font font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
+            <h2 className="auto-font font-bold text-2xl sm:text-3xl lg:text-4xl mb-4 text-gradient-tawjeeh leading-tight pb-2">
               {t("services.development.title")}
             </h2>
-            <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
+            <p className="text-base sm:text-lg max-w-xl lg:max-w-2xl mx-auto text-muted-foreground px-4">
               {t("services.development.description")}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div
               className={`order-2 lg:order-1 transition-all duration-1000 delay-200 ${isDevelopmentVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}`}
             >
-              <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8 glow">
-                <h3 className="auto-font font-bold text-2xl mb-4 text-gradient-tawjeeh leading-tight pb-1">
+              <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-lg mb-6 sm:mb-8 glow">
+                <h3 className="auto-font font-bold text-lg sm:text-xl lg:text-2xl mb-4 text-gradient-tawjeeh leading-tight pb-1">
                   {t("services.development.technicalAreas")}
                 </h3>
 
-                <div className="grid grid-cols-3 gap-2 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 sm:mb-6">
                   {developmentAreas.map((area, index) => (
                     <div
                       key={area.id}
-                      className={`text-center p-3 rounded-lg cursor-pointer transition-all duration-300 ${
+                      className={`text-center p-2 sm:p-3 rounded-lg cursor-pointer transition-all duration-300 ${
                         activeDevTab === index
                           ? "bg-gradient-tawjeeh text-white shadow-md"
                           : "bg-muted hover:bg-muted/80"
                       }`}
                       onClick={() => setActiveDevTab(index)}
                     >
-                      <i className={`${area.icon} text-xl mb-2 block`}></i>
-                      <span className="text-sm font-semibold">
+                      <i className={`${area.icon} text-lg sm:text-xl mb-1 sm:mb-2 block`}></i>
+                      <span className="text-xs sm:text-sm font-semibold">
                         {area.title}
                       </span>
                     </div>
@@ -281,7 +281,7 @@ export default function Services() {
                 style={{ transitionDelay: "800ms" }}
               >
                 <Button
-                  className="bg-gradient-tawjeeh text-white px-12 py-8 rounded-lg auto-font font-bold text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
+                  className="bg-gradient-tawjeeh text-white px-6 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 rounded-lg auto-font font-bold text-base sm:text-lg lg:text-xl hover:opacity-90 hover:shadow-lg transition-all duration-300 mt-4"
                   size="lg"
                   onClick={() => {
                     const calendlySection = document.querySelector('#calendly-booking');

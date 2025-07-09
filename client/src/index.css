@@ -92,6 +92,21 @@
     text-align: end;
   }
 
+  /* Responsive container utilities */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      max-width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
   .bg-gradient-tawjeeh {
     background: linear-gradient(135deg, #6ad4e2 0%, #997fb8 50%, #f3c575 100%);
   }

@@ -66,16 +66,16 @@ export default function LogoStory() {
         {/* Title Section */}
         <div
           ref={titleRef}
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
             titleVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="auto-font font-bold text-4xl md:text-5xl mb-4 text-foreground">
+          <h2 className="auto-font font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 text-foreground">
             {t("logoStory.title")}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl lg:max-w-2xl mx-auto px-4">
             {t("logoStory.subtitle")}
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function LogoStory() {
               : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Story Text */}
             <div
               className={`space-y-6 ${direction === "rtl" ? "lg:order-2" : ""}`}

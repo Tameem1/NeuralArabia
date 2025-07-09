@@ -45,16 +45,16 @@ export default function AIConsulting() {
       ref={sectionRef}
     >
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className={`font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className={`font-cairo font-bold text-2xl sm:text-3xl lg:text-4xl mb-4 text-gradient-tawjeeh transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             {t("services.consulting.title")}
           </h2>
-          <p className={`text-lg max-w-2xl mx-auto text-muted-foreground transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+          <p className={`text-base sm:text-lg max-w-xl lg:max-w-2xl mx-auto text-muted-foreground transition-all duration-1000 delay-100 px-4 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             نقدم استشارات متخصصة في مجال الذكاء الاصطناعي لمساعدة شركتك على تحديد أفضل الاستراتيجيات وفرص التطبيق التي تناسب أهداف عملك.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className={`order-2 lg:order-1 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
             <ul className="space-y-4 mb-8">
               {features.map((feature, index) => (
@@ -90,7 +90,7 @@ export default function AIConsulting() {
           <div 
             className={`order-1 lg:order-2 neural-container transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}
           >
-            <div className="relative w-full h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
+            <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]">
               <div className="absolute inset-0 flex items-center justify-center">
                 <i className="fas fa-lightbulb text-8xl text-gradient-cyan opacity-40"></i>
               </div>

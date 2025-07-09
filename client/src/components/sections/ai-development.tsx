@@ -40,33 +40,33 @@ export default function AIDevelopment() {
   return (
     <section id="ai-development" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 text-gradient-tawjeeh">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="font-cairo font-bold text-2xl sm:text-3xl lg:text-4xl mb-4 text-gradient-tawjeeh">
             {t("services.development.title")}
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
+          <p className="text-base sm:text-lg max-w-xl lg:max-w-2xl mx-auto text-muted-foreground px-4">
             نطور حلول ذكاء اصطناعي مخصصة ومتكاملة مع أنظمتك الحالية لزيادة الكفاءة وتحسين تجربة المستخدم
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <div className="bg-card border border-border rounded-xl p-6 shadow-lg mb-8">
+            <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-lg mb-6 sm:mb-8">
               <h3 className="font-cairo font-bold text-2xl mb-4 text-gradient-tawjeeh">
                 المجالات التقنية
               </h3>
               
-              <div className="grid grid-cols-3 gap-2 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 sm:mb-6">
                 {developmentAreas.map((area, index) => (
                   <div 
                     key={area.id}
-                    className={`text-center p-3 rounded-lg cursor-pointer transition-all duration-300 ${activeTab === index 
+                    className={`text-center p-2 sm:p-3 rounded-lg cursor-pointer transition-all duration-300 ${activeTab === index 
                       ? 'bg-gradient-tawjeeh text-white shadow-md' 
                       : 'bg-muted hover:bg-muted/80'}`}
                     onClick={() => setActiveTab(index)}
                   >
-                    <i className={`${area.icon} text-xl mb-2 block`}></i>
-                    <span className="text-sm font-semibold">{area.title}</span>
+                    <i className={`${area.icon} text-lg sm:text-xl mb-1 sm:mb-2 block`}></i>
+                    <span className="text-xs sm:text-sm font-semibold">{area.title}</span>
                   </div>
                 ))}
               </div>

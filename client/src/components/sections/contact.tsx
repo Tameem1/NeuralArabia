@@ -111,23 +111,23 @@ export default function Contact() {
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h2 className="font-cairo font-bold text-3xl md:text-4xl mb-4 gradient-text-animated">
+          <div className={`text-center mb-8 sm:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="font-cairo font-bold text-2xl sm:text-3xl lg:text-4xl mb-4 gradient-text-animated">
               {t("contact.title")}
             </h2>
-            <p className="text-lg text-muted-foreground">{t("contact.description")}</p>
+            <p className="text-base sm:text-lg text-muted-foreground px-4">{t("contact.description")}</p>
           </div>
 
           <Card className={`bg-card border border-border rounded-2xl p-0 shadow-lg perspective-card transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}>
-            <CardContent className="p-8">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="space-y-6"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <FormField
                       control={form.control}
                       name="name"

@@ -31,7 +31,7 @@ export default function Hero() {
           >
             <h1
               ref={titleRef}
-              className={`auto-font font-bold text-4xl md:text-5xl leading-tight mb-6 text-white transition-all duration-1000 ${
+              className={`auto-font font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 text-white transition-all duration-1000 ${
                 titleVisible ? "scroll-reveal active" : "scroll-reveal"
               }`}
             >
@@ -43,7 +43,7 @@ export default function Hero() {
             </h1>
             <p
               ref={descRef}
-              className={`text-lg mb-8 max-w-md mx-auto md:mx-0 md:mr-0 text-white/90 transition-all duration-1000 delay-300 ${
+              className={`text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-sm sm:max-w-md mx-auto md:mx-0 md:mr-0 text-white/90 transition-all duration-1000 delay-300 ${
                 descVisible ? "scroll-reveal active" : "scroll-reveal"
               }`}
             >
@@ -64,29 +64,29 @@ export default function Hero() {
                 ))}
             </p>
             <div
-              className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"}`}
+              className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4"}`}
             >
               <Button
                 ref={magneticRef1}
-                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg auto-font font-semibold btn-magnetic ripple"
+                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple text-sm sm:text-base"
                 size="lg"
                 asChild
               >
-                <a href="#ai-consulting">{t("services.consulting.title")}</a>
+                <a href="#ai-consulting" className="whitespace-nowrap">{t("services.consulting.title")}</a>
               </Button>
               <Button
                 ref={magneticRef2}
-                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-6 rounded-lg auto-font font-semibold btn-magnetic ripple"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple text-sm sm:text-base"
                 variant="outline"
                 size="lg"
                 asChild
               >
-                <a href="#ai-development">{t("services.development.title")}</a>
+                <a href="#ai-development" className="whitespace-nowrap">{t("services.development.title")}</a>
               </Button>
             </div>
           </div>
-          <div className="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
-            <div className="relative w-full h-80 sm:h-96 flex items-center justify-center overflow-hidden">
+          <div className="md:w-1/2 mt-8 md:mt-0 flex items-center justify-center">
+            <div className="relative w-full h-64 sm:h-80 lg:h-96 flex items-center justify-center overflow-hidden">
               <NeuralAnimation
                 className="absolute inset-0 opacity-30 hover:opacity-50 transition-opacity duration-500 z-0"
                 nodesCount={20}
@@ -95,7 +95,7 @@ export default function Hero() {
               <img
                 src={tawjeehLogo}
                 alt="TawjeehAI Logo"
-                className="relative z-10 max-w-sm max-h-60 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float hover:scale-110"
+                className="relative z-10 max-w-xs sm:max-w-sm lg:max-w-md max-h-48 sm:max-h-60 lg:max-h-72 object-contain opacity-90 hover:opacity-100 transition-all duration-500 float hover:scale-110"
               />
             </div>
           </div>

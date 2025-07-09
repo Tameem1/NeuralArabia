@@ -61,16 +61,16 @@ export default function Header() {
               />
             </a>
           </div>
-          <nav className="hidden md:flex items-center">
+          <nav className="hidden lg:flex items-center">
             <ul
-              className={`flex ${direction === "rtl" ? "space-x-8 space-x-reverse" : "space-x-8"} text-foreground`}
+              className={`flex ${direction === "rtl" ? "space-x-6 xl:space-x-8 space-x-reverse" : "space-x-6 xl:space-x-8"} text-foreground`}
             >
               {navItems.map((item, index) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className={`relative hover:text-primary transition-all duration-300 auto-font font-medium group ${
-                      isScrolled ? "text-sm" : "text-base"
+                    className={`relative hover:text-primary transition-all duration-300 auto-font font-medium group whitespace-nowrap ${
+                      isScrolled ? "text-xs xl:text-sm" : "text-sm xl:text-base"
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -80,29 +80,29 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className={`${direction === "rtl" ? "mr-6" : "ml-6"}`}>
+            <div className={`${direction === "rtl" ? "mr-4 xl:mr-6" : "ml-4 xl:ml-6"}`}>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 hover:text-primary transition-colors duration-300"
+                className="flex items-center gap-1 xl:gap-2 hover:text-primary transition-colors duration-300"
               >
-                <Globe className="w-4 h-4" />
-                <span className="font-medium">
-                  {i18n.language === 'ar' ? 'English' : 'عربي'}
+                <Globe className="w-3 h-3 xl:w-4 xl:h-4" />
+                <span className="font-medium text-xs xl:text-sm">
+                  {i18n.language === 'ar' ? 'EN' : 'عر'}
                 </span>
               </Button>
             </div>
           </nav>
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
               className="flex items-center gap-1 hover:text-primary transition-colors duration-300"
             >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">
+              <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="text-xs sm:text-sm font-medium">
                 {i18n.language === 'ar' ? 'EN' : 'عر'}
               </span>
             </Button>
@@ -113,21 +113,22 @@ export default function Header() {
               aria-label={
                 isMenuOpen ? t("header.closeMenu") : t("header.openMenu")
               }
+              className="h-8 w-8 sm:h-10 sm:w-10"
             >
               <i
-                className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}
+                className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-lg sm:text-xl`}
               ></i>
             </Button>
           </div>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden pt-2 pb-1">
-            <ul className="space-y-2">
+          <div className="lg:hidden pt-4 pb-2 border-t border-border/50 mt-2">
+            <ul className="space-y-3">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="block hover:text-primary transition duration-300"
+                    className="block py-2 px-2 rounded-md hover:text-primary hover:bg-background/50 transition duration-300 text-sm"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
