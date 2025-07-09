@@ -64,24 +64,24 @@ export default function Hero() {
                 ))}
             </p>
             <div
-              className={`flex flex-col sm:flex-row justify-center ${direction === "rtl" ? "md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4 sm:space-x-reverse" : "md:justify-start space-y-3 sm:space-y-0 sm:space-x-3 lg:space-x-4"}`}
+              className={`flex flex-col sm:flex-row flex-wrap justify-center ${direction === "rtl" ? "md:justify-start gap-3 sm:gap-2 md:gap-3 lg:gap-4" : "md:justify-start gap-3 sm:gap-2 md:gap-3 lg:gap-4"}`}
             >
               <Button
                 ref={magneticRef1}
-                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple text-sm sm:text-base"
+                className="bg-black/20 backdrop-blur-sm text-white border border-white/30 px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple btn-responsive-text flex-shrink-0 min-w-0"
                 size="lg"
                 asChild
               >
-                <a href="#ai-consulting" className="whitespace-nowrap">{t("services.consulting.title")}</a>
+                <a href="#ai-consulting" className="whitespace-nowrap block text-center truncate">{t("services.consulting.title")}</a>
               </Button>
               <Button
                 ref={magneticRef2}
-                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple text-sm sm:text-base"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 rounded-lg auto-font font-semibold btn-magnetic ripple btn-responsive-text flex-shrink-0 min-w-0"
                 variant="outline"
                 size="lg"
                 asChild
               >
-                <a href="#ai-development" className="whitespace-nowrap">{t("services.development.title")}</a>
+                <a href="#ai-development" className="whitespace-nowrap block text-center truncate">{t("services.development.title")}</a>
               </Button>
             </div>
           </div>

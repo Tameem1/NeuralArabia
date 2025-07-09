@@ -100,6 +100,9 @@ TawjeehAI is a bilingual (Arabic-English) AI consulting and development company 
   • Improved card layouts and grid responsiveness across all sections
   • Added responsive utilities for better container behavior
   • Enhanced button sizing with proper responsive padding and text
+  • Added comprehensive button text responsive utilities with clamp() function
+  • Fixed text cropping in hero buttons at specific screen sizes
+  • Implemented flex-wrap and gap utilities for better button layout
 - July 07, 2025. Added logo story section with authentic branding:
   • Created dedicated logo story section with user's refined business-focused narrative
   • Integrated actual TawjeehAI logo icon with animated visual effects
