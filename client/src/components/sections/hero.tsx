@@ -55,7 +55,7 @@ export default function Hero() {
                     {index < array.length - 1 && (
                       <span className="relative inline-block mx-1">
                         <span className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-lg blur-lg animate-pulse"></span>
-                        <span className="relative px-2 py-1 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold text-xl tracking-wide animate-shimmer">
+                        <span className="relative px-2 py-1 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-bold text-xl sm:text-xl md:text-2xl lg:text-2xl tracking-wide animate-shimmer">
                           {t("hero.companyHighlight")}
                         </span>
                       </span>
