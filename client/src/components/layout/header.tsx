@@ -63,7 +63,7 @@ export default function Header() {
           </div>
           <nav className="hidden lg:flex items-center">
             <ul
-              className={`flex ${direction === "rtl" ? "space-x-6 xl:space-x-8 space-x-reverse" : "space-x-6 xl:space-x-8"} text-foreground`}
+              className={`flex ${direction === "rtl" ? "space-x-8 xl:space-x-10 space-x-reverse" : "space-x-8 xl:space-x-10"} text-foreground`}
             >
               {navItems.map((item, index) => (
                 <li key={item.href}>
@@ -80,7 +80,7 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className={`${direction === "rtl" ? "mr-4 xl:mr-6" : "ml-4 xl:ml-6"}`}>
+            <div className={`${direction === "rtl" ? "mr-6 xl:mr-8" : "ml-6 xl:ml-8"}`}>
               <Button
                 variant="ghost"
                 size="sm"
