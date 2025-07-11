@@ -70,7 +70,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     className={`relative hover:text-primary transition-all duration-300 auto-font font-medium group whitespace-nowrap ${
-                      isScrolled ? "text-sm xl:text-base" : "text-base xl:text-lg"
+                      isScrolled ? "text-base lg:text-sm xl:text-base" : "text-lg lg:text-base xl:text-lg"
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -88,7 +88,7 @@ export default function Header() {
                 className="flex items-center gap-1 xl:gap-2 hover:text-primary transition-colors duration-300"
               >
                 <Globe className="w-3 h-3 xl:w-4 xl:h-4" />
-                <span className="font-medium text-sm xl:text-base">
+                <span className="font-medium text-base lg:text-sm xl:text-base">
                   {i18n.language === 'ar' ? 'EN' : 'عر'}
                 </span>
               </Button>
@@ -102,7 +102,7 @@ export default function Header() {
               className="flex items-center gap-1 hover:text-primary transition-colors duration-300"
             >
               <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-sm sm:text-base font-medium">
+              <span className="text-base sm:text-lg font-medium">
                 {i18n.language === 'ar' ? 'EN' : 'عر'}
               </span>
             </Button>
@@ -116,7 +116,7 @@ export default function Header() {
               className="h-8 w-8 sm:h-10 sm:w-10"
             >
               <i
-                className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-lg sm:text-xl`}
+                className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl sm:text-2xl`}
               ></i>
             </Button>
           </div>
@@ -128,7 +128,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="block py-2 px-2 rounded-md hover:text-primary hover:bg-background/50 transition duration-300 text-base"
+                    className="block py-3 px-3 rounded-md hover:text-primary hover:bg-background/50 transition duration-300 text-lg font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

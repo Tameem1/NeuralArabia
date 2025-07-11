@@ -109,46 +109,46 @@
 
   /* Button text responsive utilities */
   .btn-responsive-text {
-    font-size: clamp(0.7rem, 2.5vw, 1rem);
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
     line-height: 1.3;
     word-break: keep-all;
     overflow-wrap: break-word;
   }
 
-  /* Prevent button text overflow at all screen sizes */
+  /* Enhanced mobile button text sizes */
   @media (max-width: 479px) {
-    .btn-responsive-text {
-      font-size: 0.7rem;
-      line-height: 1.2;
-    }
-  }
-
-  @media (min-width: 480px) and (max-width: 639px) {
-    .btn-responsive-text {
-      font-size: 0.75rem;
-      line-height: 1.25;
-    }
-  }
-
-  @media (min-width: 640px) and (max-width: 767px) {
     .btn-responsive-text {
       font-size: 0.875rem;
       line-height: 1.3;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 480px) and (max-width: 639px) {
+    .btn-responsive-text {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 767px) {
     .btn-responsive-text {
       font-size: 1rem;
       line-height: 1.4;
     }
   }
 
-  /* Additional button safety for split screens */
+  @media (min-width: 768px) {
+    .btn-responsive-text {
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+  }
+
+  /* Mobile-first approach for better readability */
   @media (max-width: 380px) {
     .btn-responsive-text {
-      font-size: 0.65rem !important;
-      padding: 0.5rem !important;
+      font-size: 0.8rem !important;
+      padding: 0.75rem !important;
     }
   }
 
