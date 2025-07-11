@@ -63,7 +63,7 @@ export default function Header() {
           </div>
           <nav className="hidden lg:flex items-center">
             <ul
-              className={`flex ${direction === "rtl" ? "gap-8 xl:gap-10 flex-row-reverse" : "gap-8 xl:gap-10"} text-foreground`}
+              className={`flex gap-6 xl:gap-8 text-foreground`}
             >
               {navItems.map((item, index) => (
                 <li key={item.href}>
