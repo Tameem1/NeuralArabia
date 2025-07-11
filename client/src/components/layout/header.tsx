@@ -70,7 +70,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     className={`relative hover:text-primary transition-all duration-300 auto-font font-medium group whitespace-nowrap ${
-                      isScrolled ? "text-xs xl:text-sm" : "text-sm xl:text-base"
+                      isScrolled ? "text-sm xl:text-base" : "text-base xl:text-lg"
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -88,7 +88,7 @@ export default function Header() {
                 className="flex items-center gap-1 xl:gap-2 hover:text-primary transition-colors duration-300"
               >
                 <Globe className="w-3 h-3 xl:w-4 xl:h-4" />
-                <span className="font-medium text-xs xl:text-sm">
+                <span className="font-medium text-sm xl:text-base">
                   {i18n.language === 'ar' ? 'EN' : 'عر'}
                 </span>
               </Button>
@@ -102,7 +102,7 @@ export default function Header() {
               className="flex items-center gap-1 hover:text-primary transition-colors duration-300"
             >
               <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-xs sm:text-sm font-medium">
+              <span className="text-sm sm:text-base font-medium">
                 {i18n.language === 'ar' ? 'EN' : 'عر'}
               </span>
             </Button>
@@ -128,7 +128,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="block py-2 px-2 rounded-md hover:text-primary hover:bg-background/50 transition duration-300 text-sm"
+                    className="block py-2 px-2 rounded-md hover:text-primary hover:bg-background/50 transition duration-300 text-base"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
