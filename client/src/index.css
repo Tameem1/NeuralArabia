@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -66,6 +66,7 @@
       radial-gradient(circle at top left, rgba(87, 230, 217, 0.16), transparent 34%),
       radial-gradient(circle at 85% 12%, rgba(64, 224, 208, 0.12), transparent 22%),
       linear-gradient(180deg, var(--pure-mist) 0%, #f2fbfa 100%);
+    font-family: "Inter", "Arial", ui-sans-serif, system-ui;
   }
 
   a,
@@ -89,6 +90,18 @@
     background: rgba(64, 224, 208, 0.26);
     color: var(--ink-black);
   }
+
+  html[lang="ar"] body {
+    font-family: "IBM Plex Sans Arabic", "Alexandria", ui-sans-serif, system-ui;
+  }
+
+  html[lang="ar"] h1,
+  html[lang="ar"] h2,
+  html[lang="ar"] h3,
+  html[lang="ar"] h4 {
+    font-family: "Alexandria", "IBM Plex Sans Arabic", ui-sans-serif, system-ui;
+    letter-spacing: 0;
+  }
 }
 
 @layer utilities {
@@ -103,6 +116,12 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--deep-teal);
+  }
+
+  html[lang="ar"] .eyebrow {
+    font-family: "IBM Plex Sans Arabic", "Alexandria", ui-sans-serif, system-ui;
+    letter-spacing: 0.02em;
+    text-transform: none;
   }
 
   .brand-card {
@@ -142,6 +161,10 @@
     border: 1px solid rgba(255, 255, 255, 0.44);
     mask: linear-gradient(180deg, rgba(255, 255, 255, 1), transparent 75%);
     pointer-events: none;
+  }
+
+  .logo-motion-target {
+    transform-origin: center;
   }
 
   .fade-in-up {

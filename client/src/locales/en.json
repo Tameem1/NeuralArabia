@@ -1,204 +1,181 @@
 {
   "seo": {
-    "title": "TawjeehAI - Consulting and Development",
-    "description": "TawjeehAI offers advanced AI consulting, strategic services, and AI development and integration services for companies and institutions",
-    "ogTitle": "TawjeehAI - Consulting and Development",
-    "ogDescription": "Leading the AI revolution in the business world through innovative and customized solutions"
+    "title": "Tawjeeh AI | Guiding AI Inside the Business",
+    "description": "Tawjeeh AI helps organizations guide AI inside the business through structured products, practical solutions, focused research, and useful resources.",
+    "ogTitle": "Tawjeeh AI | Guiding AI Inside the Business",
+    "ogDescription": "A bilingual landing page for Tawjeeh AI focused on guiding AI inside the business across products, solutions, research, and resources."
   },
-  "header": {
-    "title": "TawjeehAI",
-    "home": "Home",
-    "services": "Services",
-    "aiConsulting": "AI Consulting",
-    "aiDevelopment": "AI Development",
-    "logoStory": "Logo Story",
-    "whyChooseUs": "Why Choose Us?",
-    "about": "About",
-    "contact": "Contact",
-    "openMenu": "Open Menu",
-    "closeMenu": "Close Menu"
-  },
-  "hero": {
-    "titleStart": "Leading the",
-    "titleHighlight": "AI Revolution",
-    "titleEnd": "in the Business World",
-    "description": "We empower companies through innovative AI solutions that drive growth, improve efficiency, and open new horizons for digital transformation.",
-    "companyHighlight": "TawjeehAI",
-    "contactButton": "Contact Us",
-    "servicesButton": "Discover Our Services",
-    "imageAlt": "AI Neural Network"
-  },
-  "services": {
-    "title": "Our Specialized Services",
-    "description": "We provide comprehensive AI solutions to help your company innovate and grow",
-    "consulting": {
-      "title": "AI Strategy Consulting",
-      "description": "We provide specialized consulting in AI to help your company identify the best strategies and application opportunities that fit your business goals.",
-      "imageAlt": "AI Strategy Consulting",
-      "features": {
-        "1": "Analyzing requirements and opportunities for AI application in your business",
-        "2": "Developing customized AI strategies for your business objectives",
-        "3": "Assessing technical readiness and defining digital transformation path",
-        "4": "Training and qualifying teams to use AI technologies"
-      },
-      "cta": "Book a Consultation"
+  "landing": {
+    "nav": {
+      "homeLabel": "Tawjeeh AI home",
+      "products": "Products",
+      "solutions": "Solutions",
+      "research": "Research",
+      "resources": "Resources",
+      "cta": "Start the conversation"
     },
-    "development": {
-      "title": "AI Development & Integration",
-      "description": "We develop custom and integrated AI solutions with your existing systems to increase efficiency and improve user experience",
-      "technicalAreas": "Technical Areas",
-      "imageAlt": "AI Development and Integration",
-      "features": {
-        "1": "Developing custom machine learning models for your business use case",
-        "2": "Integrating AI solutions with your existing systems",
-        "3": "Developing intelligent applications and interfaces based on AI",
-        "4": "Continuous maintenance and improvement of AI models"
-      },
-      "cta": "Request Technical Demo"
-    }
-  },
-  "features": {
-    "title": "Why Choose TawjeehAI?",
-    "description": "We combine advanced technical expertise and strategic vision to achieve exceptional results",
-    "expertise": {
-      "title": "Specialized Expertise",
-      "description": "A team of AI experts with advanced certifications and practical experience in diverse projects."
+    "hero": {
+      "eyebrow": "Guiding AI inside the business",
+      "title": "Make AI work inside the way your business actually operates.",
+      "description": "Tawjeeh AI helps organizations place AI inside workflows, teams, decisions, and governance with the right operating model, product thinking, and research discipline.",
+      "primaryCta": "Explore the products",
+      "secondaryCta": "See the solutions",
+      "panelEyebrow": "Business guidance map",
+      "panelTitle": "One story for how AI fits inside the organization.",
+      "panelBadge": "BILINGUAL READY",
+      "panelSubhead": "System overview",
+      "panelDescription": "A clearer brand system for companies that need AI to be embedded into how the business moves, not isolated from it.",
+      "metrics": [
+        {
+          "value": "4",
+          "label": "Core sections",
+          "description": "Products, solutions, research, and resources aligned under one focused narrative."
+        },
+        {
+          "value": "RTL/LTR",
+          "label": "Language ready",
+          "description": "Arabic and English each render with their natural direction and typography."
+        },
+        {
+          "value": "AI-in-business",
+          "label": "Positioning",
+          "description": "Every section now speaks directly to guiding AI inside the business."
+        }
+      ],
+      "panelItems": [
+        {
+          "title": "Products",
+          "description": "Reusable offerings that help teams structure, govern, and launch AI inside business functions."
+        },
+        {
+          "title": "Solutions",
+          "description": "Practical engagements that align leadership, operations, and delivery around real AI adoption."
+        },
+        {
+          "title": "Research",
+          "description": "Signals, pilot learnings, and market intelligence that reduce guesswork before scale."
+        },
+        {
+          "title": "Resources",
+          "description": "Playbooks, frameworks, and working material teams can use to move with more confidence."
+        }
+      ]
     },
-    "customized": {
-      "title": "Customized Solutions",
-      "description": "We design tailored solutions that fit your unique business needs instead of following a one-size-fits-all approach."
+    "products": {
+      "eyebrow": "Products",
+      "title": "Reusable products for putting AI to work inside the business.",
+      "description": "Our product layer helps organizations move beyond vague AI ambition and into systems that can be owned, operated, and improved over time.",
+      "items": [
+        {
+          "tag": "OPERATING MODEL",
+          "title": "AI Business Map",
+          "description": "A structured way to connect AI opportunities to business functions, owners, priorities, and measurable outcomes."
+        },
+        {
+          "tag": "DELIVERY SHELL",
+          "title": "AI Workflow Studio",
+          "description": "A guided product surface for embedding AI into the day-to-day work of teams without creating operational chaos."
+        },
+        {
+          "tag": "CONTROL LAYER",
+          "title": "Governance Signals",
+          "description": "Review paths, escalation logic, and accountability checkpoints that keep AI reliable inside the business."
+        }
+      ]
     },
-    "measurable": {
-      "title": "Measurable Results",
-      "description": "We focus on achieving tangible and measurable results that positively impact your business performance."
-    }
-  },
-  "calendly": {
-    "title": "Book Your Appointment",
-    "description": "Schedule a free consultation to discuss your project and how AI can help achieve your goals",
-    "bookButton": "Book Free Consultation",
-    "duration": "Session Duration: 30 minutes",
-    "steps": {
-      "schedule": {
-        "title": "Choose Your Time",
-        "description": "Book your appointment at a time that suits you through our available calendar"
-      },
-      "discuss": {
-        "title": "Discuss Your Project",
-        "description": "Talk to us about your challenges and goals in the field of artificial intelligence"
-      },
-      "plan": {
-        "title": "Get an Action Plan",
-        "description": "Receive personalized recommendations and a clear plan to move forward"
-      }
+    "solutions": {
+      "eyebrow": "Solutions",
+      "title": "Solutions that guide AI from strategy into execution.",
+      "description": "We help companies turn AI from an abstract priority into working business infrastructure by aligning decisions, teams, and delivery paths.",
+      "callout": "This section is intentionally built around business clarity: each solution shows where AI belongs, who owns it, and how it becomes useful in practice.",
+      "items": [
+        {
+          "tag": "LEADERSHIP",
+          "title": "Executive alignment",
+          "description": "Define where AI should create advantage, where it should not, and how leaders make clear investment decisions."
+        },
+        {
+          "tag": "OPERATIONS",
+          "title": "Workflow integration",
+          "description": "Place AI inside actual operating flows instead of adding disconnected tools that teams struggle to adopt."
+        },
+        {
+          "tag": "BUSINESS UNITS",
+          "title": "Function-specific rollouts",
+          "description": "Tailor AI adoption to departments such as growth, service, operations, and internal support."
+        },
+        {
+          "tag": "PLATFORM",
+          "title": "Cross-team enablement",
+          "description": "Create the shared language, policies, and building blocks that let different teams move with confidence."
+        }
+      ]
     },
-    "availability": {
-      "title": "Working Hours",
-      "description": "We are available to help you at flexible times that suit your schedule",
-      "times": "9:00 AM - 6:00 PM (Riyadh Time)",
-      "days": "Sunday - Thursday"
-    }
-  },
-  "aiDevelopment": {
-    "title": "AI Development Areas",
-    "subtitle": "We offer specialized development services in key AI domains",
-    "areas": {
-      "agents": {
-        "title": "AI Agents",
-        "description": "Imagine a team member who works tirelessly, learns continuously, and adapts to your needs. This is what AI agents promise. With their ability to monitor, plan, and act independently, AI agents open a new chapter of comprehensive transformation across various sectors, simplifying operations, enhancing data insights, and augmenting human capabilities unprecedentedly."
+    "research": {
+      "eyebrow": "Research",
+      "title": "Research that keeps AI decisions grounded before the business scales them.",
+      "description": "Research is where we test assumptions, monitor signals, and turn early findings into stronger business decisions about where AI belongs.",
+      "featuredEyebrow": "Featured research stream",
+      "featuredTitle": "From signal tracking to applied insight",
+      "featuredBadge": "ACTIVE RESEARCH",
+      "featuredPanelLabel": "Current frame",
+      "featuredPanelTitle": "AI adoption patterns inside real organizations",
+      "featuredPanelDescription": "We look at where teams create value, where governance breaks down, and how language, workflow design, and review models influence adoption.",
+      "stats": {
+        "labelOne": "Research tracks",
+        "valueOne": "03",
+        "descriptionOne": "Adoption signals, operational friction, and governance patterns mapped into practical guidance.",
+        "labelTwo": "Insight gradient"
       },
-      "generative": {
-        "title": "Generative AI",
-        "description": "AI has reached a generational turning point. With generative AI investments expected to increase by 60% over the next three years, AI and generative AI ambitions continue to grow across all sectors and functions."
-      },
-      "responsible": {
-        "title": "Responsible AI",
-        "description": "Developing intelligent systems to provide personalized recommendations to users based on their preferences and behavior"
-      }
-    }
-  },
-  "about": {
-    "title": "About Us",
-    "description1": "We are a team of AI experts specialized in developing and consulting on advanced AI solutions. TawjeehAI was founded in 2018 with the goal of helping companies leverage the power of AI to achieve exceptional growth.",
-    "description2": "We pride ourselves on providing distinguished services that combine deep technical expertise and strategic understanding of business needs, ensuring tangible results for our clients.",
-    "imageAlt": "TawjeehAI Team",
-    "stats": {
-      "projects": "Successful Projects",
-      "experts": "Specialized Experts"
-    }
-  },
-  "logoStory": {
-    "title": "Our Logo Story",
-    "subtitle": "Our Methodology in Strategic Integration",
-    "paragraph1": "Our logo embodies our methodology in unifying operations within complex business environments. The large triangle represents our goal of reaching the highest levels of efficiency and quality, while the small triangles reflect the diverse work pathways that we integrate through thoughtful steps.",
-    "paragraph2": "At the heart, the compass symbolizes our strategic vision that guides this integration—toward harmonious performance and superior results.",
-    "elements": {
-      "title": "Logo Elements",
-      "mountain": {
-        "title": "Large Triangle",
-        "description": "Represents our goal of achieving the highest levels of efficiency and quality"
-      },
-      "triangles": {
-        "title": "Small Triangles",
-        "description": "Reflect diverse work pathways that we integrate through thoughtful steps"
-      },
-      "diamond": {
-        "title": "The Compass",
-        "description": "Symbolizes our strategic vision that guides integration"
-      }
-    }
-  },
-  "contact": {
-    "title": "Contact Us",
-    "description": "We are here to help you on your digital transformation journey using AI",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Full Name",
-      "email": "Email",
-      "emailPlaceholder": "email@example.com",
-      "company": "Company",
-      "companyPlaceholder": "Company Name",
-      "service": "Service Needed",
-      "servicePlaceholder": "Select Service",
-      "serviceOptions": {
-        "consulting": "AI Strategy Consulting",
-        "development": "AI Development & Integration",
-        "training": "Team Training & Qualification",
-        "other": "Other Service"
-      },
-      "message": "Message",
-      "messagePlaceholder": "Write your inquiry or needs details here...",
-      "submit": "Send Message",
-      "submitting": "Sending..."
+      "items": [
+        {
+          "tag": "SIGNALS",
+          "title": "Market observation",
+          "description": "We study how AI products, vendor patterns, and organizational behaviors shift over time so decisions stay current."
+        },
+        {
+          "tag": "PILOTS",
+          "title": "Applied experiments",
+          "description": "Small research loops let us test where AI can safely deliver impact before it is expanded inside the business."
+        },
+        {
+          "tag": "READINESS",
+          "title": "Adoption intelligence",
+          "description": "We examine team capability, process maturity, and governance readiness to guide rollout timing and scope."
+        }
+      ]
     },
-    "info": {
-      "address": {
-        "title": "Address",
-        "text": "King Fahd Road, Al Olaya District, Riyadh, Saudi Arabia"
-      },
-      "email": {
-        "title": "Email",
-        "text": "info@tawjeeh-ai.com"
-      },
-      "phone": {
-        "title": "Phone",
-        "text": "+966 12 345 6789"
-      }
+    "resources": {
+      "eyebrow": "Resources",
+      "title": "Resources that help teams move from AI interest to informed action.",
+      "description": "A practical resource layer gives stakeholders a shared way to talk about AI, evaluate opportunities, and keep execution aligned.",
+      "items": [
+        {
+          "tag": "PLAYBOOKS",
+          "title": "Business AI playbooks",
+          "description": "Structured guides for placing AI into functions, prioritizing use cases, and defining responsible ownership."
+        },
+        {
+          "tag": "FRAMEWORKS",
+          "title": "Decision frameworks",
+          "description": "Clear models for evaluating readiness, selecting rollout paths, and deciding when human review is required."
+        },
+        {
+          "tag": "ENABLEMENT",
+          "title": "Team resources",
+          "description": "Working materials that help leaders and delivery teams speak the same language as AI becomes part of the business."
+        }
+      ]
     },
-    "success": {
-      "title": "Message Sent Successfully",
-      "message": "Thank you for contacting us, we will respond to you as soon as possible."
+    "finalCta": {
+      "eyebrow": "Next step",
+      "title": "If your business needs AI to feel operational, trustworthy, and properly guided, this is where the conversation starts.",
+      "description": "Tawjeeh AI is positioned around one idea: guiding AI inside the business with more clarity, better structure, and stronger execution logic.",
+      "button": "Contact Tawjeeh AI"
     },
-    "error": {
-      "title": "Error Occurred",
-      "message": "We couldn't send your message, please try again later."
+    "footer": {
+      "tagline": "Tawjeeh AI designs products, solutions, research, and resources for guiding AI inside the business.",
+      "note": "Built for future brand motion"
     }
-  },
-  "footer": {
-    "title": "TawjeehAI",
-    "tagline": "Leading the AI revolution in the business world through innovative and customized solutions",
-    "copyright": "© {{year}} TawjeehAI. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms & Conditions"
   }
 }

@@ -1,27 +1,33 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1"
     />
-    <title>توجيه AI للذكاء الاصطناعي - استشارات وتطوير</title>
+    <title>Tawjeeh AI | Guiding AI Inside the Business</title>
     <meta
       name="description"
-      content="شركة توجيه AI للذكاء الاصطناعي تقدم خدمات استشارية واستراتيجية متطورة وخدمات تطوير وتكامل الذكاء الاصطناعي للشركات والمؤسسات"
+      content="Tawjeeh AI helps organizations guide AI inside the business through structured products, practical solutions, focused research, and useful resources."
     />
     <meta
       property="og:title"
-      content="توجيه AI للذكاء الاصطناعي - استشارات وتطوير"
+      content="Tawjeeh AI | Guiding AI Inside the Business"
     />
-    <meta property="og:description" content="الذكاء الاصطناعي على نطاق واسع" />
+    <meta property="og:description" content="A bilingual landing page for Tawjeeh AI focused on guiding AI inside the business across products, solutions, research, and resources." />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css"
-    />
+    <script>
+      (() => {
+        const storedLanguage = localStorage.getItem("tawjeeh-language");
+        const language =
+          storedLanguage === "ar" || (!storedLanguage && navigator.language.toLowerCase().startsWith("ar")) ? "ar" : "en";
+
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

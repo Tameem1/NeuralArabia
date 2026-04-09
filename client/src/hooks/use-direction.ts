@@ -8,12 +8,16 @@ export function useDirection(): [Direction, (lang: string) => void] {
   const [direction, setDirection] = useState<Direction>(i18n.language === 'ar' ? 'rtl' : 'ltr');
 
   const changeLanguage = (lang: string) => {
+    if (lang === 'ar' || lang === 'en') {
+      window.localStorage.setItem('tawjeeh-language', lang);
+    }
     i18n.changeLanguage(lang);
   };
 
   useEffect(() => {
-    setDirection(i18n.language === 'ar' ? 'rtl' : 'ltr');
-    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    const nextDirection = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    setDirection(nextDirection);
+    document.documentElement.dir = nextDirection;
     document.documentElement.lang = i18n.language;
   }, [i18n.language]);
 

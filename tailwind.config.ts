@@ -6,6 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        arabicDisplay: ["Alexandria", "IBM Plex Sans Arabic", "ui-sans-serif", "system-ui"],
+        arabic: ["IBM Plex Sans Arabic", "Alexandria", "ui-sans-serif", "system-ui"],
         display: ["Sora", "Inter", "ui-sans-serif", "system-ui"],
         inter: ["Inter", "Arial", "ui-sans-serif", "system-ui"],
         cairo: ["Cairo", "sans-serif"],
