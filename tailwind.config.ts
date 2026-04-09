@@ -6,9 +6,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'cairo': ['Cairo', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-        'sans': ['Cairo', 'sans-serif'],
+        display: ["Sora", "Inter", "ui-sans-serif", "system-ui"],
+        inter: ["Inter", "Arial", "ui-sans-serif", "system-ui"],
+        cairo: ["Cairo", "sans-serif"],
+        sans: ["Inter", "Arial", "ui-sans-serif", "system-ui"],
+        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
