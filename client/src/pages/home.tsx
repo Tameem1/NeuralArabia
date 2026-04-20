@@ -157,7 +157,7 @@ export default function Home() {
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 {heroMetrics.map((metric) => (
-                  <div key={metric.label} className="brand-card rounded-[24px] p-5">
+                  <div key={metric.label} className="brand-card rounded-[24px] p-5 border-l-2 border-l-[#40E0D0]">
                     <p className="eyebrow">{metric.label}</p>
                     <p className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#0D2B33]">{metric.value}</p>
                     <p className="mt-2 text-sm leading-6 text-[#6B7C85]">{metric.description}</p>
@@ -289,6 +289,7 @@ export default function Home() {
         </section>
 
         <section id="research" className="relative overflow-hidden bg-[linear-gradient(180deg,#21454D_0%,#0D2B33_100%)] py-24 text-white">
+          <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(87,230,217,0.18),transparent_65%)]" />
           <div className="brand-aura left-[5%] top-[10%] h-64 w-64 bg-[#40E0D0]/20" />
           <div className="brand-aura right-[8%] bottom-[10%] h-80 w-80 bg-[#57E6D9]/10 soft-float" />
 
@@ -387,28 +388,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="brand-card mt-10 rounded-[36px] p-8 sm:p-10">
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-xl">
-                <p className="eyebrow">{t("landing.finalCta.eyebrow")}</p>
-                <p className="mt-4 text-2xl font-medium leading-9 text-[#0D2B33]">{t("landing.finalCta.title")}</p>
-                <p className="mt-3 text-base leading-7 text-[#334155]">{t("landing.finalCta.description")}</p>
+          <div className="relative mt-10 overflow-hidden rounded-[36px]">
+            <div className="brand-aura left-[-60px] top-[-40px] h-52 w-52 bg-[#57E6D9]/30" />
+            <div className="brand-dark-card relative rounded-[36px] p-8 sm:p-10">
+              <div className="brand-outline" />
+              <div className="absolute inset-0 brand-grid opacity-[0.07]" />
+              <div className="relative flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+                <div className="max-w-xl">
+                  <p className="eyebrow !text-[#7CEDE3]">{t("landing.finalCta.eyebrow")}</p>
+                  <p className="mt-4 text-2xl font-medium leading-9 text-white">{t("landing.finalCta.title")}</p>
+                  <p className="mt-3 text-base leading-7 text-white/72">{t("landing.finalCta.description")}</p>
+                </div>
+                <a href="mailto:hello@tawjeeh.ai" className="primary-cta gap-2 whitespace-nowrap">
+                  {t("landing.finalCta.button")}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-              <a href="mailto:hello@tawjeeh.ai" className="dark-cta gap-2 whitespace-nowrap">
-                {t("landing.finalCta.button")}
-                <ArrowRight className="h-4 w-4" />
-              </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-[#E8F2F2] bg-white/70 py-8 backdrop-blur-sm">
+      <footer className="relative border-t border-[#E8F2F2] bg-white/70 py-8 backdrop-blur-sm">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#40E0D0]/50 to-transparent" />
         <div className="section-shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-4">
-            <div className="rounded-[18px] border border-[#D5E7E6] bg-white p-2">
-              <img src={mark} alt="" className="h-10 w-10" />
-            </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <img src={logoLight} alt="Tawjeeh AI" className="h-8 w-auto" />
             <p className="max-w-lg text-sm text-[#6B7C85]">{t("landing.footer.tagline")}</p>
           </div>
           <p className={`text-xs uppercase tracking-[0.16em] text-[#6B7C85] ${isArabic ? "font-[Alexandria]" : "font-mono"}`}>
