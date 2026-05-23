@@ -1,9 +1,9 @@
 {
   "seo": {
-    "title": "Tawjeeh AI | Guiding AI Inside the Business",
-    "description": "Tawjeeh AI helps organizations put AI to work through products, solutions, research, and resources.",
-    "ogTitle": "Tawjeeh AI | Guiding AI Inside the Business",
-    "ogDescription": "Guiding AI inside the business — products, solutions, research, and resources."
+    "title": "Tawjeeh AI | AI in business",
+    "description": "Tawjeeh AI puts AI to work inside your operations — your data, your workflows, your terms.",
+    "ogTitle": "Tawjeeh AI | AI in business",
+    "ogDescription": "AI in business — products, solutions, research, and resources."
   },
   "landing": {
     "nav": {
@@ -12,172 +12,131 @@
       "solutions": "Solutions",
       "research": "Research",
       "resources": "Resources",
-      "cta": "Start the conversation"
+      "cta": "Request a demo"
     },
     "hero": {
-      "eyebrow": "Guiding AI inside the business",
-      "title": "Make AI work the way your business operates.",
-      "description": "We help organizations place AI inside workflows, teams, and decisions — with the right operating model and discipline.",
-      "primaryCta": "Explore products",
-      "secondaryCta": "See solutions",
-      "panelEyebrow": "Business guidance map",
-      "panelTitle": "One story for how AI fits inside the organization.",
-      "panelBadge": "BILINGUAL READY",
-      "panelSubhead": "System overview",
-      "panelDescription": "AI embedded into how the business moves — not isolated from it.",
-      "metrics": [
+      "title": "AI, in business.",
+      "subtitle": "Your operations. Your teams. Tawjeeh AI keeps it that way.",
+      "primaryCta": "Request a demo",
+      "secondaryCta": "Explore products",
+      "agentName": "Business Operations Agent",
+      "agentStatus": "READY",
+      "captionEyebrow": "Bilingual AI",
+      "caption": "Built for how business actually runs across Arabic and English."
+    },
+    "pillars": {
+      "eyebrow": "Built to be operated",
+      "title": "Designed for the way you work.",
+      "description": "Customization, deployment, and security — wired into your business from day one.",
+      "items": [
         {
-          "value": "4",
-          "label": "Core sections",
-          "description": "Products, solutions, research, resources."
+          "title": "Customization",
+          "description": "Tune Tawjeeh on your data, workflows, and language without leaving your environment."
         },
         {
-          "value": "RTL/LTR",
-          "label": "Language ready",
-          "description": "Arabic and English, natively."
+          "title": "Deployment",
+          "description": "Run on your cloud, your VPC, or fully on-prem — choose what fits your governance."
         },
         {
-          "value": "AI-in-business",
-          "label": "Positioning",
-          "description": "Guiding AI inside the business."
+          "title": "Security",
+          "description": "Enterprise controls, audit trails, and Arabic-first compliance baked in."
         }
-      ],
-      "panelItems": [
+      ]
+    },
+    "massage": {
+      "brand": "massage",
+      "title": "AI teammates that ship.",
+      "description": "All your tools connected, real work delivered. Massage gives every team an AI teammate that actually ships — on your terms.",
+      "cta": "Go massage",
+      "product": {
+        "title": "Automations",
+        "badge": "Alpha",
+        "subtitle": "Browse automations that streamline repetitive tasks and complex workflows with ease.",
+        "new": "New automation",
+        "tabs": {
+          "discovery": "Discovery",
+          "runs": "Runs",
+          "myBuilds": "My builds",
+          "monitor": "Monitor"
+        },
+        "search": "Search by automation or creator name",
+        "cards": [
+          {
+            "title": "Revenue Scope",
+            "description": "Contract ingestion pipeline designed for the Finance team.",
+            "by": "By Jerald A"
+          },
+          {
+            "title": "Meeting Summarizer",
+            "description": "Take meeting notes, run deep dives on topics, and generate action items.",
+            "by": "By Kate S"
+          },
+          {
+            "title": "Contract Analysis",
+            "description": "Provide complex contract review across legal and ops desks.",
+            "by": "By Cindy Y"
+          },
+          {
+            "title": "Customer Overview",
+            "description": "Get a quick holistic view of our current customer portfolio.",
+            "by": "By Derek M"
+          }
+        ]
+      }
+    },
+    "industries": {
+      "title": "Powering progress across industries.",
+      "items": [
+        { "title": "Financial Services" },
+        { "title": "Accounting" },
+        { "title": "Technology" },
+        { "title": "Manufacturing" },
+        { "title": "Linguistics" }
+      ]
+    },
+    "developer": {
+      "title": "Developer resources",
+      "description": "Everything you need to start building — from API access to deep technical docs, and try Tawjeeh models in the Playground.",
+      "cta": "Let's go",
+      "linkCta": "Get an API key",
+      "docsTitle": "tawjeeh docs",
+      "docsTabs": ["Guides and concepts", "API Reference", "Release Notes", "Academy", "Cookbooks"],
+      "docsNav": {
+        "getStartedLabel": "Get Started",
+        "getStarted": ["Introduction", "Installation", "Creating a client", "Quickstart", "Playground", "FAQs"],
+        "modelsLabel": "Models",
+        "models": ["Overview", "Command", "Embed", "Rerank", "Tawjeeh Arabic"]
+      },
+      "docsBody": {
+        "eyebrow": "Get Started",
+        "title": "Creating a client",
+        "subtitle": "To start using all features available in the Tawjeeh SDK, you'll need to authenticate first."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to put AI to work?",
+      "button": "Request a demo"
+    },
+    "footer": {
+      "tagline": "Products, solutions, research, and resources for putting AI to work inside your business.",
+      "note": "AI moves fast — we'll keep you up to date with the latest from Tawjeeh.",
+      "newsletterLabel": "Subscribe to updates",
+      "newsletterPlaceholder": "you@business.com",
+      "newsletterCta": "Subscribe",
+      "columns": [
         {
           "title": "Products",
-          "description": "Reusable offerings to structure, govern, and launch AI."
+          "links": ["Massage", "Business Map", "Workflow Studio", "Governance Signals"]
         },
         {
           "title": "Solutions",
-          "description": "Engagements that align leadership, ops, and delivery."
+          "links": ["Financial Services", "Accounting", "Technology", "Manufacturing", "Linguistics"]
         },
         {
-          "title": "Research",
-          "description": "Signals and pilot learnings that reduce guesswork."
-        },
-        {
-          "title": "Resources",
-          "description": "Playbooks and frameworks teams can act on."
+          "title": "Company",
+          "links": ["About", "Research", "Resources", "Contact"]
         }
       ]
-    },
-    "products": {
-      "eyebrow": "Products",
-      "title": "Reusable products for putting AI to work.",
-      "description": "Move beyond vague AI ambition into systems you can own, operate, and improve.",
-      "items": [
-        {
-          "tag": "OPERATING MODEL",
-          "title": "AI Business Map",
-          "description": "Connect AI opportunities to functions, owners, and measurable outcomes."
-        },
-        {
-          "tag": "DELIVERY SHELL",
-          "title": "AI Workflow Studio",
-          "description": "Embed AI into daily work without operational chaos."
-        },
-        {
-          "tag": "CONTROL LAYER",
-          "title": "Governance Signals",
-          "description": "Review paths and accountability checkpoints that keep AI reliable."
-        }
-      ]
-    },
-    "solutions": {
-      "eyebrow": "Solutions",
-      "title": "From strategy into execution.",
-      "description": "Turn AI from an abstract priority into working business infrastructure.",
-      "callout": "Each solution shows where AI belongs, who owns it, and how it becomes useful.",
-      "items": [
-        {
-          "tag": "LEADERSHIP",
-          "title": "Executive alignment",
-          "description": "Decide where AI creates advantage — and where it doesn't."
-        },
-        {
-          "tag": "OPERATIONS",
-          "title": "Workflow integration",
-          "description": "Place AI inside real operating flows, not disconnected tools."
-        },
-        {
-          "tag": "BUSINESS UNITS",
-          "title": "Function-specific rollouts",
-          "description": "Tailor AI to growth, service, operations, and support."
-        },
-        {
-          "tag": "PLATFORM",
-          "title": "Cross-team enablement",
-          "description": "Shared language and building blocks for every team."
-        }
-      ]
-    },
-    "research": {
-      "eyebrow": "Research",
-      "title": "Grounded research before you scale.",
-      "description": "Test assumptions, monitor signals, and sharpen decisions about where AI belongs.",
-      "featuredEyebrow": "Featured research stream",
-      "featuredTitle": "From signals to applied insight",
-      "featuredBadge": "ACTIVE RESEARCH",
-      "featuredPanelLabel": "Current frame",
-      "featuredPanelTitle": "AI adoption inside real organizations",
-      "featuredPanelDescription": "Where teams create value, where governance breaks down, and what drives real adoption.",
-      "stats": {
-        "labelOne": "Research tracks",
-        "valueOne": "03",
-        "descriptionOne": "Adoption, friction, and governance — mapped into practical guidance.",
-        "labelTwo": "Active partners",
-        "valueTwo": "12",
-        "descriptionTwo": "Ministries, foundations, and operators shaping the next Arabic-first deployments."
-      },
-      "items": [
-        {
-          "tag": "SIGNALS",
-          "title": "Market observation",
-          "description": "Track how AI products and behaviors shift over time."
-        },
-        {
-          "tag": "PILOTS",
-          "title": "Applied experiments",
-          "description": "Small loops to test impact before scaling."
-        },
-        {
-          "tag": "READINESS",
-          "title": "Adoption intelligence",
-          "description": "Capability, maturity, and governance — to guide rollout."
-        }
-      ]
-    },
-    "resources": {
-      "eyebrow": "Resources",
-      "title": "From interest to informed action.",
-      "description": "A shared way to talk about AI, evaluate opportunities, and stay aligned.",
-      "items": [
-        {
-          "tag": "PLAYBOOKS",
-          "title": "Business AI playbooks",
-          "description": "Place AI into functions, prioritize use cases, define ownership."
-        },
-        {
-          "tag": "FRAMEWORKS",
-          "title": "Decision frameworks",
-          "description": "Evaluate readiness and decide when human review is required."
-        },
-        {
-          "tag": "ENABLEMENT",
-          "title": "Team resources",
-          "description": "Shared language for leaders and delivery teams."
-        }
-      ]
-    },
-    "finalCta": {
-      "eyebrow": "Next step",
-      "title": "If your business needs AI to feel operational and trustworthy — this is where it starts.",
-      "description": "One idea: guide AI inside the business with clarity, structure, and execution logic.",
-      "button": "Contact Tawjeeh AI"
-    },
-    "footer": {
-      "tagline": "Products, solutions, research, and resources for guiding AI inside the business.",
-      "note": "Built for future brand motion"
     }
   }
 }
