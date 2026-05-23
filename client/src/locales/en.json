@@ -1,9 +1,9 @@
 {
   "seo": {
     "title": "Tawjeeh AI | Guiding AI Inside the Business",
-    "description": "Tawjeeh AI helps organizations guide AI inside the business through structured products, practical solutions, focused research, and useful resources.",
+    "description": "Tawjeeh AI helps organizations put AI to work through products, solutions, research, and resources.",
     "ogTitle": "Tawjeeh AI | Guiding AI Inside the Business",
-    "ogDescription": "A bilingual landing page for Tawjeeh AI focused on guiding AI inside the business across products, solutions, research, and resources."
+    "ogDescription": "Guiding AI inside the business — products, solutions, research, and resources."
   },
   "landing": {
     "nav": {
@@ -16,167 +16,167 @@
     },
     "hero": {
       "eyebrow": "Guiding AI inside the business",
-      "title": "Make AI work inside the way your business actually operates.",
-      "description": "Tawjeeh AI helps organizations place AI inside workflows, teams, decisions, and governance with the right operating model, product thinking, and research discipline.",
-      "primaryCta": "Explore the products",
-      "secondaryCta": "See the solutions",
+      "title": "Make AI work the way your business operates.",
+      "description": "We help organizations place AI inside workflows, teams, and decisions — with the right operating model and discipline.",
+      "primaryCta": "Explore products",
+      "secondaryCta": "See solutions",
       "panelEyebrow": "Business guidance map",
       "panelTitle": "One story for how AI fits inside the organization.",
       "panelBadge": "BILINGUAL READY",
       "panelSubhead": "System overview",
-      "panelDescription": "A clearer brand system for companies that need AI to be embedded into how the business moves, not isolated from it.",
+      "panelDescription": "AI embedded into how the business moves — not isolated from it.",
       "metrics": [
         {
           "value": "4",
           "label": "Core sections",
-          "description": "Products, solutions, research, and resources aligned under one focused narrative."
+          "description": "Products, solutions, research, resources."
         },
         {
           "value": "RTL/LTR",
           "label": "Language ready",
-          "description": "Arabic and English each render with their natural direction and typography."
+          "description": "Arabic and English, natively."
         },
         {
           "value": "AI-in-business",
           "label": "Positioning",
-          "description": "Every section now speaks directly to guiding AI inside the business."
+          "description": "Guiding AI inside the business."
         }
       ],
       "panelItems": [
         {
           "title": "Products",
-          "description": "Reusable offerings that help teams structure, govern, and launch AI inside business functions."
+          "description": "Reusable offerings to structure, govern, and launch AI."
         },
         {
           "title": "Solutions",
-          "description": "Practical engagements that align leadership, operations, and delivery around real AI adoption."
+          "description": "Engagements that align leadership, ops, and delivery."
         },
         {
           "title": "Research",
-          "description": "Signals, pilot learnings, and market intelligence that reduce guesswork before scale."
+          "description": "Signals and pilot learnings that reduce guesswork."
         },
         {
           "title": "Resources",
-          "description": "Playbooks, frameworks, and working material teams can use to move with more confidence."
+          "description": "Playbooks and frameworks teams can act on."
         }
       ]
     },
     "products": {
       "eyebrow": "Products",
-      "title": "Reusable products for putting AI to work inside the business.",
-      "description": "Our product layer helps organizations move beyond vague AI ambition and into systems that can be owned, operated, and improved over time.",
+      "title": "Reusable products for putting AI to work.",
+      "description": "Move beyond vague AI ambition into systems you can own, operate, and improve.",
       "items": [
         {
           "tag": "OPERATING MODEL",
           "title": "AI Business Map",
-          "description": "A structured way to connect AI opportunities to business functions, owners, priorities, and measurable outcomes."
+          "description": "Connect AI opportunities to functions, owners, and measurable outcomes."
         },
         {
           "tag": "DELIVERY SHELL",
           "title": "AI Workflow Studio",
-          "description": "A guided product surface for embedding AI into the day-to-day work of teams without creating operational chaos."
+          "description": "Embed AI into daily work without operational chaos."
         },
         {
           "tag": "CONTROL LAYER",
           "title": "Governance Signals",
-          "description": "Review paths, escalation logic, and accountability checkpoints that keep AI reliable inside the business."
+          "description": "Review paths and accountability checkpoints that keep AI reliable."
         }
       ]
     },
     "solutions": {
       "eyebrow": "Solutions",
-      "title": "Solutions that guide AI from strategy into execution.",
-      "description": "We help companies turn AI from an abstract priority into working business infrastructure by aligning decisions, teams, and delivery paths.",
-      "callout": "This section is intentionally built around business clarity: each solution shows where AI belongs, who owns it, and how it becomes useful in practice.",
+      "title": "From strategy into execution.",
+      "description": "Turn AI from an abstract priority into working business infrastructure.",
+      "callout": "Each solution shows where AI belongs, who owns it, and how it becomes useful.",
       "items": [
         {
           "tag": "LEADERSHIP",
           "title": "Executive alignment",
-          "description": "Define where AI should create advantage, where it should not, and how leaders make clear investment decisions."
+          "description": "Decide where AI creates advantage — and where it doesn't."
         },
         {
           "tag": "OPERATIONS",
           "title": "Workflow integration",
-          "description": "Place AI inside actual operating flows instead of adding disconnected tools that teams struggle to adopt."
+          "description": "Place AI inside real operating flows, not disconnected tools."
         },
         {
           "tag": "BUSINESS UNITS",
           "title": "Function-specific rollouts",
-          "description": "Tailor AI adoption to departments such as growth, service, operations, and internal support."
+          "description": "Tailor AI to growth, service, operations, and support."
         },
         {
           "tag": "PLATFORM",
           "title": "Cross-team enablement",
-          "description": "Create the shared language, policies, and building blocks that let different teams move with confidence."
+          "description": "Shared language and building blocks for every team."
         }
       ]
     },
     "research": {
       "eyebrow": "Research",
-      "title": "Research that keeps AI decisions grounded before the business scales them.",
-      "description": "Research is where we test assumptions, monitor signals, and turn early findings into stronger business decisions about where AI belongs.",
+      "title": "Grounded research before you scale.",
+      "description": "Test assumptions, monitor signals, and sharpen decisions about where AI belongs.",
       "featuredEyebrow": "Featured research stream",
-      "featuredTitle": "From signal tracking to applied insight",
+      "featuredTitle": "From signals to applied insight",
       "featuredBadge": "ACTIVE RESEARCH",
       "featuredPanelLabel": "Current frame",
-      "featuredPanelTitle": "AI adoption patterns inside real organizations",
-      "featuredPanelDescription": "We look at where teams create value, where governance breaks down, and how language, workflow design, and review models influence adoption.",
+      "featuredPanelTitle": "AI adoption inside real organizations",
+      "featuredPanelDescription": "Where teams create value, where governance breaks down, and what drives real adoption.",
       "stats": {
         "labelOne": "Research tracks",
         "valueOne": "03",
-        "descriptionOne": "Adoption signals, operational friction, and governance patterns mapped into practical guidance.",
+        "descriptionOne": "Adoption, friction, and governance — mapped into practical guidance.",
         "labelTwo": "Active partners",
         "valueTwo": "12",
-        "descriptionTwo": "Ministries, foundations, and operators co-developing the next round of Arabic-first deployments."
+        "descriptionTwo": "Ministries, foundations, and operators shaping the next Arabic-first deployments."
       },
       "items": [
         {
           "tag": "SIGNALS",
           "title": "Market observation",
-          "description": "We study how AI products, vendor patterns, and organizational behaviors shift over time so decisions stay current."
+          "description": "Track how AI products and behaviors shift over time."
         },
         {
           "tag": "PILOTS",
           "title": "Applied experiments",
-          "description": "Small research loops let us test where AI can safely deliver impact before it is expanded inside the business."
+          "description": "Small loops to test impact before scaling."
         },
         {
           "tag": "READINESS",
           "title": "Adoption intelligence",
-          "description": "We examine team capability, process maturity, and governance readiness to guide rollout timing and scope."
+          "description": "Capability, maturity, and governance — to guide rollout."
         }
       ]
     },
     "resources": {
       "eyebrow": "Resources",
-      "title": "Resources that help teams move from AI interest to informed action.",
-      "description": "A practical resource layer gives stakeholders a shared way to talk about AI, evaluate opportunities, and keep execution aligned.",
+      "title": "From interest to informed action.",
+      "description": "A shared way to talk about AI, evaluate opportunities, and stay aligned.",
       "items": [
         {
           "tag": "PLAYBOOKS",
           "title": "Business AI playbooks",
-          "description": "Structured guides for placing AI into functions, prioritizing use cases, and defining responsible ownership."
+          "description": "Place AI into functions, prioritize use cases, define ownership."
         },
         {
           "tag": "FRAMEWORKS",
           "title": "Decision frameworks",
-          "description": "Clear models for evaluating readiness, selecting rollout paths, and deciding when human review is required."
+          "description": "Evaluate readiness and decide when human review is required."
         },
         {
           "tag": "ENABLEMENT",
           "title": "Team resources",
-          "description": "Working materials that help leaders and delivery teams speak the same language as AI becomes part of the business."
+          "description": "Shared language for leaders and delivery teams."
         }
       ]
     },
     "finalCta": {
       "eyebrow": "Next step",
-      "title": "If your business needs AI to feel operational, trustworthy, and properly guided, this is where the conversation starts.",
-      "description": "Tawjeeh AI is positioned around one idea: guiding AI inside the business with more clarity, better structure, and stronger execution logic.",
+      "title": "If your business needs AI to feel operational and trustworthy — this is where it starts.",
+      "description": "One idea: guide AI inside the business with clarity, structure, and execution logic.",
       "button": "Contact Tawjeeh AI"
     },
     "footer": {
-      "tagline": "Tawjeeh AI designs products, solutions, research, and resources for guiding AI inside the business.",
+      "tagline": "Products, solutions, research, and resources for guiding AI inside the business.",
       "note": "Built for future brand motion"
     }
   }
