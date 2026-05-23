@@ -76,12 +76,8 @@ export default function Home() {
   }, [t, i18n.language]);
 
   return (
-    <div dir={direction} className="relative overflow-hidden text-start text-[#0F1720]">
-      <div className="brand-aura left-[-120px] top-[90px] h-64 w-64 bg-[#57E6D9]/40" />
-      <div className="brand-aura right-[-80px] top-[420px] h-72 w-72 bg-[#40E0D0]/25 soft-float" />
-      <div className="brand-aura bottom-[240px] left-[12%] h-52 w-52 bg-[#D9F3F0] soft-float-delay" />
-
-      <header className="sticky top-0 z-40 border-b border-white/60 bg-[#F7FCFC]/82 backdrop-blur-xl">
+    <div dir={direction} className="relative text-start text-[#0F1720]">
+      <header className="sticky top-0 z-40 border-b border-[#E8F2F2] bg-[#F7FCFC]">
         <div className="section-shell">
           <nav className="flex items-center justify-between gap-4 py-4">
             <a href="#top" aria-label={t("landing.nav.homeLabel")} className="flex items-center">
@@ -136,7 +132,6 @@ export default function Home() {
         <section className="section-shell pb-20 pt-10 sm:pt-14 lg:pb-28 lg:pt-16">
           <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
             <div className="fade-in-up">
-              <p className="eyebrow mb-5">{t("landing.hero.eyebrow")}</p>
               <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[0.96] tracking-[-0.05em] text-[#0F1720] sm:text-[3.35rem] lg:text-[4.5rem]">
                 {t("landing.hero.title")}
               </h1>
@@ -157,25 +152,19 @@ export default function Home() {
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 {heroMetrics.map((metric) => (
-                  <div key={metric.label} className="brand-card rounded-[24px] p-5 border-l-2 border-l-[#40E0D0]">
-                    <p className="eyebrow">{metric.label}</p>
-                    <p className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#0D2B33]">{metric.value}</p>
-                    <p className="mt-2 text-sm leading-6 text-[#6B7C85]">{metric.description}</p>
+                  <div key={metric.label} className="rounded-[24px] border border-[#D5E7E6] bg-white p-5">
+                    <p className="text-3xl font-semibold tracking-[-0.04em] text-[#0D2B33]">{metric.value}</p>
+                    <p className="mt-2 text-sm font-medium text-[#0F1720]">{metric.label}</p>
+                    <p className="mt-1 text-sm leading-6 text-[#6B7C85]">{metric.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="fade-in-up-delay">
-              <div className="brand-card relative overflow-hidden rounded-[32px] p-4 sm:p-6">
-                <div className="brand-outline" />
-                <div className="absolute inset-0 brand-grid opacity-40" />
-                <div className="relative rounded-[28px] border border-[#D5E7E6] bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(234,248,247,0.98))] p-5 sm:p-6">
+              <div className="rounded-[28px] border border-[#D5E7E6] bg-white p-5 sm:p-6">
                   <div className="flex items-center justify-between gap-4 border-b border-[#E8F2F2] pb-4">
-                    <div>
-                      <p className="eyebrow">{t("landing.hero.panelEyebrow")}</p>
-                      <p className="mt-2 text-lg font-medium text-[#0F1720]">{t("landing.hero.panelTitle")}</p>
-                    </div>
+                    <p className="text-lg font-medium text-[#0F1720]">{t("landing.hero.panelTitle")}</p>
                     <span className="rounded-full bg-[#D9F3F0] px-3 py-1 text-xs font-medium text-[#129A92]">{t("landing.hero.panelBadge")}</span>
                   </div>
 
@@ -212,7 +201,6 @@ export default function Home() {
                       })}
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -237,9 +225,8 @@ export default function Home() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="eyebrow mt-5">{item.tag}</p>
-                    <h3 className="mt-3 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
+                    <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
                   </article>
                 );
               })}
@@ -250,19 +237,16 @@ export default function Home() {
         <section id="solutions" className="section-shell py-20">
           <div className="brand-card overflow-hidden rounded-[36px]">
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative overflow-hidden border-b border-[#E8F2F2] p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                <div className="brand-aura left-[-64px] top-[-64px] h-40 w-40 bg-[#57E6D9]/25" />
-                <div className="relative">
-                  <p className="eyebrow">{t("landing.solutions.eyebrow")}</p>
-                  <h2 className="mt-4 max-w-md text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0D2B33] sm:text-5xl">
-                    {t("landing.solutions.title")}
-                  </h2>
-                  <p className="mt-5 max-w-lg text-base leading-7 text-[#334155] sm:text-lg">{t("landing.solutions.description")}</p>
+              <div className="border-b border-[#E8F2F2] p-8 sm:p-10 lg:border-b-0 lg:border-r">
+                <p className="eyebrow">{t("landing.solutions.eyebrow")}</p>
+                <h2 className="mt-4 max-w-md text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0D2B33] sm:text-5xl">
+                  {t("landing.solutions.title")}
+                </h2>
+                <p className="mt-5 max-w-lg text-base leading-7 text-[#334155] sm:text-lg">{t("landing.solutions.description")}</p>
 
-                  <div className="mt-8 rounded-[28px] border border-[#D5E7E6] bg-white/85 p-5">
-                    <img src={logoLight} alt="Tawjeeh AI" className="h-10 w-auto" />
-                    <p className="mt-4 text-base leading-7 text-[#334155]">{t("landing.solutions.callout")}</p>
-                  </div>
+                <div className="mt-8 rounded-[28px] border border-[#D5E7E6] bg-white p-5">
+                  <img src={logoLight} alt="Tawjeeh AI" className="h-10 w-auto" />
+                  <p className="mt-4 text-base leading-7 text-[#334155]">{t("landing.solutions.callout")}</p>
                 </div>
               </div>
 
@@ -276,8 +260,7 @@ export default function Home() {
                         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
                           <Icon className="h-5 w-5" />
                         </div>
-                        <p className="eyebrow mt-4">{item.tag}</p>
-                        <h3 className="mt-3 text-xl font-medium tracking-[-0.02em] text-[#0F1720]">{item.title}</h3>
+                        <h3 className="mt-4 text-xl font-medium tracking-[-0.02em] text-[#0F1720]">{item.title}</h3>
                         <p className="mt-2 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
                       </div>
                     );
@@ -288,12 +271,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="research" className="relative overflow-hidden bg-[linear-gradient(180deg,#21454D_0%,#0D2B33_100%)] py-24 text-white">
-          <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(87,230,217,0.18),transparent_65%)]" />
-          <div className="brand-aura left-[5%] top-[10%] h-64 w-64 bg-[#40E0D0]/20" />
-          <div className="brand-aura right-[8%] bottom-[10%] h-80 w-80 bg-[#57E6D9]/10 soft-float" />
-
-          <div className="section-shell relative">
+        <section id="research" className="bg-[#0D2B33] py-24 text-white">
+          <div className="section-shell">
             <div className="max-w-2xl">
               <p className="eyebrow !text-[#7CEDE3]">{t("landing.research.eyebrow")}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl">{t("landing.research.title")}</h2>
@@ -301,9 +280,8 @@ export default function Home() {
             </div>
 
             <div className="mt-12 grid items-start gap-8 lg:grid-cols-[1.12fr_0.88fr]">
-              <div className="brand-dark-card relative overflow-hidden rounded-[36px] p-6 sm:p-8">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(87,230,217,0.2),transparent_34%),linear-gradient(rgba(124,237,227,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(124,237,227,0.08)_1px,transparent_1px)] bg-[size:auto,34px_34px,34px_34px]" />
-                <div className="relative">
+              <div className="brand-dark-card rounded-[36px] p-6 sm:p-8">
+                <div>
                   <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div>
                       <p className="text-xs uppercase tracking-[0.18em] text-white/60">{t("landing.research.featuredEyebrow")}</p>
@@ -337,7 +315,8 @@ export default function Home() {
                       </div>
                       <div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
                         <p className="text-xs uppercase tracking-[0.18em] text-white/55">{t("landing.research.stats.labelTwo")}</p>
-                        <div className="mt-4 h-28 rounded-[22px] bg-[linear-gradient(135deg,rgba(183,242,236,0.9),rgba(64,224,208,0.7),rgba(22,184,174,0.55))]" />
+                        <p className="mt-3 text-5xl font-semibold tracking-[-0.05em]">{t("landing.research.stats.valueTwo")}</p>
+                        <p className="mt-2 text-sm text-white/70">{t("landing.research.stats.descriptionTwo")}</p>
                       </div>
                     </div>
                   </div>
@@ -351,8 +330,7 @@ export default function Home() {
                   return (
                     <div key={item.title} className="rounded-[32px] border border-white/10 bg-white/5 p-6">
                       <Icon className="h-5 w-5 text-[#40E0D0]" />
-                      <p className="mt-4 text-xs uppercase tracking-[0.18em] text-white/60">{item.tag}</p>
-                      <h3 className="mt-3 text-xl font-medium text-white">{item.title}</h3>
+                      <h3 className="mt-4 text-xl font-medium text-white">{item.title}</h3>
                       <p className="mt-2 text-sm leading-7 text-white/72">{item.description}</p>
                     </div>
                   );
@@ -379,38 +357,30 @@ export default function Home() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <p className="eyebrow mt-5">{item.tag}</p>
-                    <h3 className="mt-3 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
+                    <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
                   </article>
                 );
               })}
             </div>
           </div>
 
-          <div className="relative mt-10 overflow-hidden rounded-[36px]">
-            <div className="brand-aura left-[-60px] top-[-40px] h-52 w-52 bg-[#57E6D9]/30" />
-            <div className="brand-dark-card relative rounded-[36px] p-8 sm:p-10">
-              <div className="brand-outline" />
-              <div className="absolute inset-0 brand-grid opacity-[0.07]" />
-              <div className="relative flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-                <div className="max-w-xl">
-                  <p className="eyebrow !text-[#7CEDE3]">{t("landing.finalCta.eyebrow")}</p>
-                  <p className="mt-4 text-2xl font-medium leading-9 text-white">{t("landing.finalCta.title")}</p>
-                  <p className="mt-3 text-base leading-7 text-white/72">{t("landing.finalCta.description")}</p>
-                </div>
-                <a href="mailto:hello@tawjeeh.ai" className="primary-cta gap-2 whitespace-nowrap">
-                  {t("landing.finalCta.button")}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
+          <div className="mt-10 brand-dark-card rounded-[36px] p-8 sm:p-10">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-xl">
+                <p className="text-2xl font-medium leading-9 text-white">{t("landing.finalCta.title")}</p>
+                <p className="mt-3 text-base leading-7 text-white/72">{t("landing.finalCta.description")}</p>
               </div>
+              <a href="mailto:hello@tawjeeh.ai" className="primary-cta gap-2 whitespace-nowrap">
+                {t("landing.finalCta.button")}
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="relative border-t border-[#E8F2F2] bg-white/70 py-8 backdrop-blur-sm">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#40E0D0]/50 to-transparent" />
+      <footer className="border-t border-[#E8F2F2] bg-white py-8">
         <div className="section-shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <img src={logoLight} alt="Tawjeeh AI" className="h-8 w-auto" />
