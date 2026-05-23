@@ -300,8 +300,8 @@ export default function Home() {
                           <p className="text-xs uppercase tracking-[0.18em] text-white/55">{t("landing.research.featuredPanelLabel")}</p>
                           <p className="mt-2 text-3xl font-semibold tracking-[-0.04em]">{t("landing.research.featuredPanelTitle")}</p>
                         </div>
-                        <div className="rounded-2xl bg-white/10 p-2">
-                          <img src={mark} alt="" className="logo-motion-target h-12 w-12" />
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10">
+                          <img src={mark} alt="" className="logo-motion-target h-10 w-10 object-contain" />
                         </div>
                       </div>
                       <p className="mt-5 text-sm leading-7 text-white/76">{t("landing.research.featuredPanelDescription")}</p>
