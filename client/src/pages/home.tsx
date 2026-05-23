@@ -4,56 +4,45 @@ import {
   ArrowRight,
   BookOpen,
   Bot,
-  BrainCircuit,
-  BriefcaseBusiness,
-  FlaskConical,
-  Globe,
-  LayoutDashboard,
-  LibraryBig,
-  MoveRight,
-  Network,
-  Radar,
+  Cloud,
+  Code2,
+  Folder,
+  Layers,
+  Mail,
+  Search,
+  Settings2,
   ShieldCheck,
+  Sliders,
   Sparkles,
-  Workflow,
 } from "lucide-react";
 import { useDirection } from "@/hooks/use-direction";
 import logoLight from "@/assets/tawjeeh-logo-light.png";
 import mark from "@/assets/tawjeeh-mark.png";
+import { BubbleBackground } from "@/components/interactive/bubble-background";
+import {
+  IndustriesCarousel,
+  type Industry,
+} from "@/components/interactive/industries-carousel";
 
-type HeroMetric = {
-  value: string;
-  label: string;
-  description: string;
-};
-
-type CardItem = {
-  tag: string;
+type PillarItem = {
   title: string;
   description: string;
 };
 
-type PanelItem = {
+type ResourceItem = {
   title: string;
   description: string;
 };
 
-const productIcons = [LayoutDashboard, Bot, ShieldCheck];
-const solutionIcons = [Workflow, Globe, BriefcaseBusiness, Network];
-const researchIcons = [BrainCircuit, FlaskConical, Radar];
-const resourceIcons = [BookOpen, LibraryBig, Sparkles];
+const pillarIcons = [Sliders, Cloud, ShieldCheck];
 
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [direction, changeLanguage] = useDirection();
-  const isArabic = i18n.language === "ar";
 
-  const heroMetrics = t("landing.hero.metrics", { returnObjects: true }) as HeroMetric[];
-  const heroPanelItems = t("landing.hero.panelItems", { returnObjects: true }) as PanelItem[];
-  const products = t("landing.products.items", { returnObjects: true }) as CardItem[];
-  const solutions = t("landing.solutions.items", { returnObjects: true }) as CardItem[];
-  const research = t("landing.research.items", { returnObjects: true }) as CardItem[];
-  const resources = t("landing.resources.items", { returnObjects: true }) as CardItem[];
+  const pillars = t("landing.pillars.items", { returnObjects: true }) as PillarItem[];
+  const industries = t("landing.industries.items", { returnObjects: true }) as { title: string }[];
+  const resources = t("landing.resources.items", { returnObjects: true }) as ResourceItem[];
 
   useEffect(() => {
     document.title = t("seo.title");
@@ -75,9 +64,23 @@ export default function Home() {
     }
   }, [t, i18n.language]);
 
+  const industryItems: Industry[] = industries.map((industry, idx) => {
+    const palettes = [
+      "radial-gradient(120% 90% at 30% 20%, #0D2B33 0%, #16B8AE 70%, #40E0D0 100%)",
+      "radial-gradient(120% 90% at 70% 30%, #21454D 0%, #16B8AE 60%, #7CEDE3 100%)",
+      "radial-gradient(120% 90% at 30% 70%, #16B8AE 0%, #40E0D0 60%, #D9F3F0 100%)",
+      "radial-gradient(120% 90% at 70% 70%, #0D2B33 0%, #21454D 55%, #40E0D0 100%)",
+      "radial-gradient(120% 90% at 40% 40%, #57E6D9 0%, #16B8AE 50%, #0D2B33 100%)",
+    ];
+    return {
+      title: industry.title,
+      background: palettes[idx % palettes.length],
+    };
+  });
+
   return (
     <div dir={direction} className="relative text-start text-[#0F1720]">
-      <header className="sticky top-0 z-40 border-b border-[#E8F2F2] bg-[#F7FCFC]">
+      <header className="sticky top-0 z-40 border-b border-[#E8F2F2] bg-[#F7FCFC]/95 backdrop-blur">
         <div className="section-shell">
           <nav className="flex items-center justify-between gap-4 py-4">
             <a href="#top" aria-label={t("landing.nav.homeLabel")} className="flex items-center">
@@ -87,13 +90,13 @@ export default function Home() {
             </a>
 
             <div className="hidden items-center gap-8 lg:flex">
-              <a href="#products" className="nav-link">
+              <a href="#pillars" className="nav-link">
                 {t("landing.nav.products")}
               </a>
-              <a href="#solutions" className="nav-link">
+              <a href="#massage" className="nav-link">
                 {t("landing.nav.solutions")}
               </a>
-              <a href="#research" className="nav-link">
+              <a href="#industries" className="nav-link">
                 {t("landing.nav.research")}
               </a>
               <a href="#resources" className="nav-link">
@@ -113,14 +116,16 @@ export default function Home() {
                     onClick={() => changeLanguage(language.code)}
                     aria-pressed={i18n.language === language.code}
                     className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 sm:px-4 ${
-                      i18n.language === language.code ? "bg-[#0D2B33] text-white" : "text-[#334155] hover:text-[#129A92]"
+                      i18n.language === language.code
+                        ? "bg-[#0D2B33] text-white"
+                        : "text-[#334155] hover:text-[#129A92]"
                     }`}
                   >
                     {language.label}
                   </button>
                 ))}
               </div>
-              <a href="#resources" className="primary-cta hidden sm:inline-flex">
+              <a href="#contact" className="dark-cta hidden sm:inline-flex">
                 {t("landing.nav.cta")}
               </a>
             </div>
@@ -129,266 +134,478 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="section-shell pb-20 pt-10 sm:pt-14 lg:pb-28 lg:pt-16">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
-            <div className="fade-in-up">
-              <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[0.96] tracking-[-0.05em] text-[#0F1720] sm:text-[3.35rem] lg:text-[4.5rem]">
-                {t("landing.hero.title")}
-              </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-[#334155] sm:text-lg sm:leading-8">
-                {t("landing.hero.description")}
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#products" className="primary-cta gap-2">
-                  {t("landing.hero.primaryCta")}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href="#solutions" className="secondary-cta gap-2">
-                  {t("landing.hero.secondaryCta")}
-                  <MoveRight className="h-4 w-4" />
-                </a>
-              </div>
-
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {heroMetrics.map((metric) => (
-                  <div key={metric.label} className="rounded-[24px] border border-[#D5E7E6] bg-white p-5">
-                    <p className="text-3xl font-semibold tracking-[-0.04em] text-[#0D2B33]">{metric.value}</p>
-                    <p className="mt-2 text-sm font-medium text-[#0F1720]">{metric.label}</p>
-                    <p className="mt-1 text-sm leading-6 text-[#6B7C85]">{metric.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="fade-in-up-delay">
-              <div className="rounded-[28px] border border-[#D5E7E6] bg-white p-5 sm:p-6">
-                  <div className="flex items-center justify-between gap-4 border-b border-[#E8F2F2] pb-4">
-                    <p className="text-lg font-medium text-[#0F1720]">{t("landing.hero.panelTitle")}</p>
-                    <span className="rounded-full bg-[#D9F3F0] px-3 py-1 text-xs font-medium text-[#129A92]">{t("landing.hero.panelBadge")}</span>
-                  </div>
-
-                  <div className="mt-6 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-                    <div className="brand-dark-card relative overflow-hidden rounded-[28px] p-5 text-white">
-                      <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(87,230,217,0.24),transparent_70%)]" />
-                      <div className="relative">
-                        <div className="inline-flex rounded-2xl bg-white/10 p-2">
-                          <img src={mark} alt="" className="logo-motion-target h-14 w-14" />
-                        </div>
-                        <p className="mt-5 text-sm font-medium uppercase tracking-[0.18em] text-white/65">{t("landing.hero.panelSubhead")}</p>
-                        <p className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em]">{t("landing.hero.panelDescription")}</p>
-                      </div>
-                    </div>
-
-                    <div className="grid gap-4">
-                      {heroPanelItems.map((item, index) => {
-                        const icons = [LayoutDashboard, Workflow, BrainCircuit, BookOpen];
-                        const Icon = icons[index];
-
-                        return (
-                          <div key={item.title} className="rounded-[24px] border border-[#D5E7E6] bg-white/90 p-5">
-                            <div className="flex items-start gap-3">
-                              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
-                                <Icon className="h-5 w-5" />
-                              </div>
-                              <div>
-                                <p className="text-lg font-medium tracking-[-0.02em] text-[#0D2B33]">{item.title}</p>
-                                <p className="mt-2 text-sm leading-6 text-[#6B7C85]">{item.description}</p>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="products" className="section-shell py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
-            <div>
-              <p className="eyebrow">{t("landing.products.eyebrow")}</p>
-              <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">
-                {t("landing.products.title")}
-              </h2>
-              <p className="mt-5 max-w-lg text-base leading-7 text-[#334155] sm:text-lg">{t("landing.products.description")}</p>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-3">
-              {products.map((item, index) => {
-                const Icon = productIcons[index];
-
-                return (
-                  <article key={item.title} className="brand-card rounded-[28px] p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        <section id="solutions" className="section-shell py-20">
-          <div className="brand-card overflow-hidden rounded-[36px]">
-            <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="border-b border-[#E8F2F2] p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                <p className="eyebrow">{t("landing.solutions.eyebrow")}</p>
-                <h2 className="mt-4 max-w-md text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0D2B33] sm:text-5xl">
-                  {t("landing.solutions.title")}
-                </h2>
-                <p className="mt-5 max-w-lg text-base leading-7 text-[#334155] sm:text-lg">{t("landing.solutions.description")}</p>
-
-                <div className="mt-8 rounded-[28px] border border-[#D5E7E6] bg-white p-5">
-                  <img src={logoLight} alt="Tawjeeh AI" className="h-10 w-auto" />
-                  <p className="mt-4 text-base leading-7 text-[#334155]">{t("landing.solutions.callout")}</p>
-                </div>
-              </div>
-
-              <div className="p-8 sm:p-10">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  {solutions.map((item, index) => {
-                    const Icon = solutionIcons[index];
-
-                    return (
-                      <div key={item.title} className="rounded-[28px] border border-[#D5E7E6] bg-white p-5">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <h3 className="mt-4 text-xl font-medium tracking-[-0.02em] text-[#0F1720]">{item.title}</h3>
-                        <p className="mt-2 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="research" className="bg-[#0D2B33] py-24 text-white">
-          <div className="section-shell">
-            <div className="max-w-2xl">
-              <p className="eyebrow !text-[#7CEDE3]">{t("landing.research.eyebrow")}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl">{t("landing.research.title")}</h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">{t("landing.research.description")}</p>
-            </div>
-
-            <div className="mt-12 grid items-start gap-8 lg:grid-cols-[1.12fr_0.88fr]">
-              <div className="brand-dark-card rounded-[36px] p-6 sm:p-8">
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-white/60">{t("landing.research.featuredEyebrow")}</p>
-                      <p className="mt-2 text-xl font-medium text-white">{t("landing.research.featuredTitle")}</p>
-                    </div>
-                    <div className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
-                      <Radar className="h-3.5 w-3.5" />
-                      {t("landing.research.featuredBadge")}
-                    </div>
-                  </div>
-
-                  <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_0.82fr]">
-                    <div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-                      <div className="flex items-center justify-between gap-4">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.18em] text-white/55">{t("landing.research.featuredPanelLabel")}</p>
-                          <p className="mt-2 text-3xl font-semibold tracking-[-0.04em]">{t("landing.research.featuredPanelTitle")}</p>
-                        </div>
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10">
-                          <img src={mark} alt="" className="logo-motion-target h-10 w-10 object-contain" />
-                        </div>
-                      </div>
-                      <p className="mt-5 text-sm leading-7 text-white/76">{t("landing.research.featuredPanelDescription")}</p>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-                        <p className="text-xs uppercase tracking-[0.18em] text-white/55">{t("landing.research.stats.labelOne")}</p>
-                        <p className="mt-3 text-5xl font-semibold tracking-[-0.05em]">{t("landing.research.stats.valueOne")}</p>
-                        <p className="mt-2 text-sm text-white/70">{t("landing.research.stats.descriptionOne")}</p>
-                      </div>
-                      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5">
-                        <p className="text-xs uppercase tracking-[0.18em] text-white/55">{t("landing.research.stats.labelTwo")}</p>
-                        <p className="mt-3 text-5xl font-semibold tracking-[-0.05em]">{t("landing.research.stats.valueTwo")}</p>
-                        <p className="mt-2 text-sm text-white/70">{t("landing.research.stats.descriptionTwo")}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-5">
-                {research.map((item, index) => {
-                  const Icon = researchIcons[index];
-
-                  return (
-                    <div key={item.title} className="rounded-[32px] border border-white/10 bg-white/5 p-6">
-                      <Icon className="h-5 w-5 text-[#40E0D0]" />
-                      <h3 className="mt-4 text-xl font-medium text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-white/72">{item.description}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="resources" className="section-shell py-24">
-          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-            <div>
-              <p className="eyebrow">{t("landing.resources.eyebrow")}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">{t("landing.resources.title")}</h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-[#334155] sm:text-lg">{t("landing.resources.description")}</p>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-3">
-              {resources.map((item, index) => {
-                const Icon = resourceIcons[index];
-
-                return (
-                  <article key={item.title} className="brand-card rounded-[28px] p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="mt-10 brand-dark-card rounded-[36px] p-8 sm:p-10">
-            <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-xl">
-                <p className="text-2xl font-medium leading-9 text-white">{t("landing.finalCta.title")}</p>
-                <p className="mt-3 text-base leading-7 text-white/72">{t("landing.finalCta.description")}</p>
-              </div>
-              <a href="mailto:hello@tawjeeh.ai" className="primary-cta gap-2 whitespace-nowrap">
-                {t("landing.finalCta.button")}
-                <ArrowRight className="h-4 w-4" />
+        {/* ───── Hero ───── */}
+        <section className="section-shell pb-16 pt-12 sm:pt-16 lg:pb-24 lg:pt-20">
+          <div className="mx-auto max-w-3xl text-center fade-in-up">
+            <h1 className="font-display text-[3.2rem] font-semibold leading-[1.02] tracking-[-0.05em] text-[#0F1720] sm:text-[4.4rem] lg:text-[5.4rem]">
+              {t("landing.hero.title")}
+            </h1>
+            <p className="mt-6 text-base leading-7 text-[#334155] sm:text-lg">
+              {t("landing.hero.subtitle")}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+              <a href="#contact" className="dark-cta gap-2">
+                {t("landing.hero.primaryCta")}
+              </a>
+              <a href="#pillars" className="inline-flex items-center gap-2 border-b border-[#0F1720] pb-1 text-sm font-semibold text-[#0F1720] transition hover:text-[#16B8AE] hover:border-[#16B8AE]">
+                {t("landing.hero.secondaryCta")}
               </a>
             </div>
+          </div>
+
+          <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-2 fade-in-up-delay">
+            {/* Left: bubble background + agent card overlay */}
+            <div className="relative overflow-hidden rounded-[32px] border border-[#D5E7E6] min-h-[420px] sm:min-h-[480px]">
+              <BubbleBackground
+                variant="light"
+                intensity="vivid"
+                className="absolute inset-0 h-full w-full"
+              />
+              {/* Floating mark — the SVG that "plays" inside the bubble bg */}
+              <div className="absolute -right-10 top-10 opacity-80">
+                <img
+                  src={mark}
+                  alt=""
+                  className="h-44 w-44 sm:h-56 sm:w-56 logo-motion-target drop-shadow-[0_20px_50px_rgba(13,43,51,0.25)]"
+                />
+              </div>
+
+              {/* Product card overlay */}
+              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8">
+                <div className="rounded-[20px] border border-white/10 bg-[#0D2B33]/95 p-5 text-white shadow-[0_30px_80px_rgba(13,43,51,0.25)] backdrop-blur">
+                  <div className="flex items-center gap-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-[10px] bg-white">
+                      <span className="text-sm font-semibold text-[#0D2B33]">M</span>
+                    </div>
+                    <p className="text-base font-medium">{t("landing.hero.agentName")}</p>
+                  </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
+                    {[Folder, Cloud, Bot].map((Icon, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5"
+                      >
+                        <Icon className="h-3.5 w-3.5 text-[#7CEDE3]" />
+                        <span className="text-[10px] font-semibold tracking-[0.14em] text-white/70">
+                          • {t("landing.hero.agentStatus")}
+                        </span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: lifestyle picture placeholder */}
+            <div className="relative overflow-hidden rounded-[32px] border border-[#D5E7E6] min-h-[420px] sm:min-h-[480px]">
+              <div className="absolute inset-0 bg-[linear-gradient(160deg,#0D2B33_0%,#16B8AE_60%,#40E0D0_100%)]" />
+              <svg
+                aria-hidden
+                viewBox="0 0 400 480"
+                preserveAspectRatio="xMidYMid slice"
+                className="absolute inset-0 h-full w-full mix-blend-screen opacity-40"
+              >
+                <defs>
+                  <radialGradient id="hero-glow" cx="60%" cy="35%" r="55%">
+                    <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
+                    <stop offset="60%" stopColor="#FFFFFF" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                <rect width="400" height="480" fill="url(#hero-glow)" />
+              </svg>
+              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
+                  {t("landing.hero.captionEyebrow")}
+                </p>
+                <p className="mt-3 max-w-md text-2xl font-medium leading-snug tracking-[-0.02em]">
+                  {t("landing.hero.caption")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── Pillars: Customization / Deployment / Security ───── */}
+        <section id="pillars" className="section-shell py-20 lg:py-28">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">{t("landing.pillars.eyebrow")}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">
+              {t("landing.pillars.title")}
+            </h2>
+            <p className="mt-5 text-base leading-7 text-[#334155] sm:text-lg">
+              {t("landing.pillars.description")}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {pillars.map((item, index) => {
+              const Icon = pillarIcons[index] ?? Sliders;
+              return (
+                <article
+                  key={item.title}
+                  className="brand-card rounded-[28px] p-7"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-6 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ───── Massage — sovereign workplace (full-page background) ───── */}
+        <section id="massage" className="relative isolate min-h-[92vh] overflow-hidden text-white">
+          {/* Layered background — soft brand gradient + abstract terrain */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,#072027_0%,#0D2B33_40%,#21454D_85%)]" />
+            <svg
+              aria-hidden
+              viewBox="0 0 1440 900"
+              preserveAspectRatio="xMidYMid slice"
+              className="absolute inset-0 h-full w-full"
+            >
+              <defs>
+                <radialGradient id="m-glow-1" cx="20%" cy="40%" r="50%">
+                  <stop offset="0%" stopColor="#16B8AE" stopOpacity="0.55" />
+                  <stop offset="100%" stopColor="#16B8AE" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="m-glow-2" cx="80%" cy="20%" r="40%">
+                  <stop offset="0%" stopColor="#40E0D0" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#40E0D0" stopOpacity="0" />
+                </radialGradient>
+                <linearGradient id="m-ridge" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#0D2B33" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#072027" stopOpacity="0.8" />
+                </linearGradient>
+              </defs>
+              <rect width="1440" height="900" fill="url(#m-glow-1)" />
+              <rect width="1440" height="900" fill="url(#m-glow-2)" />
+              {/* Organic ridge lines mimicking terrain */}
+              <path d="M0,620 C200,560 380,680 600,600 C820,520 1040,640 1260,560 L1440,580 L1440,900 L0,900 Z" fill="#0A2229" opacity="0.9" />
+              <path d="M0,720 C220,660 420,780 660,700 C880,620 1100,740 1320,680 L1440,700 L1440,900 L0,900 Z" fill="#072027" opacity="0.9" />
+              <rect width="1440" height="900" fill="url(#m-ridge)" />
+            </svg>
+          </div>
+
+          <div className="section-shell relative flex min-h-[92vh] flex-col py-16 lg:py-24">
+            {/* Logo + label */}
+            <div className="flex items-center gap-3">
+              <img src={mark} alt="" className="h-9 w-9 logo-motion-target" />
+              <span className="text-2xl font-semibold tracking-[-0.02em] text-white">
+                {t("landing.massage.brand")}
+              </span>
+            </div>
+
+            <div className="mt-12 grid flex-1 items-center gap-12 lg:mt-16 lg:grid-cols-[0.95fr_1.05fr]">
+              {/* Left: copy + CTA */}
+              <div className="max-w-xl">
+                <h2 className="font-display text-[3rem] font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-[3.8rem]">
+                  {t("landing.massage.title")}
+                </h2>
+                <p className="mt-6 max-w-lg text-base leading-7 text-white/75 sm:text-lg">
+                  {t("landing.massage.description")}
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0D2B33] transition hover:bg-[#D9F3F0]"
+                >
+                  {t("landing.massage.cta")}
+                </a>
+              </div>
+
+              {/* Right: product screenshot placeholder */}
+              <div className="relative">
+                <div className="rounded-[24px] border border-white/10 bg-[#0D2B33]/85 p-5 shadow-[0_60px_120px_rgba(0,0,0,0.35)] backdrop-blur">
+                  <div className="flex gap-4">
+                    {/* Sidebar */}
+                    <div className="flex w-12 shrink-0 flex-col items-center gap-4 rounded-[16px] bg-[#072027] py-4">
+                      {[Layers, Bot, Sparkles, Folder, Settings2].map((Icon, i) => (
+                        <button
+                          key={i}
+                          className={`grid h-8 w-8 place-items-center rounded-full ${
+                            i === 2 ? "bg-white text-[#0D2B33]" : "text-white/55 hover:text-white"
+                          }`}
+                          aria-hidden
+                        >
+                          <Icon className="h-4 w-4" />
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Main panel */}
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <p className="text-xl font-semibold text-white">
+                              {t("landing.massage.product.title")}
+                            </p>
+                            <span className="rounded-md bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/80">
+                              {t("landing.massage.product.badge")}
+                            </span>
+                          </div>
+                          <p className="mt-1 text-xs text-white/55">
+                            {t("landing.massage.product.subtitle")}
+                          </p>
+                        </div>
+                        <button className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5 text-[11px] text-white/80">
+                          + {t("landing.massage.product.new")}
+                        </button>
+                      </div>
+
+                      <div className="mt-4 flex items-center gap-5 border-b border-white/10 text-xs text-white/55">
+                        {(["discovery", "runs", "myBuilds", "monitor"] as const).map((key, i) => (
+                          <span
+                            key={key}
+                            className={`pb-2 ${i === 0 ? "border-b-2 border-white text-white" : ""}`}
+                          >
+                            {t(`landing.massage.product.tabs.${key}`)}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="mt-3 flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/55">
+                        <Search className="h-3.5 w-3.5" />
+                        <span>{t("landing.massage.product.search")}</span>
+                      </div>
+
+                      <div className="mt-3 grid grid-cols-2 gap-3">
+                        {(t("landing.massage.product.cards", { returnObjects: true }) as { title: string; description: string; by: string }[]).map(
+                          (card) => (
+                            <div
+                              key={card.title}
+                              className="rounded-[14px] border border-white/10 bg-[#0A2229] p-3"
+                            >
+                              <div className="flex gap-1.5">
+                                <span className="grid h-6 w-6 place-items-center rounded-md bg-white/10 text-white/70">
+                                  <Folder className="h-3 w-3" />
+                                </span>
+                                <span className="grid h-6 w-6 place-items-center rounded-md bg-white/10 text-white/70">
+                                  <Sparkles className="h-3 w-3" />
+                                </span>
+                              </div>
+                              <p className="mt-3 text-sm font-semibold text-white">{card.title}</p>
+                              <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-white/55">
+                                {card.description}
+                              </p>
+                              <p className="mt-3 text-[10px] text-white/40">{card.by}</p>
+                            </div>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── Industries carousel ───── */}
+        <section id="industries" className="section-shell py-20 lg:py-28">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#0F1720] sm:text-4xl">
+              {t("landing.industries.title")}
+            </h2>
+          </div>
+
+          <IndustriesCarousel
+            items={industryItems}
+            ariaLabel={t("landing.industries.title")}
+            direction={direction === "rtl" ? "rtl" : "ltr"}
+          />
+        </section>
+
+        {/* ───── Developer resources ───── */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#0D2B33_0%,#16B8AE_50%,#40E0D0_100%)]" />
+          <BubbleBackground
+            variant="dusk"
+            className="absolute inset-0 -z-10 h-full w-full opacity-80"
+          />
+          <div className="section-shell grid gap-10 py-20 text-white lg:grid-cols-2 lg:py-28">
+            <div className="flex flex-col justify-end">
+              <h2 className="font-display text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
+                {t("landing.developer.title")}
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-7 text-white/75 sm:text-lg">
+                {t("landing.developer.description")}
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0D2B33] transition hover:bg-[#D9F3F0]"
+                >
+                  {t("landing.developer.cta")}
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white"
+                >
+                  {t("landing.developer.linkCta")}
+                  <ArrowRight className="h-4 w-4 -rotate-45" />
+                </a>
+              </div>
+            </div>
+
+            {/* Docs mockup */}
+            <div className="self-end overflow-hidden rounded-tl-[28px] border border-white/10 bg-white text-[#0F1720] shadow-[0_40px_100px_rgba(0,0,0,0.35)]">
+              <div className="flex items-center gap-3 border-b border-[#E8F2F2] px-5 py-3">
+                <div className="flex items-center gap-2">
+                  <img src={mark} alt="" className="h-5 w-5" />
+                  <span className="text-sm font-semibold">{t("landing.developer.docsTitle")}</span>
+                </div>
+                <span className="ml-auto rounded-md border border-[#D5E7E6] px-2 py-0.5 text-[10px] font-semibold text-[#6B7C85]">
+                  v2 API
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 border-b border-[#E8F2F2] px-5 py-3 text-[11px] font-semibold">
+                {(t("landing.developer.docsTabs", { returnObjects: true }) as string[]).map(
+                  (tab, idx) => (
+                    <span
+                      key={tab}
+                      className={`rounded-full border px-3 py-1 ${
+                        idx === 0 ? "border-[#0D2B33] bg-[#0D2B33] text-white" : "border-[#D5E7E6] bg-white text-[#334155]"
+                      }`}
+                    >
+                      {tab}
+                    </span>
+                  ),
+                )}
+              </div>
+              <div className="grid grid-cols-[180px_1fr]">
+                <aside className="border-r border-[#E8F2F2] px-4 py-5 text-xs">
+                  <p className="font-semibold text-[#0D2B33]">{t("landing.developer.docsNav.getStartedLabel")}</p>
+                  <ul className="mt-3 space-y-2 text-[#334155]">
+                    {(t("landing.developer.docsNav.getStarted", { returnObjects: true }) as string[]).map(
+                      (entry, idx) => (
+                        <li
+                          key={entry}
+                          className={
+                            idx === 2 ? "rounded-md bg-[#EAF8F7] px-2 py-1 font-semibold text-[#0D2B33]" : ""
+                          }
+                        >
+                          {entry}
+                        </li>
+                      ),
+                    )}
+                  </ul>
+                  <p className="mt-5 font-semibold text-[#0D2B33]">{t("landing.developer.docsNav.modelsLabel")}</p>
+                  <ul className="mt-3 space-y-2 text-[#334155]">
+                    {(t("landing.developer.docsNav.models", { returnObjects: true }) as string[]).map(
+                      (entry) => (
+                        <li key={entry}>{entry}</li>
+                      ),
+                    )}
+                  </ul>
+                </aside>
+                <div className="p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#6B7C85]">
+                    {t("landing.developer.docsBody.eyebrow")}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[#0D2B33]">
+                    {t("landing.developer.docsBody.title")}
+                  </h3>
+                  <p className="mt-1 text-xs text-[#6B7C85]">{t("landing.developer.docsBody.subtitle")}</p>
+                  <div className="mt-4 flex items-center gap-3 text-xs font-semibold text-[#6B7C85]">
+                    <span className="border-b-2 border-[#0D2B33] pb-1 text-[#0D2B33]">Python</span>
+                    <span className="pb-1">TypeScript</span>
+                    <span className="pb-1">Java</span>
+                    <span className="pb-1">Go</span>
+                  </div>
+                  <pre className="mt-3 rounded-[12px] bg-[#0D2B33] p-4 text-[11px] leading-relaxed text-[#7CEDE3]">
+                    <code>
+                      <span className="text-white/60">1</span>{"  "}<span className="text-[#40E0D0]">import</span> tawjeeh{"\n"}
+                      <span className="text-white/60">2</span>{"\n"}
+                      <span className="text-white/60">3</span>{"  "}client = tawjeeh.<span className="text-[#40E0D0]">ClientV2</span>(api_key=<span className="text-[#7CEDE3]">"YOUR_API_KEY"</span>)
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ───── Final CTA — bubble bg, full width ───── */}
+        <section id="contact" className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10">
+            <BubbleBackground variant="light" intensity="vivid" className="h-full w-full" />
+          </div>
+          <div className="section-shell flex min-h-[60vh] flex-col items-center justify-center py-24 text-center lg:py-32">
+            <h2 className="font-display text-[2.8rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[#0F1720] sm:text-[4rem] lg:text-[4.6rem]">
+              {t("landing.finalCta.title")}
+            </h2>
+            <a
+              href="mailto:hello@tawjeeh.ai"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-[#0D2B33] shadow-[0_20px_50px_rgba(13,43,51,0.15)] transition hover:bg-[#D9F3F0]"
+            >
+              {t("landing.finalCta.button")}
+            </a>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-[#E8F2F2] bg-white py-8">
-        <div className="section-shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <img src={logoLight} alt="Tawjeeh AI" className="h-8 w-auto" />
-            <p className="max-w-lg text-sm text-[#6B7C85]">{t("landing.footer.tagline")}</p>
+      <footer className="border-t border-[#E8F2F2] bg-white py-12">
+        <div className="section-shell">
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
+            <div>
+              <img src={logoLight} alt="Tawjeeh AI" className="h-8 w-auto" />
+              <p className="mt-4 max-w-sm text-sm leading-7 text-[#6B7C85]">
+                {t("landing.footer.tagline")}
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-3">
+              {(t("landing.footer.columns", { returnObjects: true }) as { title: string; links: string[] }[]).map(
+                (column) => (
+                  <div key={column.title}>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0D2B33]">
+                      {column.title}
+                    </p>
+                    <ul className="mt-4 space-y-2 text-sm text-[#334155]">
+                      {column.links.map((link) => (
+                        <li key={link}>
+                          <a href="#" className="hover:text-[#16B8AE]">
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ),
+              )}
+            </div>
           </div>
-          <p className={`text-xs uppercase tracking-[0.16em] text-[#6B7C85] ${isArabic ? "font-[Alexandria]" : "font-mono"}`}>
-            {t("landing.footer.note")}
-          </p>
+
+          <div className="mt-10 flex flex-col gap-4 border-t border-[#E8F2F2] pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-sm text-[#6B7C85]">{t("landing.footer.note")}</p>
+            <form className="flex w-full max-w-md items-center gap-2 sm:w-auto">
+              <label htmlFor="newsletter" className="sr-only">
+                {t("landing.footer.newsletterLabel")}
+              </label>
+              <div className="flex flex-1 items-center gap-2 rounded-full border border-[#D5E7E6] bg-white px-4 py-2.5">
+                <Mail className="h-4 w-4 text-[#6B7C85]" />
+                <input
+                  id="newsletter"
+                  type="email"
+                  placeholder={t("landing.footer.newsletterPlaceholder") as string}
+                  className="w-full bg-transparent text-sm text-[#0F1720] placeholder:text-[#6B7C85] focus:outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="rounded-full bg-[#0D2B33] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#21454D]"
+              >
+                {t("landing.footer.newsletterCta")}
+              </button>
+            </form>
+          </div>
         </div>
       </footer>
     </div>
