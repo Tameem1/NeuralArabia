@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useDirection } from "@/hooks/use-direction";
 import logoLight from "@/assets/tawjeeh-logo-light.png";
+import wordmark from "@/assets/tawjeeh-wordmark.png";
 import mark from "@/assets/tawjeeh-mark.png";
 import { BubbleBackground } from "@/components/interactive/bubble-background";
 import {
@@ -150,18 +151,14 @@ export default function Home() {
             <a
               href="#top"
               aria-label={t("landing.nav.homeLabel")}
-              className="flex items-center gap-2.5"
+              className="flex items-center"
             >
-              {/* Wordmark = teal T-mark (whitespace-free PNG) + crisp text alongside */}
+              {/* Tight-cropped wordmark PNG (no whitespace) — actual brand asset, not typed */}
               <img
-                src={mark}
-                alt=""
-                className="logo-motion-target h-8 w-8 sm:h-9 sm:w-9"
+                src={wordmark}
+                alt="Tawjeeh AI"
+                className="logo-motion-target h-7 w-auto sm:h-8"
               />
-              <span className="font-display text-xl font-semibold tracking-[-0.02em] text-[#0F1720] sm:text-[1.35rem]">
-                tawjeeh{" "}
-                <span className="font-normal text-[#0F1720]">AI</span>
-              </span>
             </a>
 
             <div className="hidden items-center gap-8 lg:flex">
