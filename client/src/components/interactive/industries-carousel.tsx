@@ -36,9 +36,14 @@ export function IndustriesCarousel({ items, ariaLabel, direction = "ltr" }: Indu
 
       const trackWidth = track.scrollWidth;
       const viewport = container.clientWidth;
+      if (!viewport || !Number.isFinite(viewport)) {
+        setTotalPages(1);
+        return;
+      }
       const overflow = Math.max(0, trackWidth - viewport);
+      const pages = Math.max(1, Math.min(20, Math.ceil((overflow + viewport) / viewport)));
       setMaxOffset(overflow);
-      setTotalPages(Math.max(1, Math.ceil((overflow + viewport) / viewport)));
+      setTotalPages(pages);
       setPage(0);
       controls.start({ x: 0, transition: { duration: 0 } });
     };
@@ -107,7 +112,9 @@ export function IndustriesCarousel({ items, ariaLabel, direction = "ltr" }: Indu
       </div>
 
       <div className="mt-8 flex w-full max-w-md items-center gap-1.5">
-        {Array.from({ length: totalPages }).map((_, idx) => {
+        {Array.from({
+          length: Number.isFinite(totalPages) ? Math.max(1, Math.min(20, totalPages)) : 1,
+        }).map((_, idx) => {
           const active = idx === page;
           return (
             <button
