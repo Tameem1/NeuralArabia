@@ -2,17 +2,13 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
-  BookOpen,
   Bot,
   Cloud,
-  Code2,
   Folder,
   Layers,
   Mail,
   Search,
   Settings2,
-  ShieldCheck,
-  Sliders,
   Sparkles,
 } from "lucide-react";
 import { useDirection } from "@/hooks/use-direction";
@@ -27,14 +23,76 @@ import {
 type PillarItem = {
   title: string;
   description: string;
+  href?: string;
 };
 
-type ResourceItem = {
-  title: string;
-  description: string;
-};
+/** Cohere-style line-art icons: thin strokes, brand petrol-ink color. */
+function SecurityIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <rect x="6" y="6" width="52" height="52" transform="rotate(45 32 32)" />
+      <rect x="16" y="16" width="32" height="32" transform="rotate(45 32 32)" />
+      <rect x="24" y="24" width="16" height="16" transform="rotate(45 32 32)" />
+      <rect x="28" y="28" width="8" height="8" />
+    </svg>
+  );
+}
 
-const pillarIcons = [Sliders, Cloud, ShieldCheck];
+function DeploymentIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <circle cx="32" cy="32" r="24" />
+      <ellipse cx="32" cy="32" rx="24" ry="10" />
+      <ellipse cx="32" cy="32" rx="14" ry="22" />
+      <ellipse cx="32" cy="32" rx="22" ry="14" />
+      <path d="M8 32 H56" />
+      <path d="M32 8 V56" />
+    </svg>
+  );
+}
+
+function CustomizationIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <rect x="8" y="8" width="48" height="48" />
+      <path d="M8 20 H56" />
+      <path d="M8 32 H56" />
+      <path d="M8 44 H56" />
+      <path d="M20 8 V56" />
+      <path d="M32 8 V56" />
+      <path d="M44 8 V56" />
+    </svg>
+  );
+}
+
+const pillarIcons = [SecurityIcon, DeploymentIcon, CustomizationIcon];
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -42,7 +100,6 @@ export default function Home() {
 
   const pillars = t("landing.pillars.items", { returnObjects: true }) as PillarItem[];
   const industries = t("landing.industries.items", { returnObjects: true }) as { title: string }[];
-  const resources = t("landing.resources.items", { returnObjects: true }) as ResourceItem[];
 
   useEffect(() => {
     document.title = t("seo.title");
@@ -64,28 +121,46 @@ export default function Home() {
     }
   }, [t, i18n.language]);
 
-  const industryItems: Industry[] = industries.map((industry, idx) => {
-    const palettes = [
-      "radial-gradient(120% 90% at 30% 20%, #0D2B33 0%, #16B8AE 70%, #40E0D0 100%)",
-      "radial-gradient(120% 90% at 70% 30%, #21454D 0%, #16B8AE 60%, #7CEDE3 100%)",
-      "radial-gradient(120% 90% at 30% 70%, #16B8AE 0%, #40E0D0 60%, #D9F3F0 100%)",
-      "radial-gradient(120% 90% at 70% 70%, #0D2B33 0%, #21454D 55%, #40E0D0 100%)",
-      "radial-gradient(120% 90% at 40% 40%, #57E6D9 0%, #16B8AE 50%, #0D2B33 100%)",
-    ];
-    return {
-      title: industry.title,
-      background: palettes[idx % palettes.length],
-    };
-  });
+  // Curated stock photography for each industry (Unsplash, hot-linked + tinted).
+  // Order matches landing.industries.items in the locale files:
+  // Financial Services, Accounting, Technology, Manufacturing, Linguistics.
+  const industryPhotos = [
+    // Financial Services — modern skyscrapers at dusk
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
+    // Accounting — tax forms, calculator, ledger
+    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    // Technology — circuit board / silicon
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+    // Manufacturing — industrial workshop / machinery
+    "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80",
+    // Linguistics — open books / typography
+    "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=80",
+  ];
+
+  const industryItems: Industry[] = industries.map((industry, idx) => ({
+    title: industry.title,
+    background: `linear-gradient(180deg, rgba(13,43,51,0.05) 0%, rgba(13,43,51,0.65) 100%), url(${industryPhotos[idx % industryPhotos.length]}) center/cover no-repeat`,
+  }));
 
   return (
     <div dir={direction} className="relative text-start text-[#0F1720]">
       <header className="sticky top-0 z-40 border-b border-[#E8F2F2] bg-[#F7FCFC]/95 backdrop-blur">
         <div className="section-shell">
           <nav className="flex items-center justify-between gap-4 py-4">
-            <a href="#top" aria-label={t("landing.nav.homeLabel")} className="flex items-center">
-              <span className="rounded-[20px] border border-[#D5E7E6] bg-white/80 p-2 shadow-[0_12px_30px_rgba(13,43,51,0.06)]">
-                <img src={mark} alt="" className="logo-motion-target h-11 w-11 sm:h-12 sm:w-12" />
+            <a
+              href="#top"
+              aria-label={t("landing.nav.homeLabel")}
+              className="flex items-center gap-2.5"
+            >
+              {/* Wordmark = teal T-mark (whitespace-free PNG) + crisp text alongside */}
+              <img
+                src={mark}
+                alt=""
+                className="logo-motion-target h-8 w-8 sm:h-9 sm:w-9"
+              />
+              <span className="font-display text-xl font-semibold tracking-[-0.02em] text-[#0F1720] sm:text-[1.35rem]">
+                tawjeeh{" "}
+                <span className="font-normal text-[#0F1720]">AI</span>
               </span>
             </a>
 
@@ -93,7 +168,7 @@ export default function Home() {
               <a href="#pillars" className="nav-link">
                 {t("landing.nav.products")}
               </a>
-              <a href="#massage" className="nav-link">
+              <a href="#masar" className="nav-link">
                 {t("landing.nav.solutions")}
               </a>
               <a href="#industries" className="nav-link">
@@ -226,41 +301,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ───── Pillars: Customization / Deployment / Security ───── */}
-        <section id="pillars" className="section-shell py-20 lg:py-28">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow">{t("landing.pillars.eyebrow")}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">
-              {t("landing.pillars.title")}
-            </h2>
-            <p className="mt-5 text-base leading-7 text-[#334155] sm:text-lg">
-              {t("landing.pillars.description")}
-            </p>
-          </div>
+        {/* ───── Pillars — Cohere inline layout: line-art icon + title + copy + learn more ───── */}
+        <section id="pillars" className="section-shell py-24 lg:py-32">
+          <h2 className="mx-auto max-w-4xl text-center font-display text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl lg:text-[3.6rem]">
+            {t("landing.pillars.title")}
+          </h2>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10 lg:mt-20 lg:gap-14">
             {pillars.map((item, index) => {
-              const Icon = pillarIcons[index] ?? Sliders;
+              const Icon = pillarIcons[index] ?? SecurityIcon;
               return (
-                <article
-                  key={item.title}
-                  className="brand-card rounded-[28px] p-7"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF8F7] text-[#129A92]">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-6 text-2xl font-medium leading-tight tracking-[-0.03em] text-[#0F1720]">
+                <div key={item.title} className="flex flex-col">
+                  <Icon className="h-16 w-16 text-[#0D2B33]" />
+                  <h3 className="mt-7 text-2xl font-medium tracking-[-0.02em] text-[#0F1720]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#6B7C85]">{item.description}</p>
-                </article>
+                  <p className="mt-3 max-w-sm text-sm leading-7 text-[#334155]">
+                    {item.description}
+                  </p>
+                  <a
+                    href={item.href ?? "#contact"}
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#0F1720] transition hover:text-[#16B8AE]"
+                  >
+                    {t("landing.pillars.learnMore")}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
               );
             })}
           </div>
         </section>
 
-        {/* ───── Massage — sovereign workplace (full-page background) ───── */}
-        <section id="massage" className="relative isolate min-h-[92vh] overflow-hidden text-white">
+        {/* ───── Masar — sovereign workplace (full-page background) ───── */}
+        <section id="masar" className="relative isolate min-h-[92vh] overflow-hidden text-white">
           {/* Layered background — soft brand gradient + abstract terrain */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-[linear-gradient(135deg,#072027_0%,#0D2B33_40%,#21454D_85%)]" />
@@ -298,7 +371,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img src={mark} alt="" className="h-9 w-9 logo-motion-target" />
               <span className="text-2xl font-semibold tracking-[-0.02em] text-white">
-                {t("landing.massage.brand")}
+                {t("landing.masar.brand")}
               </span>
             </div>
 
@@ -306,16 +379,16 @@ export default function Home() {
               {/* Left: copy + CTA */}
               <div className="max-w-xl">
                 <h2 className="font-display text-[3rem] font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-[3.8rem]">
-                  {t("landing.massage.title")}
+                  {t("landing.masar.title")}
                 </h2>
                 <p className="mt-6 max-w-lg text-base leading-7 text-white/75 sm:text-lg">
-                  {t("landing.massage.description")}
+                  {t("landing.masar.description")}
                 </p>
                 <a
                   href="#contact"
                   className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0D2B33] transition hover:bg-[#D9F3F0]"
                 >
-                  {t("landing.massage.cta")}
+                  {t("landing.masar.cta")}
                 </a>
               </div>
 
@@ -344,18 +417,18 @@ export default function Home() {
                         <div>
                           <div className="flex items-center gap-2">
                             <p className="text-xl font-semibold text-white">
-                              {t("landing.massage.product.title")}
+                              {t("landing.masar.product.title")}
                             </p>
                             <span className="rounded-md bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/80">
-                              {t("landing.massage.product.badge")}
+                              {t("landing.masar.product.badge")}
                             </span>
                           </div>
                           <p className="mt-1 text-xs text-white/55">
-                            {t("landing.massage.product.subtitle")}
+                            {t("landing.masar.product.subtitle")}
                           </p>
                         </div>
                         <button className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1.5 text-[11px] text-white/80">
-                          + {t("landing.massage.product.new")}
+                          + {t("landing.masar.product.new")}
                         </button>
                       </div>
 
@@ -365,18 +438,18 @@ export default function Home() {
                             key={key}
                             className={`pb-2 ${i === 0 ? "border-b-2 border-white text-white" : ""}`}
                           >
-                            {t(`landing.massage.product.tabs.${key}`)}
+                            {t(`landing.masar.product.tabs.${key}`)}
                           </span>
                         ))}
                       </div>
 
                       <div className="mt-3 flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/55">
                         <Search className="h-3.5 w-3.5" />
-                        <span>{t("landing.massage.product.search")}</span>
+                        <span>{t("landing.masar.product.search")}</span>
                       </div>
 
                       <div className="mt-3 grid grid-cols-2 gap-3">
-                        {(t("landing.massage.product.cards", { returnObjects: true }) as { title: string; description: string; by: string }[]).map(
+                        {(t("landing.masar.product.cards", { returnObjects: true }) as { title: string; description: string; by: string }[]).map(
                           (card) => (
                             <div
                               key={card.title}
