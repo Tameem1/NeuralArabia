@@ -305,13 +305,6 @@ export default function Home() {
                   <p className="mt-3 max-w-sm text-sm leading-7 text-[#334155]">
                     {item.description}
                   </p>
-                  <a
-                    href={item.href ?? "#contact"}
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-[#0F1720] transition hover:text-[#16B8AE]"
-                  >
-                    {t("landing.pillars.learnMore")}
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
                 </div>
               );
             })}
