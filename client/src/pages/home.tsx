@@ -363,7 +363,11 @@ export default function Home() {
           <div className="section-shell relative flex min-h-[92vh] flex-col py-16 lg:py-24">
             {/* Logo + label */}
             <div className="flex items-center gap-3">
-              <img src={mark} alt="" className="h-9 w-9 logo-motion-target" />
+              <img
+                src={mark}
+                alt=""
+                className="h-9 w-9 logo-motion-target [filter:brightness(0)_invert(1)]"
+              />
               <span className="text-2xl font-semibold tracking-[-0.02em] text-white">
                 {t("landing.masar.brand")}
               </span>
