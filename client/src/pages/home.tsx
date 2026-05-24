@@ -15,6 +15,10 @@ import { useDirection } from "@/hooks/use-direction";
 import logoLight from "@/assets/tawjeeh-logo-light.png";
 import wordmark from "@/assets/tawjeeh-wordmark.png";
 import mark from "@/assets/tawjeeh-mark.png";
+// Brand glass-blob renders (sized per slot — see image filename = export size)
+import bgCard from "@/assets/backgrounds/1440x1152.jpg";
+import bgCardAlt from "@/assets/backgrounds/2000x1250.jpg";
+import bgFull from "@/assets/backgrounds/2560x1440.jpg";
 import { BubbleBackground } from "@/components/interactive/bubble-background";
 import {
   IndustriesCarousel,
@@ -226,12 +230,13 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-2 fade-in-up-delay">
-            {/* Left: bubble background + agent card overlay */}
+            {/* Left: glass-blob backdrop + agent card overlay */}
             <div className="relative overflow-hidden rounded-[32px] border border-[#D5E7E6] min-h-[420px] sm:min-h-[480px]">
-              <BubbleBackground
-                variant="light"
-                intensity="vivid"
-                className="absolute inset-0 h-full w-full"
+              <img
+                src={bgCard}
+                alt=""
+                aria-hidden
+                className="absolute inset-0 h-full w-full object-cover"
               />
               {/* Floating mark — the SVG that "plays" inside the bubble bg */}
               <div className="absolute -right-10 top-10 opacity-80">
@@ -268,24 +273,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: lifestyle picture placeholder */}
+            {/* Right: glass-blob backdrop with brand caption */}
             <div className="relative overflow-hidden rounded-[32px] border border-[#D5E7E6] min-h-[420px] sm:min-h-[480px]">
-              <div className="absolute inset-0 bg-[linear-gradient(160deg,#0D2B33_0%,#16B8AE_60%,#40E0D0_100%)]" />
-              <svg
+              <img
+                src={bgCardAlt}
+                alt=""
                 aria-hidden
-                viewBox="0 0 400 480"
-                preserveAspectRatio="xMidYMid slice"
-                className="absolute inset-0 h-full w-full mix-blend-screen opacity-40"
-              >
-                <defs>
-                  <radialGradient id="hero-glow" cx="60%" cy="35%" r="55%">
-                    <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8" />
-                    <stop offset="60%" stopColor="#FFFFFF" stopOpacity="0.1" />
-                    <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-                <rect width="400" height="480" fill="url(#hero-glow)" />
-              </svg>
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              {/* Bottom-anchored gradient veil so the white caption stays legible */}
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,43,51,0)_45%,rgba(13,43,51,0.55)_100%)]" />
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
                   {t("landing.hero.captionEyebrow")}
@@ -602,18 +599,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ───── Final CTA — bubble bg, full width ───── */}
+        {/* ───── Final CTA — full-bleed glass-blob backdrop ───── */}
         <section id="contact" className="relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <BubbleBackground variant="light" intensity="vivid" className="h-full w-full" />
-          </div>
+          <img
+            src={bgFull}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 -z-10 h-full w-full object-cover"
+          />
+          {/* Subtle dark vignette only on edges so the dark CTA button reads */}
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0)_55%,rgba(13,43,51,0.18)_100%)]" />
           <div className="section-shell flex min-h-[60vh] flex-col items-center justify-center py-24 text-center lg:py-32">
             <h2 className="font-display text-[2.8rem] font-semibold leading-[1.05] tracking-[-0.04em] text-[#0F1720] sm:text-[4rem] lg:text-[4.6rem]">
               {t("landing.finalCta.title")}
             </h2>
             <a
               href="mailto:hello@tawjeeh.ai"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-[#0D2B33] shadow-[0_20px_50px_rgba(13,43,51,0.15)] transition hover:bg-[#D9F3F0]"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#0D2B33] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_20px_50px_rgba(13,43,51,0.25)] transition hover:bg-[#21454D]"
             >
               {t("landing.finalCta.button")}
             </a>
