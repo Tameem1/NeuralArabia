@@ -238,14 +238,6 @@ export default function Home() {
                 aria-hidden
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              {/* Floating mark — the SVG that "plays" inside the bubble bg */}
-              <div className="absolute -right-10 top-10 opacity-80">
-                <img
-                  src={mark}
-                  alt=""
-                  className="h-44 w-44 sm:h-56 sm:w-56 logo-motion-target drop-shadow-[0_20px_50px_rgba(13,43,51,0.25)]"
-                />
-              </div>
 
               {/* Product card overlay */}
               <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8">
