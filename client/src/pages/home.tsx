@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 import {
   ArrowRight,
   Bot,
@@ -178,6 +179,9 @@ export default function Home() {
               <a href="#resources" className="nav-link">
                 {t("landing.nav.resources")}
               </a>
+              <Link href="/careers" className="nav-link">
+                {t("careers.nav.link")}
+              </Link>
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3">
@@ -630,13 +634,22 @@ export default function Home() {
                       {column.title}
                     </p>
                     <ul className="mt-4 space-y-2 text-sm text-[#334155]">
-                      {column.links.map((link) => (
-                        <li key={link}>
-                          <a href="#" className="hover:text-[#16B8AE]">
-                            {link}
-                          </a>
-                        </li>
-                      ))}
+                      {column.links.map((link) => {
+                        const isCareers = link === t("careers.nav.link");
+                        return (
+                          <li key={link}>
+                            {isCareers ? (
+                              <Link href="/careers" className="hover:text-[#16B8AE]">
+                                {link}
+                              </Link>
+                            ) : (
+                              <a href="#" className="hover:text-[#16B8AE]">
+                                {link}
+                              </a>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ),
