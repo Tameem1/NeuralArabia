@@ -133,9 +133,199 @@
         },
         {
           "title": "Company",
-          "links": ["About", "Research", "Resources", "Contact"]
+          "links": ["About", "Research", "Careers", "Contact"]
         }
       ]
+    }
+  },
+  "careers": {
+    "nav": {
+      "back": "Tawjeeh AI",
+      "openRoles": "See open roles",
+      "link": "Careers"
+    },
+    "hero": {
+      "eyebrow": "Careers at Tawjeeh AI",
+      "title": "Help us put AI to work, in Arabic.",
+      "subtitle": "We're building bilingual AI that respects how business actually runs across the Arab world — and we're hiring researchers, engineers, and operators to ship it with us.",
+      "primaryCta": "See open roles",
+      "secondaryCta": "Read our principles",
+      "stats": [
+        { "value": "60+", "label": "Teammates" },
+        { "value": "4", "label": "Cities" },
+        { "value": "12", "label": "Open roles" },
+        { "value": "$0", "label": "Hidden ceilings" }
+      ]
+    },
+    "mission": {
+      "eyebrow": "Why Tawjeeh",
+      "title": "Serious AI, built where business actually happens.",
+      "body": "Most frontier AI is built far from the operations it claims to serve. We're closer. Our researchers sit next to the operators using our models, in the same rooms, in the same languages — so what ships actually works on Sunday morning, not just on a benchmark.",
+      "captionEyebrow": "Our wager",
+      "caption": "Sovereign, bilingual AI is not a niche — it's the next default for half the world."
+    },
+    "principles": {
+      "title": "How we work.",
+      "subtitle": "Five principles that decide what we ship and how we treat each other.",
+      "items": [
+        {
+          "title": "Customer-obsessed.",
+          "description": "We sit with the teams using our models until the workflow works. Demos don't count — production does."
+        },
+        {
+          "title": "Bilingual by default.",
+          "description": "Arabic and English are first-class everywhere — in our product, our docs, our reviews, and our hiring."
+        },
+        {
+          "title": "Move with intent.",
+          "description": "Speed matters, but so does taste. We ship the smallest thing that solves the real problem, then sharpen."
+        },
+        {
+          "title": "Independent thought.",
+          "description": "We disagree in public, decide, and commit. Seniority sets context, not conclusions."
+        },
+        {
+          "title": "Trust by design.",
+          "description": "Security, governance, and audit aren't a layer we add later. They're how the product is built from day one."
+        },
+        {
+          "title": "Own the outcome.",
+          "description": "Whoever picks up the work owns it end to end — from research, to release, to the support call after."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "How we take care of each other.",
+      "subtitle": "The basics, done seriously. Plus a few things we believe matter.",
+      "items": [
+        {
+          "title": "Comprehensive health",
+          "description": "Medical, dental, and mental health coverage for you and your dependents in every market we operate in."
+        },
+        {
+          "title": "Meaningful equity",
+          "description": "Every teammate is an owner. Long vesting horizons, real upside, and clear documentation of what you hold."
+        },
+        {
+          "title": "Time that's actually off",
+          "description": "Unlimited PTO with a four-week minimum we actually enforce. Plus paid local and religious holidays."
+        },
+        {
+          "title": "Parental leave",
+          "description": "Sixteen weeks fully paid for all new parents, with phased return and flexible schedules afterward."
+        },
+        {
+          "title": "Learning budget",
+          "description": "An annual budget for courses, conferences, books, and the compute you need to keep getting sharper."
+        },
+        {
+          "title": "Flexible location",
+          "description": "Hubs in Riyadh, Dubai, and Cairo with full remote available for most engineering and research roles."
+        }
+      ]
+    },
+    "roles": {
+      "title": "Open roles.",
+      "subtitle": "Don't see a fit? Send us a note — we hire generalists too.",
+      "filtersLabel": "Filter by team",
+      "allDepartments": "All teams",
+      "locationLabel": "Location",
+      "teamLabel": "Team",
+      "applyCta": "Apply",
+      "emptyLabel": "No open roles in this team right now. Check back soon.",
+      "items": [
+        {
+          "title": "Senior Research Scientist, Arabic NLP",
+          "team": "Research",
+          "location": "Riyadh"
+        },
+        {
+          "title": "Member of Technical Staff, Pretraining",
+          "team": "Research",
+          "location": "Dubai · Remote"
+        },
+        {
+          "title": "Staff Software Engineer, Inference",
+          "team": "Engineering",
+          "location": "Riyadh · Remote"
+        },
+        {
+          "title": "Software Engineer, Masar Platform",
+          "team": "Engineering",
+          "location": "Cairo"
+        },
+        {
+          "title": "Frontend Engineer, Workflow Studio",
+          "team": "Engineering",
+          "location": "Remote"
+        },
+        {
+          "title": "Forward Deployed Engineer",
+          "team": "Engineering",
+          "location": "Riyadh"
+        },
+        {
+          "title": "Product Designer, Agents",
+          "team": "Design",
+          "location": "Dubai"
+        },
+        {
+          "title": "Product Manager, Governance",
+          "team": "Product",
+          "location": "Riyadh"
+        },
+        {
+          "title": "Enterprise Account Executive — KSA",
+          "team": "Go-to-Market",
+          "location": "Riyadh"
+        },
+        {
+          "title": "Solutions Architect, Financial Services",
+          "team": "Go-to-Market",
+          "location": "Dubai"
+        },
+        {
+          "title": "People Partner",
+          "team": "People",
+          "location": "Riyadh"
+        },
+        {
+          "title": "Recruiter, Research & Engineering",
+          "team": "People",
+          "location": "Remote"
+        }
+      ]
+    },
+    "locations": {
+      "title": "Where we work.",
+      "subtitle": "Built around the operations we serve. Three hubs, one network.",
+      "items": [
+        {
+          "city": "Riyadh",
+          "country": "Saudi Arabia",
+          "blurb": "Headquarters. Research, engineering, and most of go-to-market."
+        },
+        {
+          "city": "Dubai",
+          "country": "United Arab Emirates",
+          "blurb": "Customer-facing teams, partnerships, and a growing inference cluster."
+        },
+        {
+          "city": "Cairo",
+          "country": "Egypt",
+          "blurb": "Platform engineering, design, and our largest data and evaluation team."
+        }
+      ],
+      "remote": {
+        "title": "Remote",
+        "blurb": "Most engineering and research roles are open to remote across MENA timezones."
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Don't see your role?",
+      "title": "Tell us what you'd build.",
+      "subtitle": "We hire for trajectory, not just titles. Send a short note about the problem you want to work on next.",
+      "button": "careers@tawjeeh.ai"
     }
   }
 }
