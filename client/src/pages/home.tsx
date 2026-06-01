@@ -3,9 +3,13 @@ import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import {
   ArrowRight,
+  ArrowUpRight,
   Bot,
+  Check,
   Cloud,
+  Compass,
   Folder,
+  Highlighter,
   Layers,
   Mail,
   Search,
@@ -372,7 +376,9 @@ export default function Home() {
                   {t("landing.masar.description")}
                 </p>
                 <a
-                  href="#contact"
+                  href="https://tawjeehai.cloud/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0D2B33] transition hover:bg-[#D9F3F0]"
                 >
                   {t("landing.masar.cta")}
@@ -464,6 +470,90 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ───── Tawjeeh suite — Qalam & Tamam ───── */}
+        <section id="suite" className="section-shell py-20 lg:py-28">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#129A92]">
+              {t("landing.suite.eyebrow")}
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#0F1720] sm:text-4xl lg:text-5xl">
+              {t("landing.suite.title")}
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[#334155] sm:text-lg">
+              {t("landing.suite.description")}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            {(
+              [
+                { key: "qalam", url: "https://annotation.tawjeehai.cloud/", Icon: Highlighter },
+                { key: "tamam", url: "https://advisor.tawjeehai.com/", Icon: Compass },
+              ] as const
+            ).map(({ key, url, Icon }) => (
+              <div
+                key={key}
+                className="group relative flex flex-col overflow-hidden rounded-[28px] border border-[#D5E7E6] bg-white p-8 transition hover:border-[#16B8AE] hover:shadow-[0_40px_90px_rgba(13,43,51,0.10)] sm:p-10"
+              >
+                {/* Soft brand glow */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(64,224,208,0.18),transparent_70%)]"
+                />
+
+                <div className="flex items-center gap-4">
+                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[linear-gradient(135deg,#0D2B33,#16B8AE)] text-white shadow-[0_18px_40px_rgba(13,43,51,0.25)]">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <p className="text-2xl font-semibold tracking-[-0.02em] text-[#0F1720]">
+                        {t(`landing.suite.items.${key}.name`)}
+                      </p>
+                      <span className="rounded-full bg-[#E6F7F4] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#129A92]">
+                        {t(`landing.suite.items.${key}.badge`)}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm font-medium text-[#129A92]">
+                      {t(`landing.suite.items.${key}.tag`)}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-6 text-base leading-7 text-[#334155]">
+                  {t(`landing.suite.items.${key}.description`)}
+                </p>
+
+                <ul className="mt-6 space-y-3">
+                  {(
+                    t(`landing.suite.items.${key}.features`, {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm text-[#334155]"
+                    >
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#16B8AE]" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#0D2B33] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#16B8AE]"
+                >
+                  {t(`landing.suite.items.${key}.cta`)}
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+            ))}
           </div>
         </section>
 
