@@ -1,18 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { ArrowRight, MapPin } from "lucide-react";
 import { useDirection } from "@/hooks/use-direction";
 import logoLight from "@/assets/tawjeeh-logo-light.png";
 import wordmark from "@/assets/tawjeeh-wordmark.png";
-import mark from "@/assets/tawjeeh-mark.png";
 import bgCard from "@/assets/backgrounds/1440x1152.jpg";
 import bgFull from "@/assets/backgrounds/2560x1440.jpg";
 
-type Role = { title: string; team: string; location: string };
 type Principle = { title: string; description: string };
 type Benefit = { title: string; description: string };
-type Stat = { value: string; label: string };
 type LocationItem = { city: string; country: string; blurb: string };
 
 const locationImages: Record<string, string> = {
@@ -34,30 +31,13 @@ export default function Careers() {
   const { t, i18n } = useTranslation();
   const [direction, changeLanguage] = useDirection();
 
-  const stats = t("careers.hero.stats", { returnObjects: true }) as Stat[];
   const principles = t("careers.principles.items", { returnObjects: true }) as Principle[];
   const benefits = t("careers.benefits.items", { returnObjects: true }) as Benefit[];
-  const roles = t("careers.roles.items", { returnObjects: true }) as Role[];
   const locations = t("careers.locations.items", { returnObjects: true }) as LocationItem[];
-
-  const teams = useMemo(() => {
-    const set = new Set<string>();
-    roles.forEach((r) => set.add(r.team));
-    return Array.from(set);
-  }, [roles]);
-
-  const [activeTeam, setActiveTeam] = useState<string>("__all__");
-
-  useEffect(() => {
-    setActiveTeam("__all__");
-  }, [i18n.language]);
 
   useEffect(() => {
     document.title = `${t("careers.hero.eyebrow")} | Tawjeeh AI`;
   }, [t, i18n.language]);
-
-  const filteredRoles =
-    activeTeam === "__all__" ? roles : roles.filter((r) => r.team === activeTeam);
 
   return (
     <div dir={direction} className="relative text-start text-[#0F1720]">
@@ -140,7 +120,7 @@ export default function Careers() {
             </div>
           </div>
 
-          {/* Hero panel: brand backdrop + stats overlay */}
+          {/* Hero panel: brand backdrop with a caption overlay */}
           <div className="mt-14 relative overflow-hidden rounded-[32px] border border-[#D5E7E6] min-h-[360px] sm:min-h-[440px] fade-in-up-delay">
             <img
               src={bgCard}
@@ -149,21 +129,13 @@ export default function Careers() {
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,43,51,0)_45%,rgba(13,43,51,0.55)_100%)]" />
-            <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8">
-              <div className="rounded-[20px] border border-white/10 bg-[#0D2B33]/95 p-6 text-white shadow-[0_30px_80px_rgba(13,43,51,0.25)] backdrop-blur sm:p-8">
-                <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-                  {stats.map((stat) => (
-                    <div key={stat.label}>
-                      <p className="font-display text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
-                        {stat.value}
-                      </p>
-                      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/65">
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="absolute inset-x-6 bottom-6 sm:inset-x-10 sm:bottom-10 lg:inset-x-12 lg:bottom-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
+                {t("careers.mission.captionEyebrow")}
+              </p>
+              <p className="mt-3 max-w-xl text-2xl font-medium leading-snug tracking-[-0.02em] text-white sm:text-3xl">
+                {t("careers.mission.caption")}
+              </p>
             </div>
           </div>
         </section>
@@ -226,13 +198,11 @@ export default function Careers() {
               </p>
             </div>
 
-            <ol className="mt-16 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-              {principles.map((principle, idx) => (
+            <ul className="mt-16 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+              {principles.map((principle) => (
                 <li key={principle.title} className="flex flex-col">
-                  <span className="font-mono text-xs font-medium tracking-[0.18em] text-[#7CEDE3]">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-medium tracking-[-0.02em] text-white">
+                  <span aria-hidden className="h-px w-10 bg-[#7CEDE3]" />
+                  <h3 className="mt-5 text-2xl font-medium tracking-[-0.02em] text-white">
                     {principle.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-white/65">
@@ -240,7 +210,7 @@ export default function Careers() {
                   </p>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
@@ -274,84 +244,28 @@ export default function Careers() {
 
         {/* ───── Open roles ───── */}
         <section id="open-roles" className="section-shell pb-24 pt-4 lg:pb-32">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="font-display text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">
-                {t("careers.roles.title")}
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-7 text-[#334155]">
-                {t("careers.roles.subtitle")}
-              </p>
-            </div>
+          <div className="max-w-2xl">
+            <h2 className="font-display text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#0F1720] sm:text-5xl">
+              {t("careers.roles.title")}
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-[#334155]">
+              {t("careers.roles.subtitle")}
+            </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-2">
-            <span className="me-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#6B7C85]">
-              {t("careers.roles.filtersLabel")}
-            </span>
-            <button
-              type="button"
-              onClick={() => setActiveTeam("__all__")}
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-                activeTeam === "__all__"
-                  ? "border-[#0D2B33] bg-[#0D2B33] text-white"
-                  : "border-[#D5E7E6] bg-white text-[#334155] hover:border-[#16B8AE] hover:text-[#129A92]"
-              }`}
+          <div className="mt-10 overflow-hidden rounded-[24px] border border-[#E8F2F2] bg-white px-6 py-12 text-center sm:px-10 sm:py-16">
+            <p className="eyebrow">{t("careers.roles.eyebrow")}</p>
+            <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-[#334155] sm:text-xl">
+              {t("careers.roles.emptyLabel")}
+            </p>
+            <a
+              href="mailto:careers@tawjeeh.ai"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0D2B33] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#21454D]"
             >
-              {t("careers.roles.allDepartments")}
-            </button>
-            {teams.map((team) => (
-              <button
-                key={team}
-                type="button"
-                onClick={() => setActiveTeam(team)}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition ${
-                  activeTeam === team
-                    ? "border-[#0D2B33] bg-[#0D2B33] text-white"
-                    : "border-[#D5E7E6] bg-white text-[#334155] hover:border-[#16B8AE] hover:text-[#129A92]"
-                }`}
-              >
-                {team}
-              </button>
-            ))}
+              {t("careers.roles.contactCta")}
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+            </a>
           </div>
-
-          <ul className="mt-10 divide-y divide-[#E8F2F2] overflow-hidden rounded-[24px] border border-[#E8F2F2] bg-white">
-            {filteredRoles.length === 0 && (
-              <li className="px-6 py-10 text-center text-sm text-[#6B7C85] sm:px-8">
-                {t("careers.roles.emptyLabel")}
-              </li>
-            )}
-            {filteredRoles.map((role) => (
-              <li
-                key={`${role.team}-${role.title}`}
-                className="group flex flex-col gap-4 px-6 py-6 transition-colors hover:bg-[#F7FCFC] sm:flex-row sm:items-center sm:justify-between sm:px-8"
-              >
-                <div className="min-w-0">
-                  <p className="text-lg font-semibold tracking-[-0.01em] text-[#0D2B33] sm:text-xl">
-                    {role.title}
-                  </p>
-                  <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs font-medium text-[#6B7C85]">
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#16B8AE]" />
-                      {role.team}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="h-3.5 w-3.5" />
-                      {role.location}
-                    </span>
-                  </div>
-                </div>
-                <a
-                  href="mailto:careers@tawjeeh.ai"
-                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#D5E7E6] bg-white px-5 py-2.5 text-sm font-semibold text-[#0D2B33] transition group-hover:border-[#0D2B33] group-hover:bg-[#0D2B33] group-hover:text-white"
-                >
-                  {t("careers.roles.applyCta")}
-                  <ArrowRight className="h-4 w-4 rtl:rotate-180" />
-                </a>
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* ───── Locations ───── */}
