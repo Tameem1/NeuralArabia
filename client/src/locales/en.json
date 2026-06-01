@@ -149,13 +149,7 @@
       "title": "Help us put AI to work, in Arabic.",
       "subtitle": "We're building bilingual AI that respects how business actually runs across the Arab world — and we're hiring researchers, engineers, and operators to ship it with us.",
       "primaryCta": "See open roles",
-      "secondaryCta": "Read our principles",
-      "stats": [
-        { "value": "60+", "label": "Teammates" },
-        { "value": "4", "label": "Cities" },
-        { "value": "12", "label": "Open roles" },
-        { "value": "$0", "label": "Hidden ceilings" }
-      ]
+      "secondaryCta": "Read our principles"
     },
     "mission": {
       "eyebrow": "Why Tawjeeh",
@@ -226,75 +220,10 @@
     },
     "roles": {
       "title": "Open roles.",
-      "subtitle": "Don't see a fit? Send us a note — we hire generalists too.",
-      "filtersLabel": "Filter by team",
-      "allDepartments": "All teams",
-      "locationLabel": "Location",
-      "teamLabel": "Team",
-      "applyCta": "Apply",
-      "emptyLabel": "No open roles in this team right now. Check back soon.",
-      "items": [
-        {
-          "title": "Senior Research Scientist, Arabic NLP",
-          "team": "Research",
-          "location": "Riyadh"
-        },
-        {
-          "title": "Member of Technical Staff, Pretraining",
-          "team": "Research",
-          "location": "Dubai · Remote"
-        },
-        {
-          "title": "Staff Software Engineer, Inference",
-          "team": "Engineering",
-          "location": "Riyadh · Remote"
-        },
-        {
-          "title": "Software Engineer, Masar Platform",
-          "team": "Engineering",
-          "location": "Cairo"
-        },
-        {
-          "title": "Frontend Engineer, Workflow Studio",
-          "team": "Engineering",
-          "location": "Remote"
-        },
-        {
-          "title": "Forward Deployed Engineer",
-          "team": "Engineering",
-          "location": "Riyadh"
-        },
-        {
-          "title": "Product Designer, Agents",
-          "team": "Design",
-          "location": "Dubai"
-        },
-        {
-          "title": "Product Manager, Governance",
-          "team": "Product",
-          "location": "Riyadh"
-        },
-        {
-          "title": "Enterprise Account Executive — KSA",
-          "team": "Go-to-Market",
-          "location": "Riyadh"
-        },
-        {
-          "title": "Solutions Architect, Financial Services",
-          "team": "Go-to-Market",
-          "location": "Dubai"
-        },
-        {
-          "title": "People Partner",
-          "team": "People",
-          "location": "Riyadh"
-        },
-        {
-          "title": "Recruiter, Research & Engineering",
-          "team": "People",
-          "location": "Remote"
-        }
-      ]
+      "subtitle": "We hire when the right person finds us, not on a schedule. Send us a note about the problem you'd like to work on.",
+      "eyebrow": "Currently",
+      "emptyLabel": "No open roles right now — but we're always reading inbound applications. If you'd thrive here, we want to hear from you.",
+      "contactCta": "Get in touch"
     },
     "locations": {
       "title": "Where we work.",
