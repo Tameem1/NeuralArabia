@@ -83,14 +83,57 @@
         ]
       }
     },
+    "suite": {
+      "eyebrow": "The Tawjeeh suite",
+      "title": "More ways to put AI to work",
+      "description": "Beyond Masar, two focused products that turn language and expertise into outcomes — one builds the datasets that train AI, the other turns hard questions into grounded answers.",
+      "items": {
+        "qalam": {
+          "name": "Qalam",
+          "badge": "Live",
+          "tag": "Data annotation platform",
+          "description": "An AI-powered annotation platform for language workflows. Build high-quality labeled datasets faster with LLM-assisted pre-labeling, entity and text classification, and quality control baked in.",
+          "features": [
+            "AI-assisted pre-labeling and annotation workflows",
+            "Named-entity (NER), span and text classification",
+            "Inter-annotator agreement and quality metrics",
+            "Multiple model profiles with JSON / CSV export"
+          ],
+          "cta": "Open Qalam"
+        },
+        "tamam": {
+          "name": "Tamam",
+          "badge": "New",
+          "tag": "Grounded AI advisor",
+          "description": "An AI advisor that answers with sources, not guesses. Switch between guided lessons and instant expert answers — every reply backed by citations you can trace.",
+          "features": [
+            "Tutor and Advisor modes — guided or instant",
+            "Every answer grounded in cited sources",
+            "Interactive knowledge graph to explore topics",
+            "Ask anything and get battle-tested guidance"
+          ],
+          "cta": "Open Tamam"
+        }
+      }
+    },
     "industries": {
       "title": "Powering progress across industries.",
       "items": [
-        { "title": "Financial Services" },
-        { "title": "Accounting" },
-        { "title": "Technology" },
-        { "title": "Manufacturing" },
-        { "title": "Linguistics" }
+        {
+          "title": "Financial Services"
+        },
+        {
+          "title": "Accounting"
+        },
+        {
+          "title": "Technology"
+        },
+        {
+          "title": "Manufacturing"
+        },
+        {
+          "title": "Linguistics"
+        }
       ]
     },
     "developer": {
@@ -99,12 +142,31 @@
       "cta": "Let's go",
       "linkCta": "Get an API key",
       "docsTitle": "tawjeeh docs",
-      "docsTabs": ["Guides and concepts", "API Reference", "Release Notes", "Academy", "Cookbooks"],
+      "docsTabs": [
+        "Guides and concepts",
+        "API Reference",
+        "Release Notes",
+        "Academy",
+        "Cookbooks"
+      ],
       "docsNav": {
         "getStartedLabel": "Get Started",
-        "getStarted": ["Introduction", "Installation", "Creating a client", "Quickstart", "Playground", "FAQs"],
+        "getStarted": [
+          "Introduction",
+          "Installation",
+          "Creating a client",
+          "Quickstart",
+          "Playground",
+          "FAQs"
+        ],
         "modelsLabel": "Models",
-        "models": ["Overview", "Command", "Embed", "Rerank", "Tawjeeh Arabic"]
+        "models": [
+          "Overview",
+          "Command",
+          "Embed",
+          "Rerank",
+          "Tawjeeh Arabic"
+        ]
       },
       "docsBody": {
         "eyebrow": "Get Started",
@@ -125,15 +187,31 @@
       "columns": [
         {
           "title": "Products",
-          "links": ["Masar", "Business Map", "Workflow Studio", "Governance Signals"]
+          "links": [
+            "Masar",
+            "Business Map",
+            "Workflow Studio",
+            "Governance Signals"
+          ]
         },
         {
           "title": "Solutions",
-          "links": ["Financial Services", "Accounting", "Technology", "Manufacturing", "Linguistics"]
+          "links": [
+            "Financial Services",
+            "Accounting",
+            "Technology",
+            "Manufacturing",
+            "Linguistics"
+          ]
         },
         {
           "title": "Company",
-          "links": ["About", "Research", "Careers", "Contact"]
+          "links": [
+            "About",
+            "Research",
+            "Careers",
+            "Contact"
+          ]
         }
       ]
     }
